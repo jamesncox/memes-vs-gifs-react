@@ -9,13 +9,16 @@ export default function NavBar(props) {
                      <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="#">Sign Up</a>
-                    <a href="#">Login</a>
-                    <a href="#">Profile</a>
+                    <a href="#signup">Sign Up</a>
+                    <a href="#login">Login</a>
+                    {/* click user profile to see only user's saved memes and gifs */}
+                    <a href="#profile">Profile</a>
                 </div>
             </div>
-            <a href="#meme">What Do You Meme?</a>
-            <a href="#gif">That's What You Gif!</a>
+            {/* click savedmemes to see all users best saved memes */}
+            <a href="#savedmemes">Saved Memes</a>
+            {/* clicked savedgifs to see all users best saved gifs */}
+            <a href="#savedgifs">Saved Gifs</a>
         </div>
     )
 }
