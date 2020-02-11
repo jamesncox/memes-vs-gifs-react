@@ -2,12 +2,11 @@ import React from "react"
 
 export default function NavBar(props) {
 
-
     return (
         <div class="navbar">
             <div class="dropdown">
                 <button class="dropbtn">User
-        <i class="fa fa-caret-down"></i>
+                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
                     <a href="#">Sign Up</a>
