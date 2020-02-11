@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
-import "./styles.css";
+import "./stylesheets/home.css";
 import NavBar from './components/NavBar'
 import GifGameCard from './components/GifGameCard'
 import MemeGameCard from './components/MemeGameCard'
