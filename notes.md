@@ -42,7 +42,8 @@ Initial commmit.
 
     index.css // don't think I need this either
 
-    index.js // I have a lot to do here, all the router stuff for the links, Redux stuff I think and calling App.js
+    index.js // I have a lot to do here, all the router stuff for the links, Redux stuff I think and calling App.js. 
+            // Remember that index.js holds the store(s) which takes in all my reducers. What reducers do I need?
 
     serviceWorker.js // No idea what this does
 
