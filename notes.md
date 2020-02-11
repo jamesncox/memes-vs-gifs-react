@@ -9,13 +9,14 @@ Initial commmit.
         NavBar // Links to user signup/login/profile and saved memes/gifs
         Styles // styled components pertaining to game cards/navbar
 
+    Reducers
+        Multiple files for reducers
+
     Gif
         Actions
             Some Actions
         Components
             All the gif components
-        Reducer
-            Gif reducers
 
             GifStyles.js // styled components pertaining to Gif game
 
@@ -24,8 +25,6 @@ Initial commmit.
             Meme actions
         Components
             All the meme components
-        Reducer
-            Meme reducers
 
             MemeStyles.js // styled components pertaining to Meme game
 
