@@ -58,3 +58,26 @@ Initial commmit.
         These show pages will show all the saved memes and gifs that any user sends to the database
 
     Create a User Profile component that renders only the user's saved memes and gifs
+
+# Loading Gif Options
+    my "is loading" animation, not a spinning wheel
+
+    cat spinning around
+    https://media0.giphy.com/media/w9yg6QsZJ3JC/giphy.gif?cid=790b76116d57b53c71d60bfdf80940f79ba854d474688f02&rid=giphy.gif
+
+    fingers tapping
+    https://media1.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif?cid=790b7611b68668f161ca4d7a631e88d6854f994a2da390f8&rid=giphy.gif
+
+    cat playing while lying down
+    https://media1.giphy.com/media/LyuWqvhAU93XO/giphy.gif?cid=790b76110beff867408baa87f7c7b3676f75c46d0579f36c&rid=giphy.gif
+
+    animated computer blue and pink
+    https://media3.giphy.com/media/l0HUpt2s9Pclgt9Vm/giphy.gif?cid=790b76119589c896c27a29eacca0ba8057253831b1d837f5&rid=giphy.gif
+
+    simple loading text
+    https://media1.giphy.com/media/3ov9k0BZQL358k458s/giphy.gif?cid=790b761140ff2d7d0dfd7f55330e302d3a45b11fccd32623&rid=giphy.gif
+
+    loading gif
+    https://media3.giphy.com/media/p0DJuJj18Gcz6/giphy.gif?cid=790b7611b172a6d947fa45c99b63ff5e6089bad101deb52d&rid=giphy.gif
+
+    
