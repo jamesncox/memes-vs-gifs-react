@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { MemeCard } from "./Styles"
+import { MemeCard } from "./MemeStyles"
 import { connect } from 'react-redux'
 
 class Meme extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { MyForm } from '../GiphyStyles'
+import { MyForm } from './GiphyStyles'
 import { connect } from 'react-redux'
 import { getQueriedGifs } from './actions/gifs'
 import { SET_QUERY_INPUT, CLEAR_CHOSEN_CAPTION } from './actionTypes'
