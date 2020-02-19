@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
     BrowserRouter as Router,
     Redirect,
@@ -7,29 +7,34 @@ import {
     Link,
     useHistory
 } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { CLEAR_CHOSEN_CAPTION } from '../actionTypes'
 
-export default function NavBar(props) {
+class NavBar extends Component {
 
-    return (
-        <div class="navbar">
-            <div class="dropdown">
-                <button class="dropbtn">User
+    render() {
+        return (
+            <div class="navbar" >
+                <div class="dropdown">
+                    <button class="dropbtn">User
                      <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <Link to="/signup">Sign Up</Link>
-                    <Link to="/login">Login</Link>
-                    {/* click user profile to see only user's saved memes and gifs */}
-                    <Link to="/profile">Profile</Link>
+                    </button>
+                    <div class="dropdown-content">
+                        <Link to="/signup">Sign Up</Link>
+                        <Link to="/login">Login</Link>
+                        {/* click user profile to see only user's saved memes and gifs */}
+                        <Link to="/profile">Profile</Link>
+                    </div>
                 </div>
-            </div>
-            {/* click savedmemes to see all users best saved memes */}
-            <Link to="/saved-memes">Saved Memes</Link>
-            {/* clicked savedgifs to see all users best saved gifs */}
-            <Link to="/saved-gifs">Saved Gifs</Link>
-            <Link to="/">Home</Link>
+                {/* click savedmemes to see all users best saved memes */}
+                <Link to="/saved-memes">Saved Memes</Link>
+                {/* clicked savedgifs to see all users best saved gifs */}
+                <Link to="/saved-gifs">Saved Gifs</Link>
+                <Link to={{ pathname: "/", state: this.props.clearChosenCaption() }}>
+                    Home
+                </Link>
 
-            {/* <Switch>
+                {/* <Switch>
                 <Route exact path="/">
                     <Home />
                 </Route>
@@ -47,6 +52,14 @@ export default function NavBar(props) {
                 </Route>
             </Switch> */}
 
-        </div>
-    )
+            </div >
+        )
+    }
 }
+
+const mapDispatchToProps = dispatch => ({
+    clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION })
+})
+
+
+export default connect(null, mapDispatchToProps)(NavBar)
