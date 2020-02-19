@@ -24,7 +24,19 @@ const MyForm = styled.form`
   font-family: Helvetica, sans-serif;
 `
 
-export { GiphyCard, NextBtn, MyForm }
+const StyledBody = styled.div`
+  background: url('https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+export { GiphyCard, NextBtn, MyForm, StyledBody }
 
 
 

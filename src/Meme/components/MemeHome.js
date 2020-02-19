@@ -8,7 +8,7 @@ class MemeHome extends Component {
     render() {
         return (
             <div>
-                <h1>What Do You Meme?</h1>
+                <h1 className="header">What Do You Meme?</h1>
                 <MemeContainer />
                 <CaptionContainer />
             </div>
