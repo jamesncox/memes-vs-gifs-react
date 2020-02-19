@@ -3,7 +3,7 @@ import Giphy from './Giphy.js'
 import SearchBar from './SearchBar'
 import NextButton from './NextButton'
 import { connect } from 'react-redux'
-import { GEN_RANDOM_GIF, CLEAR_CHOSEN_CAPTION } from '../actionTypes'
+import { GEN_RANDOM_GIF, CLEAR_CHOSEN_CAPTION } from '../../actionTypes'
 
 class GiphyContainer extends Component {
 

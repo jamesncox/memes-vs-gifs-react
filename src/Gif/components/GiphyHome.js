@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GiphyContainer from './GiphyContainer'
-import '../stylesheets/gif.css';
-import CaptionContainer from '../Caption/components/CaptionContainer'
+import '../../stylesheets/gif.css';
+import CaptionContainer from '../../Caption/components/CaptionContainer'
 
 class GiphyHome extends Component {
 

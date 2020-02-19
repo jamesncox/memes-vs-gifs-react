@@ -14,7 +14,7 @@ export const getCaptions = () => {
             const captionData = await res.json()
             dispatch(setCaptions(captionData))
         } catch (err) {
-            alert("Failed to load captions")
+            // alert("Failed to load captions")
         }
     }
 }
