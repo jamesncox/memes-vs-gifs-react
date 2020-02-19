@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CaptionButton } from './Styles'
+import { CaptionButton } from '../CaptionStyles'
 import { connect } from 'react-redux'
 import {
     GEN_RANDOM_CAPTIONS_R,
