@@ -15,7 +15,7 @@ export const getMemes = () => {
             const memeList = memeData.data.memes
             dispatch(setMemes(memeList))
         } catch (err) {
-            alert("An error occured")
+            alert("Failed to load memes")
         }
     }
 }

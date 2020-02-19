@@ -20,7 +20,7 @@ export const getQueriedGifs = () => {
             dispatch(setQueriedGifs(giphySearchResults))
             dispatch({ type: GEN_RANDOM_GIF })
         } catch (err) {
-            // alert("An error occured"
+            alert("Failed to load gifs")
         }
     }
 }
