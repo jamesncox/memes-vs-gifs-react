@@ -1,10 +1,10 @@
 // this is my gif home page
 // gif game card will have the link to call this class, which will render my Gif game
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import GiphyContainer from './GiphyContainer'
 import NavBar from '../components/NavBar'
-import "../stylesheets/gif.css";
+import '../stylesheets/gif.css';
 import CaptionContainer from '../Caption/components/CaptionContainer'
 
 class GiphyHome extends Component {

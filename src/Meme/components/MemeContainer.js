@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import Meme from './Meme'
 import GenerateMeme from './GenerateMeme'
 import { connect } from 'react-redux'

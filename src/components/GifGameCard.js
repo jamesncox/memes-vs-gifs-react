@@ -1,5 +1,5 @@
-import React from "react"
-import { GameLinkCard } from "./Styles"
+import React from 'react'
+import { GameLinkCard } from './Styles'
 
 export default function GifGameCard(props) {
 

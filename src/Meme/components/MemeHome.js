@@ -1,11 +1,10 @@
 // aka app.js in codesandbox what-do-you-meme-classes
 // this class will be called by my router/link to display Meme homepage
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import NavBar from '../components/NavBar'
 import CaptionContainer from '../Caption/components/CaptionContainer'
 import MemeContainer from './MemeContainer'
-
 import './stylesheets/meme.css'
 
 class MemeHome extends Component {

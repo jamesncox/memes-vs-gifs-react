@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const GiphyCard = styled.div`
   background-color: #000308d2;

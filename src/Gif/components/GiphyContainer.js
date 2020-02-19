@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import Giphy from './Giphy.js'
 import SearchBar from './SearchBar'
 import NextButton from './NextButton'

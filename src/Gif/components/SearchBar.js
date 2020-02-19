@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import { MyForm } from './GiphyStyles'
 import { connect } from 'react-redux'
 import { getQueriedGifs } from '../actions/gifs'
