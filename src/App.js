@@ -5,10 +5,8 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import './stylesheets/home.css';
+import './stylesheets/app.css';
 import NavBar from './components/NavBar'
-import GifGameCard from './components/GifGameCard'
-import MemeGameCard from './components/MemeGameCard'
 import MemeHome from './Meme/components/MemeHome'
 import GifHome from './Gif/components/GiphyHome'
 import Home from './Home'

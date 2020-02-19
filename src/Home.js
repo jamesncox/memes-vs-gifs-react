@@ -8,14 +8,13 @@ import {
     useHistory
 } from 'react-router-dom';
 import './stylesheets/home.css';
-import NavBar from './components/NavBar'
 import GifGameCard from './components/GifGameCard'
 import MemeGameCard from './components/MemeGameCard'
-import MemeHome from './Meme/components/MemeHome'
-import GifHome from './Gif/components/GiphyHome'
 
 export default function Home() {
+
     let history = useHistory()
+
     const redirectToMemeGame = () => {
         history.push('/meme-game')
     }
@@ -23,7 +22,6 @@ export default function Home() {
     const redirectToGifGame = () => {
         history.push('/gif-game')
     }
-
 
     return (
         <Router>
