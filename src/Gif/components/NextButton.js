@@ -1,5 +1,5 @@
 import React from 'react'
-import { NextBtn } from './Styles'
+import { NextBtn } from '../GiphyStyles'
 
 export default function NextButton(props) {
 

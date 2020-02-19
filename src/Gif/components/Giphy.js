@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { GiphyCard } from "./Styles"
+import { GiphyCard } from "../GiphyStyles"
 import { connect } from 'react-redux'
 
 class Giphy extends Component {
