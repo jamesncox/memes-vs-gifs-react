@@ -3,14 +3,16 @@
 
 import React, { Component } from "react";
 import GiphyContainer from './GiphyContainer'
-import "./stylesheets/gif.css";
-import CaptionContainer from './CaptionContainer'
+import NavBar from '../components/NavBar'
+import "../stylesheets/gif.css";
+import CaptionContainer from '../Caption/components/CaptionContainer'
 
 class GiphyHome extends Component {
 
     render() {
         return (
             <div>
+                <NavBar />
                 <h1 className="header">That's What You Gif!</h1>
                 <GiphyContainer />
                 <CaptionContainer />

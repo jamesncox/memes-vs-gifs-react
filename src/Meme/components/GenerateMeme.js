@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MemeButton } from './MemeStyles'
 import { connect } from 'react-redux'
-import { GEN_RANDOM_MEME, CLEAR_CHOSEN_CAPTION } from './actionTypes'
+import { GEN_RANDOM_MEME, CLEAR_CHOSEN_CAPTION } from '../actionTypes'
 
 class GenerateMeme extends Component {
 

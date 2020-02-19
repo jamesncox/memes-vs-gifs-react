@@ -2,8 +2,8 @@
 // this class will be called by my router/link to display Meme homepage
 
 import React, { Component } from "react";
-import NavBar from './NavBar'
-import CaptionContainer from './CaptionContainer'
+import NavBar from '../components/NavBar'
+import CaptionContainer from '../Caption/components/CaptionContainer'
 import MemeContainer from './MemeContainer'
 
 import './stylesheets/meme.css'

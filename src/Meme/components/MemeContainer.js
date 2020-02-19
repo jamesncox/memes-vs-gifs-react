@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Meme from './Meme'
 import GenerateMeme from './GenerateMeme'
 import { connect } from 'react-redux'
-import { getMemes } from './actions/memes'
+import { getMemes } from '../actions/memes'
 
 class MemeContainer extends Component {
 
