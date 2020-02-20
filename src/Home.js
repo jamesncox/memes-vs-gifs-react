@@ -59,6 +59,8 @@ class Home extends Component {
     //     // window.location.reload(false)
     // }
 
+    // add a componentDidMount and a clearhistory method to clear meme/gif games
+
     render() {
         return (
             <Router>
