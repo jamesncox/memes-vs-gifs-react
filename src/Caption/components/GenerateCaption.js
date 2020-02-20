@@ -26,13 +26,13 @@ class GenerateCaption extends Component {
     render() {
         return (
             <div>
-                <CaptionButton onClick={this.handleClick}>Generate Caption Cards</CaptionButton>
-                <select id="selectedRating">
-                    <option value="All">All captions</option>
-                    <option value="PG">PG only</option>
-                    <option value="R">NSFW only</option>
-                </select>
-                <h4>Now choose the most hilarious caption!</h4>
+                <h4><CaptionButton onClick={this.handleClick}>Generate Caption Cards</CaptionButton>
+                    <select id="selectedRating">
+                        <option value="All">All captions</option>
+                        <option value="PG">PG only</option>
+                        <option value="R">NSFW only</option>
+                    </select></h4>
+                <h1>{' '}</h1>
             </div>
         )
     }

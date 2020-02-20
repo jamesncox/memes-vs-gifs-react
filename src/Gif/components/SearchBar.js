@@ -20,11 +20,10 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <h4>Type in a category to get a random gif</h4>
-                <MyForm onSubmit={this.handleSubmit.bind(this)}>
+                <h4><MyForm onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" placeholder="Category" onChange={this.handleChange} />
                     <input type="submit" value="Search" />
-                </MyForm>
+                </MyForm></h4>
                 <h1>{' '}</h1>
             </div>
         )

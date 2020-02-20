@@ -12,7 +12,7 @@ class GiphyHome extends Component {
                 <h1 className="header">That's What You Gif!</h1>
                 <GiphyContainer />
                 <CaptionContainer />
-                <h4>Thank you for playing</h4>
+                <h4>Thank you for playing That's What You Gif!</h4>
             </div>
         )
     }

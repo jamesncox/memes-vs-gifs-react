@@ -11,6 +11,7 @@ class MemeHome extends Component {
                 <h1 className="header">What Do You Meme?</h1>
                 <MemeContainer />
                 <CaptionContainer />
+                <h4>Thank you for playing</h4>
             </div>
         )
     }
