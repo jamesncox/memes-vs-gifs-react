@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const MemeCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.90);
+  background-color: rgba(0, 0, 0, 0.85);
   border-radius: .25in;
   display: inline-block;
   margin: 10px;
