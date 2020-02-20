@@ -26,7 +26,7 @@ export default function Home() {
     return (
         <Router>
             <div>
-                <h1>Memes Vs. Gifs</h1>
+                <h1 className="header">Memes Vs. Gifs</h1>
                 <MemeGameCard handleNav={redirectToMemeGame} />
                 <GifGameCard handleNav={redirectToGifGame} />
             </div>
