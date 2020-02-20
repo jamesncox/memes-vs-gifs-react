@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const GiphyCard = styled.div`
-  background-color: #000308d2;
+  background-color: rgba(0, 0, 0, 0.90);
   border-radius: .25in;
   display: inline-block;
   margin: 10px;

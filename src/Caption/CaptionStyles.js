@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const CaptionButton = styled.button`
-   color: buttontext;
+  color: buttontext;
   border-radius: .10in;
   color: black;
   font-size: 20px;
@@ -9,9 +9,8 @@ const CaptionButton = styled.button`
 `
 
 const SelectButton = styled.button`
-  background-color: #000308d2;
   border-radius: .10in;
-  color: white;
+  color: buttontext;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
 `

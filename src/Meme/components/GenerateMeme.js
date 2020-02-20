@@ -13,7 +13,8 @@ class GenerateMeme extends Component {
     render() {
         return (
             <div>
-                <MemeButton onClick={this.handleClick}>Generate Random Meme</MemeButton>
+                <h4><MemeButton onClick={this.handleClick}>Generate Random Meme</MemeButton></h4>
+                <h1>{' '}</h1>
             </div>
         )
     }

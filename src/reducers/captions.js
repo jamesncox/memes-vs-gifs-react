@@ -31,8 +31,7 @@ export default (state = { all: [], randomCaptions: null, chosenCaption: '' }, ac
             return { ...state, chosenCaption: action.payload }
 
         case CLEAR_CHOSEN_CAPTION:
-            const noCaption = ""
-            return { ...state, chosenCaption: noCaption }
+            return { ...state, chosenCaption: "" }
 
         default:
             return state

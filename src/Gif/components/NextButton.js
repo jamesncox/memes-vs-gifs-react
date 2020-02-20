@@ -10,7 +10,7 @@ export default function NextButton(props) {
 
     return (
         <div>
-            <NextBtn onClick={handleClick}>Next Giphy</NextBtn>
+            <NextBtn onClick={handleClick}>Next Gif</NextBtn>
             <h1>{' '}</h1>
         </div>
     )

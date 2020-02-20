@@ -7,8 +7,6 @@ import {
     Link,
     useHistory
 } from 'react-router-dom';
-import { connect } from 'react-redux'
-import { CLEAR_CHOSEN_CAPTION } from '../actionTypes'
 
 class NavBar extends Component {
 
@@ -30,9 +28,7 @@ class NavBar extends Component {
                 <Link to="/saved-memes">Saved Memes</Link>
                 {/* clicked savedgifs to see all users best saved gifs */}
                 <Link to="/saved-gifs">Saved Gifs</Link>
-                <Link to={{ pathname: "/", state: this.props.clearChosenCaption() }}>
-                    Home
-                </Link>
+                <Link to="/">Home</Link>
 
                 {/* <Switch>
                 <Route exact path="/">
@@ -57,9 +53,4 @@ class NavBar extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION })
-})
-
-
-export default connect(null, mapDispatchToProps)(NavBar)
+export default NavBar
