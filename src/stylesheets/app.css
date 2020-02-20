@@ -7,9 +7,9 @@
     border-radius: .25in;
   }
   
-  /* body {
-    background-image: url("https://wallup.net/wp-content/uploads/2018/10/04/355171-cat-meme-quote-funny-humor-grumpy-81.jpg")
-  } */
+   body {
+    background-image: url("https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+  }
   
   h1 {
     color: white
@@ -24,7 +24,7 @@
     border-radius: .20in;
     padding: 10px;
     overflow: hidden;
-    background-color: rgba(3, 3, 3, 0.623);
+    background-color:  rgba(0, 0, 0, 0.75);
     font-family: Arial;
   }
   
@@ -58,7 +58,7 @@
   
   /* Add a red background color to navbar links on hover */
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: rgba(162, 0, 255, 0.493);
+    background-color: rgba(144, 3, 226, 0.623);
     border-radius: .20in;
   }
   
@@ -67,7 +67,7 @@
     display: none;
     position: absolute;
     background-color: #e7e7e7e5;
-    min-width: 100px;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: .20in;
