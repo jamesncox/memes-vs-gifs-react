@@ -16,7 +16,7 @@ export default function App() {
     <Router>
       <div className="App">
         <NavBar />
-
+        {/* refactor the routes to send history props */}
         <Switch>
           <Route path="/meme-game">
             <MemeHome />
