@@ -6,13 +6,13 @@ import { connect } from 'react-redux'
 import {
     GEN_RANDOM_GIF,
     CLEAR_CHOSEN_CAPTION,
-    CLEAR_GIF, CLEAR_CAPTIONS
+    CLEAR_GIF,
+    CLEAR_CAPTIONS
 } from '../../actionTypes'
 
 class GiphyContainer extends Component {
 
     componentWillUnmount() {
-        console.log(this.props)
         this.props.clearGif()
         this.props.clearCaptions()
     }

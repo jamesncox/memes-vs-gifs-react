@@ -80,4 +80,10 @@ Initial commmit.
     loading gif
     https://media3.giphy.com/media/p0DJuJj18Gcz6/giphy.gif?cid=790b7611b172a6d947fa45c99b63ff5e6089bad101deb52d&rid=giphy.gif
 
+    handls twiddling thumbs
+    https://media3.giphy.com/media/3o85xscgnCWS8Xxqik/giphy.gif?cid=790b76116b48478ceccac3c9302eb9f12894ed09d180ad20&rid=giphy.gif
+
+    robot computer waiting
+    https://media1.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.gif?cid=790b7611e0ed9b8f318f9c048e70e0623a6b2cd833b83953&rid=giphy.gif
+
     
