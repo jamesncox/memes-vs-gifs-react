@@ -4,6 +4,14 @@ import { connect } from 'react-redux'
 
 class Meme extends Component {
 
+    renderSaveButton = () => {
+        if (this.props.chosenCaption) {
+            return (
+                <SaveButton>Save</SaveButton>
+            )
+        }
+    }
+
     render() {
         return (
             <>
@@ -11,7 +19,7 @@ class Meme extends Component {
                     <MemeCard>
                         <img src={this.props.memesURL} alt={this.props.name} />
                         <h2>{this.props.chosenCaption}</h2>
-                        <SaveButton>Save</SaveButton>
+                        {this.renderSaveButton()}
                     </MemeCard>
                 </div>
             </>

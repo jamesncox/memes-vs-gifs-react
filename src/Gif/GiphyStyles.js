@@ -34,9 +34,17 @@ const StyledBody = styled.div`
   bottom: 0;
   width: 100%;
   height: 100%;
-`;
+`
 
-export { GiphyCard, NextBtn, MyForm, StyledBody }
+const SaveButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+`
+
+export { GiphyCard, NextBtn, MyForm, StyledBody, SaveButton }
 
 
 
