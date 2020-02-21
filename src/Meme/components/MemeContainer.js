@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import Meme from './Meme'
 import GenerateMeme from './GenerateMeme'
 import { connect } from 'react-redux'
-import { getMemes } from '../../actions/memes'
+import { getMemes, clearMeme } from '../../actions/memes'
+import { clearCaptions } from '../../actions/captions'
 
 class MemeContainer extends Component {
 
     async componentDidMount() {
         this.props.getMemes()
+    }
+
+    componentWillUnmount() {
+        this.props.clearMeme()
+        this.props.clearCaptions()
     }
 
     renderRandomMeme = () => {
@@ -36,4 +42,9 @@ const mapStateToProps = state => ({
     chosenCaption: state.chosenCaption
 })
 
-export default connect(mapStateToProps, { getMemes })(MemeContainer)
+// const mapDispatchToProps = dispatch => ({
+//     clearMeme: () => dispatch({ type: CLEAR_MEME })
+//     // getMemes = () => dispatch({ type: SET_MEMES })
+// })
+
+export default connect(mapStateToProps, { getMemes, clearMeme, clearCaptions })(MemeContainer)

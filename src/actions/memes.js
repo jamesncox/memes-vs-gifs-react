@@ -1,7 +1,11 @@
-import { SET_MEMES } from '../actionTypes'
+import { SET_MEMES, CLEAR_MEME } from '../actionTypes'
 
 const setMemes = memes => {
     return { type: SET_MEMES, memes: memes }
+}
+
+export const clearMeme = () => {
+    return { type: CLEAR_MEME }
 }
 
 export const getMemes = () => {

@@ -8,7 +8,7 @@ export default (state = { all: [], randomMeme: null }, action) => {
             const randMeme = state.all[Math.floor(Math.random() * state.all.length)]
             return { ...state, randomMeme: randMeme }
         case CLEAR_MEME:
-            return { ...state, all: [] }
+            return { all: [] }
         default:
             return state
     }

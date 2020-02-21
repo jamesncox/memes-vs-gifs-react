@@ -4,7 +4,8 @@ import {
     GEN_RANDOM_CAPTIONS_PG,
     GEN_RANDOM_CAPTIONS_R,
     SET_CHOSEN_CAPTION,
-    CLEAR_CHOSEN_CAPTION
+    CLEAR_CHOSEN_CAPTION,
+    CLEAR_CAPTIONS
 } from '../actionTypes'
 
 export default (state = { all: [], randomCaptions: null, chosenCaption: '' }, action) => {
@@ -32,6 +33,9 @@ export default (state = { all: [], randomCaptions: null, chosenCaption: '' }, ac
 
         case CLEAR_CHOSEN_CAPTION:
             return { ...state, chosenCaption: "" }
+
+        case CLEAR_CAPTIONS:
+            return { all: [] }
 
         default:
             return state
