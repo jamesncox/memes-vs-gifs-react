@@ -1,7 +1,11 @@
-import { SET_QUERIED_GIFS, GEN_RANDOM_GIF } from '../actionTypes'
+import { SET_QUERIED_GIFS, GEN_RANDOM_GIF, CLEAR_GIF } from '../actionTypes'
 
 const setQueriedGifs = gifs => {
     return { type: SET_QUERIED_GIFS, gifs: gifs }
+}
+
+export const clearGif = () => {
+    return { type: CLEAR_GIF }
 }
 
 export const getQueriedGifs = () => {

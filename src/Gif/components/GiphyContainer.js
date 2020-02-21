@@ -3,9 +3,14 @@ import Giphy from './Giphy.js'
 import SearchBar from './SearchBar'
 import NextButton from './NextButton'
 import { connect } from 'react-redux'
-import { GEN_RANDOM_GIF, CLEAR_CHOSEN_CAPTION } from '../../actionTypes'
+import { GEN_RANDOM_GIF, CLEAR_CHOSEN_CAPTION, CLEAR_GIF, CLEAR_CAPTIONS } from '../../actionTypes'
 
 class GiphyContainer extends Component {
+
+    componentWillUnount() {
+        this.props.clearGif()
+        this.props.clearCaptions()
+    }
 
     renderRandomGiphy = () => {
         if (this.props.randomGif) {
@@ -45,7 +50,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return ({
         genRandomGif: () => dispatch({ type: GEN_RANDOM_GIF }),
-        clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION })
+        clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION }),
+        clearGif: () => dispatch({ type: CLEAR_GIF }),
+        clearCaptions: () => dispatch({ type: CLEAR_CAPTIONS })
     })
 }
 
