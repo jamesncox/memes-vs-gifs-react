@@ -118,7 +118,7 @@
   
   /* Links inside the navbar */
   .navbar a {
-    float: left;
+    float: right;
     font-size: 20px;
     color: white;
     text-align: center;
@@ -128,7 +128,7 @@
   
   /* The dropdown container */
   .dropdown {
-    float: left;
+    float: right;
     overflow: hidden;
   }
   
