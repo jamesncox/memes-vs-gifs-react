@@ -3,11 +3,16 @@ import Giphy from './Giphy.js'
 import SearchBar from './SearchBar'
 import NextButton from './NextButton'
 import { connect } from 'react-redux'
-import { GEN_RANDOM_GIF, CLEAR_CHOSEN_CAPTION, CLEAR_GIF, CLEAR_CAPTIONS } from '../../actionTypes'
+import {
+    GEN_RANDOM_GIF,
+    CLEAR_CHOSEN_CAPTION,
+    CLEAR_GIF, CLEAR_CAPTIONS
+} from '../../actionTypes'
 
 class GiphyContainer extends Component {
 
-    componentWillUnount() {
+    componentWillUnmount() {
+        console.log(this.props)
         this.props.clearGif()
         this.props.clearCaptions()
     }
