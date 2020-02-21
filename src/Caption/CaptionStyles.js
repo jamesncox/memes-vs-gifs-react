@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const CaptionButton = styled.button`
-  color: buttontext;
   border-radius: .10in;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
 `

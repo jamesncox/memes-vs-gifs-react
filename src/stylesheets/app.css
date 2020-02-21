@@ -3,7 +3,7 @@
     text-align: center;
   }
   
-   body {
+  body {
     background-image: url("https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
   }
 
@@ -12,11 +12,11 @@
   }
   
   h1 {
-    color: white
+    color: #F8F8FF
   }
   
   h2 {
-    color: white
+    color: #F8F8FF;
   }
 
   h4 {
@@ -28,8 +28,16 @@
     font-size: 18px;
     text-align: center;
     background: rgba(0, 0, 0, 0.80);
-    color: white;
+    color:  #F8F8FF;
     border-radius: .25in;
+  }
+
+  .my-form {
+    border-radius: .10in;
+    background-color: rgba(0, 0, 0, 0.00);
+    color:  #F8F8FF;
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
   }
 
   .form-submit-button {

@@ -27,6 +27,7 @@ class GenerateCaption extends Component {
         return (
             <div>
                 <h4><CaptionButton onClick={this.handleClick}>Generate Caption Cards</CaptionButton>
+                    <span>{'  '}</span>
                     <select id="selectedRating">
                         <option value="All">All captions</option>
                         <option value="PG">PG only</option>

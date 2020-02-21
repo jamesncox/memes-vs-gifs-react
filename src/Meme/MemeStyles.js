@@ -9,10 +9,19 @@ const MemeCard = styled.div`
 `
 
 const MemeButton = styled.button`
-  border-radius: .25in;
-  color: buttontext;
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color: #F8F8FF;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
 `
 
-export { MemeCard, MemeButton }
+const SaveButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+`
+
+export { MemeCard, MemeButton, SaveButton }

@@ -24,11 +24,11 @@ class NavBar extends Component {
                         <Link to="/profile">Profile</Link>
                     </div>
                 </div>
+                <Link to="/">Home</Link>
                 {/* click savedmemes to see all users best saved memes */}
                 <Link to="/saved-memes">Saved Memes</Link>
                 {/* clicked savedgifs to see all users best saved gifs */}
                 <Link to="/saved-gifs">Saved Gifs</Link>
-                <Link to="/">Home</Link>
 
                 {/* <Switch>
                 <Route exact path="/">

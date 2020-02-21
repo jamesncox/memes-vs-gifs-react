@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MemeCard } from '../MemeStyles'
+import { MemeCard, SaveButton } from '../MemeStyles'
 import { connect } from 'react-redux'
 
 class Meme extends Component {
@@ -11,6 +11,7 @@ class Meme extends Component {
                     <MemeCard>
                         <img src={this.props.memesURL} alt={this.props.name} />
                         <h2>{this.props.chosenCaption}</h2>
+                        <SaveButton>Save</SaveButton>
                     </MemeCard>
                 </div>
             </>
