@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { CaptionButton } from '../CaptionStyles'
+import { CaptionButton } from './CaptionStyles'
 import { connect } from 'react-redux'
 import {
     GEN_RANDOM_CAPTIONS_R,
     GEN_RANDOM_CAPTIONS_PG,
     GEN_RANDOM_CAPTIONS_ALL
-} from '../../actionTypes'
+} from '../actionTypes'
 
 class GenerateCaption extends Component {
 

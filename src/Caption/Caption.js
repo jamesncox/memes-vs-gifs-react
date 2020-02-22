@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { CaptionCard, SelectButton } from '../CaptionStyles'
+import { CaptionCard, SelectButton } from './CaptionStyles'
 import { connect } from 'react-redux'
-import { SET_CHOSEN_CAPTION } from '../../actionTypes'
+import { SET_CHOSEN_CAPTION } from '../actionTypes'
 
 class Caption extends Component {
 

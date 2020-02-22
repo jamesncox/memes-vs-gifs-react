@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CaptionContainer from '../../Caption/components/CaptionContainer'
+import CaptionContainer from '../../Caption/CaptionContainer'
 import MemeContainer from './MemeContainer'
 
 class MemeHome extends Component {

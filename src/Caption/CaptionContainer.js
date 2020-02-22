@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import GenerateCaption from './GenerateCaption'
 import Caption from './Caption'
 import { connect } from 'react-redux'
-import { getCaptions } from '../../actions/captions'
+import { getCaptions } from '../actions/captions'
 
 class CaptionContainer extends Component {
 
