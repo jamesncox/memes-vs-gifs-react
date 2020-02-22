@@ -14,4 +14,18 @@ const GameLinkCard = styled.div`
   display: inline-table;
 `
 
-export { GameLinkCard }
+const SavedMemeCard = styled.div`
+  background-color: rgba(0, 0, 0, 0.90) ;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  width: 2.5in;
+  height: 4in;
+  border-radius: .25in;
+  margin: 10px;
+  display: inline-block;
+  padding: 10px;
+  display: inline-table;
+`
+
+export { GameLinkCard, SavedMemeCard }

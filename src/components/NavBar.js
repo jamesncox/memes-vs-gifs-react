@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
-import {
-    BrowserRouter as Router,
-    Redirect,
-    Switch,
-    Route,
-    Link,
-    useHistory
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Home from '../Home'
+import SavedMemes from './SavedMemes'
 
 class NavBar extends Component {
 
@@ -15,9 +10,7 @@ class NavBar extends Component {
             <div class="navbar" >
 
                 <Link to="/">Home</Link>
-                {/* click savedmemes to see all users best saved memes */}
-                <Link to="/saved-memes">Saved Memes</Link>
-                {/* clicked savedgifs to see all users best saved gifs */}
+                <Link to={{ pathname: "/saved-memes" }}>Saved Memes</Link>
                 <Link to="/saved-gifs">Saved Gifs</Link>
 
                 <div class="dropdown">
@@ -27,30 +20,11 @@ class NavBar extends Component {
                     <div class="dropdown-content">
                         <Link to="/signup">Sign Up</Link>
                         <Link to="/login">Login</Link>
-                        {/* click user profile to see only user's saved memes and gifs */}
                         <Link to="/profile">Profile</Link>
                     </div>
                 </div>
 
-                {/* <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/signup">
-                    <Signup />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/saved-memes">
-                    <SavedMemes />
-                </Route>
-                <Route path="/saved-gifs">
-                    <SavedGifs />
-                </Route>
-            </Switch> */}
-
-            </div >
+            </div>
         )
     }
 }

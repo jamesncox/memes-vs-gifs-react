@@ -13,7 +13,7 @@ export default (state = { all: [], loading: false, randomCaptions: null, chosenC
     switch (action.type) {
 
         case LOADING_CAPTIONS:
-            return { ...state, all: [...state.all], loading: true] }
+            return { ...state, all: [...state.all], loading: true }
 
         case SET_CAPTIONS:
             return { ...state, all: action.captions, loading: false }
