@@ -5,16 +5,18 @@ import { connect } from 'react-redux'
 class SavedGifs extends Component {
 
     displaySavedGifs() {
+        return (
+            <SavedGifCard>
 
+            </SavedGifCard>
+        )
     }
 
     render() {
         return (
             <div>
-                <h4>Everyone's favorite Gifs</h4>
-                <SavedGifCard>
-                    {this.displaySavedGifs()}
-                </SavedGifCard>
+                <h1 className="header">Everyone's favorite gifs</h1>
+                {this.displaySavedGifs()}
             </div>
         )
     }

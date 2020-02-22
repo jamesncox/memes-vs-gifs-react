@@ -5,16 +5,19 @@ import { connect } from 'react-redux'
 class SavedMemes extends Component {
 
     displaySavedMemes() {
+        return (
+            <SavedMemeCard>
+
+            </SavedMemeCard>
+        )
 
     }
 
     render() {
         return (
             <div>
-                <h4>Everyone's favorite Memes</h4>
-                <SavedMemeCard>
-                    {this.displaySavedMemes()}
-                </SavedMemeCard>
+                <h1 className="header">Everyone's favorite memes</h1>
+                {this.displaySavedMemes()}
             </div>
         )
     }
