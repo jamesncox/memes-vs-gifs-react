@@ -10,7 +10,6 @@ class SavedMemes extends Component {
 
             </SavedMemeCard>
         )
-
     }
 
     render() {

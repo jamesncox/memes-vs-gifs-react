@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import Home from '../Home'
-import SavedMemes from './SavedMemes'
 
 class NavBar extends Component {
 
@@ -10,7 +8,7 @@ class NavBar extends Component {
             <div class="navbar" >
 
                 <Link to="/">Home</Link>
-                <Link to={{ pathname: "/saved-memes" }}>Saved Memes</Link>
+                <Link to="/saved-memes">Saved Memes</Link>
                 <Link to="/saved-gifs">Saved Gifs</Link>
 
                 <div class="dropdown">
@@ -23,7 +21,6 @@ class NavBar extends Component {
                         <Link to="/profile">Profile</Link>
                     </div>
                 </div>
-
             </div>
         )
     }

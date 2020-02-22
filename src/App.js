@@ -11,6 +11,7 @@ import GifHome from './Gif/components/GiphyHome'
 import Home from './Home'
 import SavedMemes from './components/SavedMemes'
 import SavedGifs from './components/SavedGifs'
+import UserProfile from './User/UserProfile'
 
 export default function App() {
   return (
@@ -32,6 +33,9 @@ export default function App() {
           </Route>
           <Route path="/saved-gifs">
             <SavedGifs />
+          </Route>
+          <Route path="/profile">
+            <UserProfile />
           </Route>
         </Switch>
 
