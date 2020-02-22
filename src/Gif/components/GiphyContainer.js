@@ -53,12 +53,12 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return ({
+    return {
         genRandomGif: () => dispatch({ type: GEN_RANDOM_GIF }),
         clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION }),
         clearGif: () => dispatch({ type: CLEAR_GIF }),
         clearCaptions: () => dispatch({ type: CLEAR_CAPTIONS })
-    })
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GiphyContainer)

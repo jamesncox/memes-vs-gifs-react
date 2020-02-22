@@ -1,4 +1,5 @@
 import {
+    LOADING_CAPTIONS,
     SET_CAPTIONS,
     GEN_RANDOM_CAPTIONS_ALL,
     GEN_RANDOM_CAPTIONS_PG,
@@ -8,11 +9,14 @@ import {
     CLEAR_CAPTIONS
 } from '../actionTypes'
 
-export default (state = { all: [], randomCaptions: null, chosenCaption: '' }, action) => {
+export default (state = { all: [], loading: false, randomCaptions: null, chosenCaption: '' }, action) => {
     switch (action.type) {
 
+        case LOADING_CAPTIONS:
+            return { ...state, all: [...state.all], loading: true] }
+
         case SET_CAPTIONS:
-            return { ...state, all: action.captions }
+            return { ...state, all: action.captions, loading: false }
 
         case GEN_RANDOM_CAPTIONS_ALL:
             const randCaptions = state.all.sort(() => Math.random() - Math.random()).slice(0, 5)
