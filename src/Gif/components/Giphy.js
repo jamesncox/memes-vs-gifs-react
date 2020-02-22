@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { GiphyCard, SaveButton } from '../GiphyStyles'
 import { connect } from 'react-redux'
+import { SAVE_GIF_WITH_CAPTION } from '../../actionTypes'
 
 class Giphy extends Component {
 
@@ -9,7 +10,7 @@ class Giphy extends Component {
             return (
                 <SaveButton className="popup" onClick={this.handleClick}>
                     Save
-                        <span class="popuptext" id="myPopup">Meme saved!</span>
+                    <span class="popuptext" id="myPopup">Meme saved!</span>
                 </SaveButton>
             )
         }
@@ -18,6 +19,7 @@ class Giphy extends Component {
     handleClick = () => {
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
+        this.props.saveGifWithCaption(this.props, this.props.chosenCaption)
     }
 
     render() {
@@ -38,4 +40,8 @@ const mapStateToProps = state => ({
     chosenCaption: state.captions.chosenCaption
 })
 
-export default connect(mapStateToProps)(Giphy)
+const mapDispatchToProps = dispatch => ({
+    saveGifWithCaption: () => dispatch({ type: SAVE_GIF_WITH_CAPTION })
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Giphy)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SavedGifCard } from './Styles'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 class SavedGifs extends Component {
 

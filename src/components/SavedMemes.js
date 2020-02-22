@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SavedMemeCard } from './Styles'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 class SavedMemes extends Component {
 
