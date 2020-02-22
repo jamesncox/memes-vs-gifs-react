@@ -42,9 +42,4 @@ const mapStateToProps = state => ({
     chosenCaption: state.chosenCaption
 })
 
-// const mapDispatchToProps = dispatch => ({
-//     clearMeme: () => dispatch({ type: CLEAR_MEME })
-//     // getMemes = () => dispatch({ type: SET_MEMES })
-// })
-
 export default connect(mapStateToProps, { getMemes, clearMeme, clearCaptions })(MemeContainer)

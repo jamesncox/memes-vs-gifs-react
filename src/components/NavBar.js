@@ -8,8 +8,8 @@ class NavBar extends Component {
             <div class="navbar" >
 
                 <Link to="/">Home</Link>
-                <Link to="/saved-memes">Saved Memes</Link>
                 <Link to="/saved-gifs">Saved Gifs</Link>
+                <Link to="/saved-memes">Saved Memes</Link>
 
                 <div class="dropdown">
                     <button class="dropbtn">User
