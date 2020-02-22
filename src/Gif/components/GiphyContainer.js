@@ -21,8 +21,9 @@ class GiphyContainer extends Component {
         if (this.props.randomGif) {
             return (
                 <Giphy
-                    key={this.props.randomGif.id}
+                    giphyObj={this.props.randomGif}
                     giphyURL={this.props.randomGif.images.original.url}
+                    giphyId={this.props.randomGif.id}
                 />
             )
         }

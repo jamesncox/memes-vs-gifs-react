@@ -10,7 +10,7 @@ class Giphy extends Component {
             return (
                 <SaveButton className="popup" onClick={this.handleClick}>
                     Save
-                    <span class="popuptext" id="myPopup">Meme saved!</span>
+                    <span className="popuptext" id="myPopup">Meme saved!</span>
                 </SaveButton>
             )
         }
@@ -19,10 +19,11 @@ class Giphy extends Component {
     handleClick = () => {
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
-        this.props.saveGifWithCaption(this.props, this.props.chosenCaption)
+        this.props.saveGifWithCaption(this.props.giphyURL, this.props.chosenCaption)
     }
 
     render() {
+        console.log(this.props)
         return (
             <>
                 <div className="zoom">
@@ -41,7 +42,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    saveGifWithCaption: () => dispatch({ type: SAVE_GIF_WITH_CAPTION })
+    saveGifWithCaption: (gifObj, captionObj) => dispatch({ type: SAVE_GIF_WITH_CAPTION, payload: (gifObj, captionObj) })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Giphy)
