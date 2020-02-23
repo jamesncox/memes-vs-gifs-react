@@ -5,33 +5,31 @@ import { getSavedMemes } from '../actions/memes'
 
 class SavedMemes extends Component {
 
-    //this action is async, so savedMemes does load, but always after displaySavedMemes() is called
-    componentDidMount() {
-        this.props.getSavedMemes()
-    }
-
-    // this is rendering undefined data because savecMemes load after this 
-    displaySavedMemes() {
-        console.log(this.props.state)
-        return (
-            <SavedMemeCard>
-
-            </SavedMemeCard>
-        )
-    }
-
     render() {
+        const savedCaptionList = this.props.savedMemes.map(savedMeme => {
+            return savedMeme.captions.map(caption => {
+                return (
+                    <SavedMemeCard>
+                        <img src={savedMeme.url} alt={savedMeme.id} />
+                        <h2>{caption.text}</h2>
+                    </SavedMemeCard>
+                )
+            })
+        })
+
         return (
             <div>
                 <h1 className="header">Everyone's favorite memes</h1>
-                {this.displaySavedMemes()}
+                {savedCaptionList}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    savedMemes: state.savedMemes
-})
+const mapStateToProps = state => {
+    return ({
+        savedMemes: state.memes.savedMemes
+    })
+}
 
 export default connect(mapStateToProps, { getSavedMemes })(SavedMemes)

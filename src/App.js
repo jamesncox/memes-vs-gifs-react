@@ -18,7 +18,7 @@ import { getSavedMemes } from './actions/memes'
 class App extends Component {
 
   componentDidMount() {
-    // this.props.getSavedMemes()
+    this.props.getSavedMemes()
   }
 
   render() {

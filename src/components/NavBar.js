@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { getSavedMemes } from '../actions/memes'
 
 class NavBar extends Component {
+
+    // handleClick = () => {
+    //     console.log('inside saved-memes click')
+    //     this.props.getSavedMemes()
+    // }
 
     render() {
         return (
@@ -26,4 +33,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar
+export default connect(null, { getSavedMemes })(NavBar)

@@ -36,7 +36,7 @@ export const getSavedMemes = () => {
                 throw res
             }
             const savedMemeData = await res.json()
-            console.log(savedMemeData)
+            // console.log(savedMemeData)
             dispatch(setSavedMemes(savedMemeData))
         } catch (err) {
             console.log("error fetching saved memes from API")
