@@ -22,3 +22,5 @@ export const getCaptions = () => {
         }
     }
 }
+
+// caption (Post) including only the id of saved caption

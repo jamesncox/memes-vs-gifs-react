@@ -12,12 +12,10 @@ export default function Home(props) {
 
     const redirectToMemeGame = () => {
         history.push('/meme-game')
-        // window.location.reload(false)
     }
 
     const redirectToGifGame = () => {
         history.push('/gif-game')
-        // window.location.reload(false)
     }
 
     return (
