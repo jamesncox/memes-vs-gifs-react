@@ -15,7 +15,7 @@ const GameLinkCard = styled.div`
 `
 
 const SavedMemeCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.85) ;
+  background-color: rgba(0, 0, 0, 0.95) ;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
