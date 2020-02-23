@@ -13,6 +13,7 @@ export default (state = { all: [], randomMeme: null, savedMemes: [] }, action) =
             return { all: [] }
 
         case SET_SAVED_MEMES:
+            console.log(action.savedMemes)
             return { ...state, savedMemes: action.savedMemes }
 
         default:

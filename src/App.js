@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,34 +12,45 @@ import Home from './Home'
 import SavedMemes from './components/SavedMemes'
 import SavedGifs from './components/SavedGifs'
 import UserProfile from './User/UserProfile'
+import { connect } from 'react-redux';
+import { getSavedMemes } from './actions/memes'
 
-export default function App() {
-  return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/meme-game">
-            <MemeHome />
-          </Route>
-          <Route path="/gif-game">
-            <GifHome />
-          </Route>
-          <Route path="/saved-memes">
-            <SavedMemes />
-          </Route>
-          <Route path="/saved-gifs">
-            <SavedGifs />
-          </Route>
-          <Route path="/profile">
-            <UserProfile />
-          </Route>
-        </Switch>
+class App extends Component {
 
-      </div>
-    </Router>
-  );
+  componentDidMount() {
+    // this.props.getSavedMemes()
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/meme-game">
+              <MemeHome />
+            </Route>
+            <Route path="/gif-game">
+              <GifHome />
+            </Route>
+            <Route path="/saved-memes">
+              <SavedMemes />
+            </Route>
+            <Route path="/saved-gifs">
+              <SavedGifs />
+            </Route>
+            <Route path="/profile">
+              <UserProfile />
+            </Route>
+          </Switch>
+
+        </div>
+      </Router>
+    );
+  }
 }
+
+export default connect(null, { getSavedMemes })(App)

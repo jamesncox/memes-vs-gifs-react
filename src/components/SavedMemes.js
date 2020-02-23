@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import { SavedMemeCard } from './Styles'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
+import { getSavedMemes } from '../actions/memes'
 
 class SavedMemes extends Component {
 
+    //this action is async, so savedMemes does load, but always after displaySavedMemes() is called
+    componentDidMount() {
+        this.props.getSavedMemes()
+    }
+
+    // this is rendering undefined data because savecMemes load after this 
     displaySavedMemes() {
+        console.log(this.props.state)
         return (
             <SavedMemeCard>
 
@@ -22,4 +30,8 @@ class SavedMemes extends Component {
     }
 }
 
-export default SavedMemes
+const mapStateToProps = state => ({
+    savedMemes: state.savedMemes
+})
+
+export default connect(mapStateToProps, { getSavedMemes })(SavedMemes)
