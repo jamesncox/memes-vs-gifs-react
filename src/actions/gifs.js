@@ -1,7 +1,11 @@
-import { SET_QUERIED_GIFS, GEN_RANDOM_GIF, CLEAR_GIF } from '../actionTypes'
+import { SET_QUERIED_GIFS, GEN_RANDOM_GIF, CLEAR_GIF, SET_SAVED_GIFS } from '../actionTypes'
 
 const setQueriedGifs = gifs => {
     return { type: SET_QUERIED_GIFS, gifs: gifs }
+}
+
+const setSavedGifs = savedGifs => {
+    return { type: SET_SAVED_GIFS, savedGifs: savedGifs }
 }
 
 export const clearGif = () => {
@@ -25,6 +29,22 @@ export const getQueriedGifs = () => {
             dispatch({ type: GEN_RANDOM_GIF })
         } catch (err) {
             alert("Failed to load gifs")
+        }
+    }
+}
+
+export const getSavedGifs = () => {
+    return async dispatch => {
+        try {
+            const res = await fetch("http://localhost:3000/api/v1/gifs")
+            if (!res.ok) {
+                throw res
+            }
+            const savedGifData = await res.json()
+            console.log(savedGifData)
+            dispatch(setSavedGifs(savedGifData))
+        } catch (err) {
+            console.log("error fetching saved memes from API")
         }
     }
 }

@@ -5,11 +5,6 @@ import { getSavedMemes } from '../actions/memes'
 
 class NavBar extends Component {
 
-    // handleClick = () => {
-    //     console.log('inside saved-memes click')
-    //     this.props.getSavedMemes()
-    // }
-
     render() {
         return (
             <div className="navbar" >

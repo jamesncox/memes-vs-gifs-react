@@ -14,11 +14,13 @@ import SavedGifs from './components/SavedGifs'
 import UserProfile from './User/UserProfile'
 import { connect } from 'react-redux';
 import { getSavedMemes } from './actions/memes'
+import { getSavedGifs } from './actions/gifs'
 
 class App extends Component {
 
   componentDidMount() {
     this.props.getSavedMemes()
+    this.props.getSavedGifs()
   }
 
   render() {
@@ -53,4 +55,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getSavedMemes })(App)
+export default connect(null, { getSavedMemes, getSavedGifs })(App)
