@@ -28,7 +28,8 @@ class SavedGifs extends Component {
 
 const mapStateToProps = state => {
     return ({
-        savedGifs: state.gifs.savedGifs
+        savedGifs: state.gifs.savedGifs,
+        loading: state.loading
     })
 }
 
