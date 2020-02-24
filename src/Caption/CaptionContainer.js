@@ -36,6 +36,7 @@ class CaptionContainer extends Component {
     }
 }
 
+
 const mapStateToProps = (state) => ({
     randomCaptions: state.captions.randomCaptions
 })

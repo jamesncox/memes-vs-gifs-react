@@ -39,6 +39,7 @@ class MemeContainer extends Component {
 
 const mapStateToProps = state => ({
     randomMeme: state.memes.randomMeme,
+    loading: state.memes.loading,
     chosenCaption: state.chosenCaption
 })
 
