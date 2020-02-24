@@ -12,15 +12,27 @@ class CaptionContainer extends Component {
 
     renderRandomCaptions() {
         if (this.props.randomCaptions) {
-            return this.props.randomCaptions.map(c => {
+            if (this.props.loading) {
                 return (
-                    <Caption
-                        text={c.text}
-                        key={c.id}
-                        handleChooseCaption={this.props.handleChooseCaption}
-                    />
+                    <>
+                        <h3>Loading captions...</h3>
+                        <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading gifs..."} />
+                    </>
                 )
-            })
+            } else {
+                if (this.props.randomCaptions) {
+                    return this.props.randomCaptions.map(c => {
+                        return (
+                            <Caption
+                                text={c.text}
+                                key={c.id}
+                                handleChooseCaption={this.props.handleChooseCaption}
+                            />
+                        )
+                    })
+
+                }
+            }
         }
     }
 
@@ -38,7 +50,8 @@ class CaptionContainer extends Component {
 
 
 const mapStateToProps = (state) => ({
-    randomCaptions: state.captions.randomCaptions
+    randomCaptions: state.captions.randomCaptions,
+    loading: state.captions.loading
 })
 
 export default connect(mapStateToProps, { getCaptions })(CaptionContainer)
