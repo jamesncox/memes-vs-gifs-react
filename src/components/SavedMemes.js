@@ -6,8 +6,7 @@ import { getSavedMemes } from '../actions/memes'
 class SavedMemes extends Component {
 
     render() {
-
-        const savedCaptionList = this.props.savedMemes.map(savedMeme => {
+        const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
                 return (
                     <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
@@ -18,7 +17,6 @@ class SavedMemes extends Component {
             })
         })
 
-        console.log(this.props.loading)
         if (this.props.loading) {
             return (
                 <>
@@ -30,7 +28,7 @@ class SavedMemes extends Component {
             return (
                 <div>
                     <h1 className="header">Everyone's favorite memes</h1>
-                    {savedCaptionList}
+                    {savedMemeAndCaptionList}
                 </div>
             )
         }

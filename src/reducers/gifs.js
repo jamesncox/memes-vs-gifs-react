@@ -30,7 +30,7 @@ export default (state = { all: [], randomGif: null, query: '', savedGifs: [], lo
             return { ...state, all: [...state.all], loading: true }
 
         case SET_SAVED_GIFS:
-            return { ...state, savedGifs: action.savedGifs }
+            return { ...state, savedGifs: action.savedGifs, loading: false }
 
         default:
             return state
