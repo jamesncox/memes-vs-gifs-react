@@ -1,4 +1,8 @@
-import { SET_CAPTIONS, CLEAR_CAPTIONS, LOADING_CAPTIONS } from '../actionTypes'
+import {
+    LOADING_CAPTIONS,
+    SET_CAPTIONS,
+    CLEAR_CAPTIONS
+} from '../actionTypes'
 
 const setCaptions = captions => {
     return { type: SET_CAPTIONS, captions: captions }

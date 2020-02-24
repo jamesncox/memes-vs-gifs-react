@@ -1,9 +1,10 @@
 import {
+    LOADING_MEMES,
     SET_MEMES,
     GEN_RANDOM_MEME,
     CLEAR_MEME,
-    SET_SAVED_MEMES,
-    LOADING_MEMES
+    LOADING_SAVED_MEMES,
+    SET_SAVED_MEMES
 } from '../actionTypes'
 
 export default (state = { all: [], randomMeme: null, savedMemes: [], loading: false }, action) => {
@@ -21,8 +22,11 @@ export default (state = { all: [], randomMeme: null, savedMemes: [], loading: fa
         case CLEAR_MEME:
             return { all: [] }
 
+        case LOADING_SAVED_MEMES:
+            return { ...state, all: [...state.all], loading: true }
+
         case SET_SAVED_MEMES:
-            return { ...state, savedMemes: action.savedMemes }
+            return { ...state, savedMemes: action.savedMemes, loading: false }
 
         default:
             return state

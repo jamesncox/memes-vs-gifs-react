@@ -1,4 +1,10 @@
-import { SET_MEMES, CLEAR_MEME, SET_SAVED_MEMES } from '../actionTypes'
+import {
+    LOADING_MEMES,
+    SET_MEMES,
+    CLEAR_MEME,
+    LOADING_SAVED_MEMES,
+    SET_SAVED_MEMES
+} from '../actionTypes'
 
 const setMemes = memes => {
     return { type: SET_MEMES, memes: memes }
@@ -14,6 +20,7 @@ export const clearMeme = () => {
 
 export const getMemes = () => {
     return async dispatch => {
+        dispatch({ type: LOADING_MEMES })
         try {
             const res = await fetch("https://api.imgflip.com/get_memes")
             if (!res.ok) {
@@ -30,6 +37,7 @@ export const getMemes = () => {
 
 export const getSavedMemes = () => {
     return async dispatch => {
+        dispatch({ type: LOADING_SAVED_MEMES })
         try {
             const res = await fetch("http://localhost:3000/api/v1/memes")
             if (!res.ok) {
