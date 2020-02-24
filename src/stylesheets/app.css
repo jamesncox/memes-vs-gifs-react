@@ -32,6 +32,10 @@
     border-radius: .25in;
   }
 
+  .loader {
+    background-image: url("https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp")
+  }
+
   .my-form {
     border-radius: .10in;
     background-color: rgba(0, 0, 0, 0.00);
