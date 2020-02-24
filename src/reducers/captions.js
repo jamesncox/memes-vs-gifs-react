@@ -9,7 +9,7 @@ import {
     CLEAR_CAPTIONS
 } from '../actionTypes'
 
-export default (state = { all: [], loading: false, randomCaptions: null, chosenCaption: '' }, action) => {
+export default (state = { all: [], loading: false, randomCaptions: null, chosenCaption: [] }, action) => {
     switch (action.type) {
 
         case LOADING_CAPTIONS:
@@ -36,7 +36,7 @@ export default (state = { all: [], loading: false, randomCaptions: null, chosenC
             return { ...state, chosenCaption: action.payload }
 
         case CLEAR_CHOSEN_CAPTION:
-            return { ...state, chosenCaption: "" }
+            return { ...state, chosenCaption: [] }
 
         case CLEAR_CAPTIONS:
             return { all: [] }

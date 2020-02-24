@@ -6,7 +6,7 @@ import { SET_CHOSEN_CAPTION } from '../actionTypes'
 class Caption extends Component {
 
     handleClick = (e) => {
-        this.props.setChosenCaption(this.props.text)
+        this.props.setChosenCaption(this.props)
     }
 
     render() {
@@ -25,7 +25,7 @@ class Caption extends Component {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        setChosenCaption: (text) => dispatch({ type: SET_CHOSEN_CAPTION, payload: text })
+        setChosenCaption: (captionObj) => dispatch({ type: SET_CHOSEN_CAPTION, payload: captionObj })
     })
 }
 

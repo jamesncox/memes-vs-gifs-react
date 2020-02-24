@@ -25,6 +25,7 @@ class CaptionContainer extends Component {
                         return (
                             <Caption
                                 text={c.text}
+                                id={c.id}
                                 key={c.id}
                                 handleChooseCaption={this.props.handleChooseCaption}
                             />

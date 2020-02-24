@@ -29,7 +29,7 @@ class Giphy extends Component {
                 <div className="zoom">
                     <GiphyCard>
                         <img src={this.props.giphyURL} alt={this.props.name} />
-                        <h2>{this.props.chosenCaption}</h2>
+                        <h2>{this.props.chosenCaption.text}</h2>
                         {this.renderSaveButton()}
                     </GiphyCard>
                 </div>

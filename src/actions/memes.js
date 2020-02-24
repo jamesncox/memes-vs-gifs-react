@@ -3,7 +3,8 @@ import {
     SET_MEMES,
     CLEAR_MEME,
     LOADING_SAVED_MEMES,
-    SET_SAVED_MEMES
+    SET_SAVED_MEMES,
+    SEND_SAVED_MEME
 } from '../actionTypes'
 
 const setMemes = memes => {
@@ -12,6 +13,11 @@ const setMemes = memes => {
 
 const setSavedMemes = savedMemes => {
     return { type: SET_SAVED_MEMES, savedMemes: savedMemes }
+}
+
+const sendMeme = payload => {
+    console.log("inside sendMeme", payload)
+    return { type: SEND_SAVED_MEME, payload: payload }
 }
 
 export const clearMeme = () => {
@@ -35,6 +41,47 @@ export const getMemes = () => {
     }
 }
 
+export const sendMemeRequest = (payload) => {
+    console.log("inside sendMemeRequest", payload)
+
+    // const payload = () => {
+
+    // }
+
+    return dispatch => {
+        return fetch("http://localhost:3000/api/v1/saved-memes", {
+            method: "POST",
+            header: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ payload: payload })
+        })
+            .then(response => response.json())
+            .then(payload => {
+                dispatch(sendMeme(payload))
+            })
+    }
+}
+
+
+// export const createMedication = medication => {
+//     return dispatch => {
+//       return fetch(`${API_URL}/medications`, {
+//         method: "POST",
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({medication: medication})
+//       })
+//         .then(response => response.json())
+//         .then(medication => {
+//           dispatch(addMedication(medication))
+//           dispatch(resetMedicationForm())
+//         })
+//         .catch(error => console.log(error))
+//     };
+//   }
+
 export const getSavedMemes = () => {
     return async dispatch => {
         dispatch({ type: LOADING_SAVED_MEMES })
@@ -50,3 +97,15 @@ export const getSavedMemes = () => {
         }
     }
 }
+
+// export const saveMeme = () => {
+//     return async dispatch => {
+//         const res = await fetch("http://localhost:3000/api/v1/saved-memes")
+//         method: 'POST'
+//         headers: {
+//             'Content-Type': 'application/json',
+//                 'Accept': 'application/json'
+//         }
+
+//     }
+// }

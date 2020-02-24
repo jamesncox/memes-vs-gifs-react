@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { MemeCard, SaveButton } from '../MemeStyles'
 import { connect } from 'react-redux'
+import { SEND_SAVED_MEME } from '../../actionTypes'
 
 class Meme extends Component {
 
@@ -9,7 +10,7 @@ class Meme extends Component {
             return (
                 <SaveButton className="popup" onClick={this.handleClick}>
                     Save
-                        <span class="popuptext" id="myPopup">Meme saved!</span>
+                        <span className="popuptext" id="myPopup">Meme saved!</span>
                 </SaveButton>
             )
         }
@@ -18,6 +19,7 @@ class Meme extends Component {
     handleClick = () => {
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
+        this.props.sendSavedMeme({ memeObj: this.props.randomMeme, captionObj: this.props.chosenCaption })
     }
 
     render() {
@@ -26,7 +28,7 @@ class Meme extends Component {
                 <div className="zoom">
                     <MemeCard>
                         <img src={this.props.memesURL} alt={this.props.name} />
-                        <h2>{this.props.chosenCaption}</h2>
+                        <h2>{this.props.chosenCaption.text}</h2>
                         {this.renderSaveButton()}
                     </MemeCard>
                 </div>
@@ -36,7 +38,12 @@ class Meme extends Component {
 }
 
 const mapStateToProps = state => ({
-    chosenCaption: state.captions.chosenCaption
+    chosenCaption: state.captions.chosenCaption,
+    randomMeme: state.memes.randomMeme
 })
 
-export default connect(mapStateToProps)(Meme)
+const mapDispatchToProps = dispatch => ({
+    sendSavedMeme: sendObj => dispatch({ type: SEND_SAVED_MEME, payload: sendObj })
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Meme)
