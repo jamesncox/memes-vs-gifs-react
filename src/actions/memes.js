@@ -4,6 +4,7 @@ import {
     CLEAR_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
+    START_MEME_POST_REQUEST,
     SEND_SAVED_MEME
 } from '../actionTypes'
 
@@ -15,10 +16,10 @@ const setSavedMemes = savedMemes => {
     return { type: SET_SAVED_MEMES, savedMemes: savedMemes }
 }
 
-const sendMeme = payload => {
-    console.log("inside sendMeme", payload)
-    return { type: SEND_SAVED_MEME, payload: payload }
-}
+// const sendMeme = payload => {
+//     console.log("inside sendMeme", payload)
+//     return { type: SEND_SAVED_MEME, payload: payload }
+// }
 
 export const clearMeme = () => {
     return { type: CLEAR_MEME }
@@ -41,46 +42,23 @@ export const getMemes = () => {
     }
 }
 
-export const sendMemeRequest = (payload) => {
-    console.log("inside sendMemeRequest", payload)
+export function sendMemeRequest(sendObj) {
+    return (dispatch) => {
+        const url = sendObj.sendObj.url
+        const memeId = sendObj.sendObj.memeId
+        const caption = sendObj.sendObj.caption
+        const captionId = sendObj.sendObj.captionId
+        const data = { url, memeId, caption, captionId }
 
-    // const payload = () => {
-
-    // }
-
-    return dispatch => {
-        return fetch("http://localhost:3000/api/v1/saved-memes", {
+        return fetch("http://localhost:3000/api/v1/caption_joins", {
             method: "POST",
-            header: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ payload: payload })
+            body: JSON.stringify(data),
+            contentType: false
         })
-            .then(response => response.json())
-            .then(payload => {
-                dispatch(sendMeme(payload))
-            })
+            .then(res => res.json())
+            .then(sendObj => dispatch({ type: SEND_SAVED_MEME, sendObj }))
     }
 }
-
-
-// export const createMedication = medication => {
-//     return dispatch => {
-//       return fetch(`${API_URL}/medications`, {
-//         method: "POST",
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({medication: medication})
-//       })
-//         .then(response => response.json())
-//         .then(medication => {
-//           dispatch(addMedication(medication))
-//           dispatch(resetMedicationForm())
-//         })
-//         .catch(error => console.log(error))
-//     };
-//   }
 
 export const getSavedMemes = () => {
     return async dispatch => {
@@ -97,15 +75,3 @@ export const getSavedMemes = () => {
         }
     }
 }
-
-// export const saveMeme = () => {
-//     return async dispatch => {
-//         const res = await fetch("http://localhost:3000/api/v1/saved-memes")
-//         method: 'POST'
-//         headers: {
-//             'Content-Type': 'application/json',
-//                 'Accept': 'application/json'
-//         }
-
-//     }
-// }
