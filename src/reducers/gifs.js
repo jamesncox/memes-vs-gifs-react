@@ -1,12 +1,22 @@
-import { SET_QUERIED_GIFS, GEN_RANDOM_GIF, SET_QUERY_INPUT, CLEAR_GIF, SET_SAVED_GIFS } from '../actionTypes'
+import {
+    SET_QUERIED_GIFS,
+    GEN_RANDOM_GIF,
+    SET_QUERY_INPUT,
+    CLEAR_GIF,
+    SET_SAVED_GIFS,
+    LOADING_GIFS
+} from '../actionTypes'
 
-export default (state = { all: [], randomGif: null, query: '', savedGifs: [] }, action) => {
+export default (state = { all: [], randomGif: null, query: '', savedGifs: [], loading: false }, action) => {
     switch (action.type) {
+        case LOADING_GIFS:
+            return { ...state, all: [...state.all], loading: true }
+
         case SET_QUERY_INPUT:
             return { ...state, query: action.payload }
 
         case SET_QUERIED_GIFS:
-            return { ...state, all: action.gifs }
+            return { ...state, all: action.gifs, loading: false }
 
         case GEN_RANDOM_GIF:
             const randGif = state.all[Math.floor(Math.random() * state.all.length)]

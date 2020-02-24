@@ -10,7 +10,7 @@ class Giphy extends Component {
             return (
                 <SaveButton className="popup" onClick={this.handleClick}>
                     Save
-                    <span className="popuptext" id="myPopup">Meme saved!</span>
+                    <span className="popuptext" id="myPopup">Gif saved!</span>
                 </SaveButton>
             )
         }
