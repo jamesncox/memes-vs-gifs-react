@@ -6,7 +6,7 @@ import { SAVE_GIF_WITH_CAPTION } from '../../actionTypes'
 class Giphy extends Component {
 
     renderSaveButton = () => {
-        if (this.props.chosenCaption) {
+        if (this.props.chosenCaption.text) {
             return (
                 <SaveButton className="popup" onClick={this.handleClick}>
                     Save
