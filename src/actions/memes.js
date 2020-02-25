@@ -5,7 +5,7 @@ import {
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
     // START_MEME_POST_REQUEST,
-    SEND_SAVED_MEME
+    ADD_SAVED_MEME
 } from '../actionTypes'
 
 const setMemes = memes => {
@@ -41,14 +41,16 @@ export const getMemes = () => {
 export function sendMemeRequest(sendObj) {
     console.log(sendObj)
     return (dispatch) => {
-
-        return fetch("http://localhost:3000/api/v1/caption_joins", {
+        fetch("http://localhost:3000/api/v1/caption_joins", {
             method: "POST",
-            body: JSON.stringify(sendObj),
-            contentType: false
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(sendObj)
         })
             .then(res => res.json())
-            .then(sendObj => dispatch({ type: SEND_SAVED_MEME, sendObj }))
+            .then(savedMeme => dispatch({ type: ADD_SAVED_MEME, payload: savedMeme }))
     }
 }
 

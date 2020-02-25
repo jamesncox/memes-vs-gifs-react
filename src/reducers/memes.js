@@ -4,7 +4,7 @@ import {
     GEN_RANDOM_MEME,
     CLEAR_MEME,
     // START_MEME_POST_REQUEST,
-    SEND_SAVED_MEME,
+    ADD_SAVED_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES
 } from '../actionTypes'
@@ -27,12 +27,18 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
         // case START_MEME_POST_REQUEST:
         //     return { ...state, sendMeme: [...state.sendMeme] }
 
-        case SEND_SAVED_MEME:
-            return { ...state, sendMeme: action.payload }
+        // ADD_SAVED_MEME is the action I will use to display all the saved memes 
+        // in SavedMemes.js because it will be updated by each post request
+        case ADD_SAVED_MEME:
+            console.log(action.payload)
+            return { ...state, savedMemes: action.payload, loading: false }
 
         case LOADING_SAVED_MEMES:
             return { ...state, all: [...state.all], loading: true }
 
+        // SET_SAVED_MEMES is a temporary action I call on render of SavedMemes.js
+        // but it's not necessary. ADD_SAVED_MEME will populate savedMemes array when my
+        // post request is working and updating savedMemes state
         case SET_SAVED_MEMES:
             return { ...state, savedMemes: action.savedMemes, loading: false }
 
