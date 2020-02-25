@@ -40,11 +40,12 @@ export const getMemes = () => {
 
 export function sendMemeRequest(sendObj) {
     return (dispatch) => {
-        const url = sendObj.sendObj.url
-        const memeId = sendObj.sendObj.memeId
-        const caption = sendObj.sendObj.caption
-        const captionId = sendObj.sendObj.captionId
+        const url = sendObj.url
+        const memeId = sendObj.memeId
+        const caption = sendObj.caption
+        const captionId = sendObj.captionId
         const data = { url, memeId, caption, captionId }
+        console.log(data)
 
         return fetch("http://localhost:3000/api/v1/caption_joins", {
             method: "POST",

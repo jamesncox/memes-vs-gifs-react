@@ -24,7 +24,7 @@ class Meme extends Component {
         const memeId = this.props.randomMeme.id
         const caption = this.props.chosenCaption.text
         const captionId = this.props.chosenCaption.id
-        const sendObj = { sendObj: { url: url, memeId: memeId, caption: caption, captionId: captionId } }
+        const sendObj = { url, memeId, caption, captionId }
         this.props.sendMemeRequest(sendObj)
     }
 
