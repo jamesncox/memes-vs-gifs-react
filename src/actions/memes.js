@@ -40,6 +40,14 @@ export const getMemes = () => {
 
 export function sendMemeRequest(sendObj) {
     console.log(sendObj)
+
+    const objData = {
+        url: sendObj.memeUrl,
+        meme_id: sendObj.memeId,
+        text: sendObj.captionText,
+        caption_id: sendObj.captionId
+    }
+
     return (dispatch) => {
         fetch("http://localhost:3000/api/v1/caption_joins", {
             method: "POST",
@@ -47,7 +55,7 @@ export function sendMemeRequest(sendObj) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(sendObj)
+            body: JSON.stringify(objData)
         })
             .then(res => res.json())
             .then(savedMeme => dispatch({ type: ADD_SAVED_MEME, payload: savedMeme }))
