@@ -3,7 +3,7 @@ import {
     SET_MEMES,
     GEN_RANDOM_MEME,
     CLEAR_MEME,
-    START_MEME_POST_REQUEST,
+    // START_MEME_POST_REQUEST,
     SEND_SAVED_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES
@@ -24,8 +24,8 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
         case CLEAR_MEME:
             return { all: [] }
 
-        case START_MEME_POST_REQUEST:
-            return { ...state, sendMeme: [...state.sendMeme] }
+        // case START_MEME_POST_REQUEST:
+        //     return { ...state, sendMeme: [...state.sendMeme] }
 
         case SEND_SAVED_MEME:
             return { ...state, sendMeme: action.payload }

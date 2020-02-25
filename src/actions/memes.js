@@ -4,7 +4,7 @@ import {
     CLEAR_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
-    START_MEME_POST_REQUEST,
+    // START_MEME_POST_REQUEST,
     SEND_SAVED_MEME
 } from '../actionTypes'
 
@@ -16,10 +16,6 @@ const setSavedMemes = savedMemes => {
     return { type: SET_SAVED_MEMES, savedMemes: savedMemes }
 }
 
-// const sendMeme = payload => {
-//     console.log("inside sendMeme", payload)
-//     return { type: SEND_SAVED_MEME, payload: payload }
-// }
 
 export const clearMeme = () => {
     return { type: CLEAR_MEME }
