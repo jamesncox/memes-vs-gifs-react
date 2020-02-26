@@ -1,63 +1,26 @@
 # Notes
 
-Initial commmit.
-
-# Structure (in src folder)
-    Components
-        GifGameCard // links to That's What You Gif! page
-        MemeGameCard // links to What Do You Meme? page
-        NavBar // Links to user signup/login/profile and saved memes/gifs
-        Styles // styled components pertaining to game cards/navbar
-
-    Reducers
-        Multiple files for reducers
-
-    Gif
-        Actions
-            Some Actions
-        Components
-            All the gif components
-
-            GifStyles.js // styled components pertaining to Gif game
-
-    Meme
-        Actions
-            Meme actions
-        Components
-            All the meme components
-
-            MemeStyles.js // styled components pertaining to Meme game
-
-    Stylesheets
-        gif.css // styling for the gif game localhost:3000/thatswhatyougif
-        home.css // styling for the "homepage" localhost:3000/
-        meme.ss // styling for meme game localhost:3000/whatdoyoumeme
-
-    App.css // not sure I need this
-
-    App.js // this is where I will call my main components, navbar, gifgamecard and memegamecard
-
-    Home.js // not sure I need this unless for namespacing / linking reasons
-
-    index.css // don't think I need this either
-
-    index.js // I have a lot to do here, all the router stuff for the links, Redux stuff I think and calling App.js. 
-            // Remember that index.js holds the store(s) which takes in all my reducers. What reducers do I need?
-
-    serviceWorker.js // No idea what this does
-
 # Still to do:
 
-    What do I need for user auth / session handling syncning up with my rails api?
+[]  Refactor the saved memes and gifs actions/reducers to load on initial app load (componentDidMount) and then update store with every new save.
 
-    Break down my Meme and Gif game into Redux actions/reducer and bring those over here.
+[]  What do I need for user auth / session handling syncning up with my rails api?
 
-    Create a user sign up and login form / component
+[x] Break down my Meme and Gif game into Redux actions/reducer and bring those over here.
 
-    Create show pages for Saved Memes and Saved Gifs
+[]  Create a user sign up and login form / component
+
+[x] Create show pages for Saved Memes and Saved Gifs
         These show pages will show all the saved memes and gifs that any user sends to the database
 
-    Create a User Profile component that renders only the user's saved memes and gifs
+[]  Create a User Profile component that renders only the user's saved memes and gifs
+
+[]  After User can signup/login/logout, will need to have logic for things like:
+    []  Checking to see if a meme/gif and caption combo has alreawdy been created
+    []  Showing the specific User's creations will have to be checked
+    []  Potentially having the saved meme/gifs page organized by user
+
+[] I'd like to display saved Memes/Gifs in a carousel.
 
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
