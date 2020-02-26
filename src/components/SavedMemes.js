@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { SavedMemeCard } from './Styles'
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
-import Slider from './Slider'
 
 class SavedMemes extends Component {
 
@@ -29,9 +28,7 @@ class SavedMemes extends Component {
             return (
                 <div className="parent">
                     <h1 className="header">Everyone's favorite memes</h1>
-                    <Slider>
-                        {savedMemeAndCaptionList}
-                    </Slider>
+                    {savedMemeAndCaptionList}
                 </div>
             )
         }

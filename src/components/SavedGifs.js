@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { SavedGifCard } from './Styles'
 import { connect } from 'react-redux'
 import { getSavedGifs } from '../actions/gifs'
-import Slider from './Slider'
 
 class SavedGifs extends Component {
 
@@ -27,11 +26,9 @@ class SavedGifs extends Component {
             )
         } else {
             return (
-                <div className="parent">
+                <div>
                     <h1 className="header">Everyone's favorite gifs</h1>
-                    <Slider>
-                        {savedGifAndCaptionList}
-                    </Slider>
+                    {savedGifAndCaptionList}
                 </div>
             )
         }
