@@ -42,4 +42,11 @@ const SavedGifCard = styled.div`
   display: inline-table;
 `
 
-export { GameLinkCard, SavedMemeCard, SavedGifCard }
+const DisplayGrid = styled.div`
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+`
+
+export { GameLinkCard, SavedMemeCard, SavedGifCard, DisplayGrid }

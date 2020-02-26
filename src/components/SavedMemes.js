@@ -26,7 +26,7 @@ class SavedMemes extends Component {
             )
         } else {
             return (
-                <div className="parent">
+                <div>
                     <h1 className="header">Everyone's favorite memes</h1>
                     {savedMemeAndCaptionList}
                 </div>
