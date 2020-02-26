@@ -30,7 +30,7 @@ class Signup extends Component {
     render() {
         return (
             <>
-                <h1 className="header">Sign up Below</h1>
+                <h1 className="header">Sign up</h1>
                 <LoginCard className="zoom">
                     Sign up
                     <h3> </h3>

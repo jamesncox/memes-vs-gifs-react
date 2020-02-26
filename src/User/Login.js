@@ -26,7 +26,7 @@ class Login extends Component {
     render() {
         return (
             <>
-                <h1 className="header">Login Below</h1>
+                <h1 className="header">Login</h1>
                 <LoginCard className="zoom">
                     Login
                     <h3> </h3>

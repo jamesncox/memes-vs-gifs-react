@@ -23,6 +23,7 @@ class App extends Component {
   componentDidMount() {
     this.props.getSavedMemes()
     this.props.getSavedGifs()
+    // fetch('http://localhost:3000/api/v1//auth-check')
   }
 
   render() {

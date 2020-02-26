@@ -16,7 +16,8 @@ export function signupUser(user) {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'X-CSRF-Token': 'token'
             },
             body: JSON.stringify(userObj)
         })
