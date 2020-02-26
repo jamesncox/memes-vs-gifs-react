@@ -12,7 +12,6 @@ class Signup extends Component {
     }
 
     handleChange = e => {
-        console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -40,7 +39,7 @@ class Signup extends Component {
                         {' '}
                         <input type="text" placeholder="Email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
                         {' '}
-                        <input type="text" placeholder="Password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+                        <input type="password" placeholder="Password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
                         {' '}
                         <input type="submit" value="Sign up" />
                     </form>
