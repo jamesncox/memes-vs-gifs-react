@@ -4,6 +4,7 @@ import {
     GEN_RANDOM_GIF,
     CLEAR_GIF,
     LOADING_SAVED_GIFS,
+    ADD_SAVED_GIF,
     SET_SAVED_GIFS
 } from '../actionTypes'
 
@@ -38,6 +39,30 @@ export const getQueriedGifs = () => {
         } catch (err) {
             alert("Failed to load gifs")
         }
+    }
+}
+
+export function sendGifRequest(sendObj) {
+    console.log(sendObj)
+
+    const objData = {
+        gif_url: sendObj.gifURL,
+        gif_id: sendObj.gifId,
+        text: sendObj.captionText,
+        caption_id: sendObj.captionId
+    }
+
+    return (dispatch) => {
+        fetch("http://localhost:3000/api/v1/caption_joins", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(objData)
+        })
+            .then(res => res.json())
+            .then(savedGif => dispatch({ type: ADD_SAVED_GIF, payload: savedGif }))
     }
 }
 

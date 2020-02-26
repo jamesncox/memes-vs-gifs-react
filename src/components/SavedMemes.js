@@ -9,8 +9,8 @@ class SavedMemes extends Component {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
                 return (
-                    <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
-                        <img src={savedMeme.url} alt={savedMeme.id} />
+                    <SavedMemeCard className="saved-zoom" key={savedMeme.meme_id}>
+                        <img src={savedMeme.meme_url} alt={savedMeme.id} />
                         <h2>{caption.text}</h2>
                     </SavedMemeCard>
                 )

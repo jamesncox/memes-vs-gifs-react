@@ -42,7 +42,7 @@ export function sendMemeRequest(sendObj) {
     console.log(sendObj)
 
     const objData = {
-        url: sendObj.memeUrl,
+        meme_url: sendObj.memeURL,
         meme_id: sendObj.memeId,
         text: sendObj.captionText,
         caption_id: sendObj.captionId

@@ -4,6 +4,7 @@ import {
     GEN_RANDOM_GIF,
     SET_QUERY_INPUT,
     CLEAR_GIF,
+    ADD_SAVED_GIF,
     LOADING_SAVED_GIFS,
     SET_SAVED_GIFS
 } from '../actionTypes'
@@ -25,6 +26,9 @@ export default (state = { all: [], randomGif: null, query: '', savedGifs: [], lo
 
         case CLEAR_GIF:
             return { all: [] }
+
+        case ADD_SAVED_GIF:
+            return { ...state, savedGifs: action.payload }
 
         case LOADING_SAVED_GIFS:
             return { ...state, all: [...state.all], loading: true }

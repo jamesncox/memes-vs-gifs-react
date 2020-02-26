@@ -30,10 +30,10 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
         // ADD_SAVED_MEME is the action I will use to display all the saved memes 
         // in SavedMemes.js because it will be updated by each post request
         case ADD_SAVED_MEME:
-            return { ...state, savedMemes: action.payload, loading: false }
+            return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
         case LOADING_SAVED_MEMES:
-            return { ...state, all: [...state.all], loading: true }
+            return { ...state, loading: true }
 
         // SET_SAVED_MEMES is a temporary action I call on render of SavedMemes.js
         // but it's not necessary. ADD_SAVED_MEME will populate savedMemes array when my

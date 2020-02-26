@@ -20,11 +20,11 @@ class Meme extends Component {
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
 
-        const memeUrl = this.props.memesURL
+        const memeURL = this.props.memesURL
         const memeId = this.props.randomMeme.id
         const captionText = this.props.chosenCaption.text
         const captionId = this.props.chosenCaption.id
-        const sendObj = { memeUrl, memeId, captionText, captionId }
+        const sendObj = { memeURL, memeId, captionText, captionId }
         this.props.sendMemeRequest(sendObj)
     }
 
