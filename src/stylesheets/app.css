@@ -269,14 +269,13 @@
 
 
 /* slider css */
-  .parent {
+  /* .parent {
     width: 100%;
     overflow: hidden;
     margin: auto;
     padding: 1rem;
 }
 .slider-container {
- /* if you want to have a scrollbar, you can add overflow here */ 
     overflow-x: hidden;
     display: flex;
     justify-content: center;
@@ -331,4 +330,4 @@
 {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
-}
+} */
