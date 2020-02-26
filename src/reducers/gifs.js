@@ -27,8 +27,9 @@ export default (state = { all: [], randomGif: null, query: '', savedGifs: [], lo
         case CLEAR_GIF:
             return { all: [] }
 
+        // See notes in Meme.js reducer for what I need to refactor 
         case ADD_SAVED_GIF:
-            return { ...state, savedGifs: action.payload }
+            return { ...state, savedGifs: [...state.savedGifs, action.payload] }
 
         case LOADING_SAVED_GIFS:
             return { ...state, all: [...state.all], loading: true }

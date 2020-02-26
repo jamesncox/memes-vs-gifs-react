@@ -24,14 +24,13 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
         case CLEAR_MEME:
             return { all: [] }
 
-        // case START_MEME_POST_REQUEST:
-        //     return { ...state, sendMeme: [...state.sendMeme] }
-
-        // ADD_SAVED_MEME is the action I will use to display all the saved memes 
-        // in SavedMemes.js because it will be updated by each post request
+        // ADD_SAVED_MEME is the action called by my Meme post request
+        // Need to refactor to update the store, call the method every time a meme is saved
         case ADD_SAVED_MEME:
             return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
+        // LOADING_SAVED_MEMES needs to be called on App componentDidMount with initial load of all memes from DB
+        // Then every time ADD_SAVED_MEME action is fired, will add a new saved meme to savedMemes array
         case LOADING_SAVED_MEMES:
             return { ...state, loading: true }
 
