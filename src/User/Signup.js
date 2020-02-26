@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { LoginCard } from './UserStyles'
 import { connect } from 'react-redux'
-import { sendUser } from './actions/users'
+import { signupUser } from '../actions/users'
 
 class Signup extends Component {
     state = {
@@ -20,7 +20,7 @@ class Signup extends Component {
 
     handleSignup = e => {
         e.preventDefault()
-        // this.props.sendUser(this.state)
+        this.props.signupUser(this.state)
         this.setState({
             username: '',
             email: '',
@@ -50,4 +50,4 @@ class Signup extends Component {
     }
 }
 
-export default connect(Signup)
+export default connect(null, { signupUser })(Signup)

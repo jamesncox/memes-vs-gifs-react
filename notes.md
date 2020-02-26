@@ -49,4 +49,5 @@
     robot computer waiting
     https://media1.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.gif?cid=790b7611e0ed9b8f318f9c048e70e0623a6b2cd833b83953&rid=giphy.gif
 
-    
+# Textarea
+    <textarea> This tag for draggable text </textarea>
