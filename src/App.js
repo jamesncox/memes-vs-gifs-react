@@ -12,6 +12,8 @@ import Home from './Home'
 import SavedMemes from './components/SavedMemes'
 import SavedGifs from './components/SavedGifs'
 import UserProfile from './User/UserProfile'
+import Login from './User/Login'
+import Signup from './User/Signup'
 import { connect } from 'react-redux';
 import { getSavedMemes } from './actions/memes'
 import { getSavedGifs } from './actions/gifs'
@@ -46,6 +48,12 @@ class App extends Component {
             </Route>
             <Route path="/profile">
               <UserProfile />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <Route exact path="/login">
+              <Login />
             </Route>
           </Switch>
 

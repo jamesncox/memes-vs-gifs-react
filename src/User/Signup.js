@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { LoginCard } from './UserStyles'
+import { connect } from 'react-redux'
+import { sendUser } from './actions/users'
 
-class Login extends Component {
+class Signup extends Component {
     state = {
         username: '',
-        password: ''
+        password: '',
+        email: ''
+
     }
 
     handleChange = e => {
@@ -14,11 +18,12 @@ class Login extends Component {
         })
     }
 
-    handleLogin = e => {
+    handleSignup = e => {
         e.preventDefault()
-        console.log('login clicked...')
+        // this.props.sendUser(this.state)
         this.setState({
             username: '',
+            email: '',
             password: ''
         })
     }
@@ -26,16 +31,18 @@ class Login extends Component {
     render() {
         return (
             <>
-                <h1 className="header">Login Below</h1>
+                <h1 className="header">Sign up Below</h1>
                 <LoginCard className="zoom">
-                    Login
+                    Sign up
                     <h3> </h3>
-                    <form onSubmit={e => this.handleLogin(e)}>
+                    <form onSubmit={this.handleSignup.bind(this)}>
                         <input type="text" placeholder="Username" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+                        {' '}
+                        <input type="text" placeholder="Email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} />
                         {' '}
                         <input type="text" placeholder="Password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
                         {' '}
-                        <input type="submit" value="Login" />
+                        <input type="submit" value="Sign up" />
                     </form>
                 </LoginCard>
             </>
@@ -43,4 +50,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default connect(Signup)
