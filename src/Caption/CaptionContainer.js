@@ -38,18 +38,10 @@ class CaptionContainer extends Component {
         }
     }
 
-    renderNewCaptionForm() {
-        return (
-            <NewCaptionForm />
-        )
-    }
-
     render() {
         return (
             <div>
                 <GenerateCaption handleSetRandomCaption={this.handleSetRandomCaption} />
-                {this.renderNewCaptionForm()}
-                <br></br>
                 {this.renderRandomCaptions()}
             </div>
         )

@@ -32,6 +32,10 @@
     border-radius: .25in;
   }
 
+  .hidden {
+    display: none;
+  }
+
   .loader {
     background-image: url("https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp")
   }

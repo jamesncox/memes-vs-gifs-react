@@ -15,6 +15,14 @@ const SelectButton = styled.button`
   font-family: Helvetica, sans-serif;
 `
 
+const FormButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+`
+
 const CaptionCard = styled.div`
   background-color: #32003bd2;
   color: white;
@@ -35,12 +43,11 @@ const CaptionForm = styled.div`
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   width: 2.5in;
-  height: 3in;
+  height: 2in;
   border-radius: .25in;
   margin: 10px;
-  display: inline-block;
   padding: 10px;
-  display: inline-table;
+  display: inline-block;
 `
 
-export { CaptionButton, CaptionCard, SelectButton, CaptionForm }
+export { CaptionButton, FormButton, CaptionCard, SelectButton, CaptionForm }

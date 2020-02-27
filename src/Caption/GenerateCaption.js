@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CaptionButton } from './CaptionStyles'
+import { CaptionButton, FormButton } from './CaptionStyles'
 import { connect } from 'react-redux'
 import {
     GEN_RANDOM_CAPTIONS_R,
@@ -10,6 +10,23 @@ import {
 import NewCaptionForm from './NewCaptionForm'
 
 class GenerateCaption extends Component {
+
+    state = {
+        isActive: false
+    }
+
+    handleShow = () => {
+        this.setState({
+            isActive: true
+        })
+    }
+
+    handleHide = () => {
+        this.setState({
+            isActive: false
+        })
+    }
+
 
     handleClick = () => {
         const selectedRating = document.getElementById("selectedRating")
@@ -25,26 +42,30 @@ class GenerateCaption extends Component {
         }
     }
 
-    // handleCreate = () => {
-    //     if (this.props.clearCaptions()) {
-    //         this.props.clearCaptions()
-    //     }
+    // handleShow = () => {
+    //     console.log('click')
+    //     return <NewCaptionForm style={{ display: "inline-block" }} />
     // }
 
     render() {
         return (
             <div>
-                <h4><CaptionButton onClick={this.handleClick}>Caption Cards</CaptionButton>
+                <h4>
+                    <FormButton onClick={this.handleShow}>Create Your Own Caption</FormButton>
+                    {' '}
+                    <FormButton onClick={this.handleHide}>Hide Form</FormButton>
+                    <br></br>
+                    <br></br>
+                    <CaptionButton onClick={this.handleClick}>Caption Cards</CaptionButton>
                     {'  '}
                     <select id="selectedRating">
                         <option value="All">All captions</option>
                         <option value="PG">PG only</option>
                         <option value="R">NSFW only</option>
                     </select>
-                    <br></br>
-                    <br></br>
-                    <CaptionButton onClick={this.handleCreate}>Create Your Own Caption</CaptionButton></h4>
-                <h3> </h3>
+                </h4>
+                {this.state.isActive ? <NewCaptionForm /> : null}
+                <h3></h3>
             </div>
         )
     }
