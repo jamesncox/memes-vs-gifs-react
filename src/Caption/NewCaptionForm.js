@@ -34,7 +34,7 @@ class NewCaptionForm extends Component {
                     <textarea placeholder="Create a hilarious caption!!" name="text" value={this.state.text} onChange={e => this.handleChange(e)} />
                     <br></br>
                     <br></br>
-                    Give your caption an appropriate rating.
+                    Give your caption a PG or R rating
                    <br></br>
                     <br></br>
                     <select id="selectedRating" name="rating" value={this.state.rating} onChange={e => this.handleChange(e)}>

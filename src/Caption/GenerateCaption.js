@@ -42,11 +42,6 @@ class GenerateCaption extends Component {
         }
     }
 
-    // handleShow = () => {
-    //     console.log('click')
-    //     return <NewCaptionForm style={{ display: "inline-block" }} />
-    // }
-
     render() {
         return (
             <div>

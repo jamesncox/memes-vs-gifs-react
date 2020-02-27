@@ -47,7 +47,7 @@ const CaptionForm = styled.div`
   border-radius: .25in;
   margin: 10px;
   padding: 10px;
-  display: inline-block;
+  display: inline-table;
 `
 
 export { CaptionButton, FormButton, CaptionCard, SelectButton, CaptionForm }
