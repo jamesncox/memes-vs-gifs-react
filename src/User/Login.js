@@ -16,7 +16,6 @@ class Login extends Component {
 
     handleLogin = e => {
         e.preventDefault()
-        console.log('login clicked...')
         this.setState({
             username: '',
             password: ''

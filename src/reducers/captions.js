@@ -6,10 +6,11 @@ import {
     GEN_RANDOM_CAPTIONS_R,
     SET_CHOSEN_CAPTION,
     CLEAR_CHOSEN_CAPTION,
-    CLEAR_CAPTIONS
+    CLEAR_CAPTIONS,
+    SET_CAPTION_INPUT
 } from '../actionTypes'
 
-export default (state = { all: [], loading: false, randomCaptions: null, chosenCaption: [] }, action) => {
+export default (state = { all: [], loading: false, randomCaptions: null, chosenCaption: [], captionInput: "" }, action) => {
     switch (action.type) {
 
         case LOADING_CAPTIONS:
@@ -40,6 +41,9 @@ export default (state = { all: [], loading: false, randomCaptions: null, chosenC
 
         case CLEAR_CAPTIONS:
             return { all: [] }
+
+        case SET_CAPTION_INPUT:
+            return { ...state, captionInput: action.payload }
 
         default:
             return state

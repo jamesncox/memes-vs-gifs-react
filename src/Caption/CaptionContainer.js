@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import GenerateCaption from './GenerateCaption'
 import Caption from './Caption'
+import NewCaptionForm from './NewCaptionForm'
 import { connect } from 'react-redux'
-import { getCaptions } from '../actions/captions'
+import { getCaptions, clearCaptions } from '../actions/captions'
 
 class CaptionContainer extends Component {
 
@@ -37,12 +38,18 @@ class CaptionContainer extends Component {
         }
     }
 
+    renderNewCaptionForm() {
+        return (
+            <NewCaptionForm />
+        )
+    }
+
     render() {
         return (
             <div>
-                <GenerateCaption
-                    handleSetRandomCaption={this.handleSetRandomCaption}
-                />
+                <GenerateCaption handleSetRandomCaption={this.handleSetRandomCaption} />
+                {this.renderNewCaptionForm()}
+                <br></br>
                 {this.renderRandomCaptions()}
             </div>
         )
@@ -55,4 +62,4 @@ const mapStateToProps = (state) => ({
     loading: state.captions.loading
 })
 
-export default connect(mapStateToProps, { getCaptions })(CaptionContainer)
+export default connect(mapStateToProps, { getCaptions, clearCaptions })(CaptionContainer)
