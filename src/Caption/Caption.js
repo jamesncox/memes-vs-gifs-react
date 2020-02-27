@@ -29,8 +29,4 @@ const mapDispatchToProps = dispatch => {
     })
 }
 
-const mapStateToProps = state => ({
-    chosenCaption: state.captions.chosenCaption
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Caption)
+export default connect(null, mapDispatchToProps)(Caption)
