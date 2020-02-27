@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { CaptionForm } from './CaptionStyles'
 import { SET_CAPTION_INPUT } from '../actionTypes'
 import { connect } from 'react-redux'
+import { sendSavedCaption } from '../actions/captions'
 
 class NewCaptionForm extends Component {
     state = {
@@ -17,8 +18,13 @@ class NewCaptionForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
-        this.props.setCaptionInput(this.state)
+        // this.props.setCaptionInput(this.state)
+
+        const text = this.state.text
+        const rating = this.state.rating
+        const captionObj = { text, rating }
+        this.props.sendSavedCaption(captionObj)
+
         this.setState({
             text: '',
             rating: 'PG'
@@ -55,8 +61,9 @@ const mapStateToProps = state => ({
     captionInput: state.captions.captionInput
 })
 
-const mapDispatchToProps = dispatch => ({
-    setCaptionInput: (text) => dispatch({ type: SET_CAPTION_INPUT, payload: text })
-})
+// const mapDispatchToProps = dispatch => ({
+//     setCaptionInput: (text) => dispatch({ type: SET_CAPTION_INPUT, payload: text }),
+//     saveCaption: (captionObj) => dispatch({ type: SAVE_CAPTION, payload: captionObj })
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewCaptionForm)
+export default connect(mapStateToProps, { sendSavedCaption })(NewCaptionForm)

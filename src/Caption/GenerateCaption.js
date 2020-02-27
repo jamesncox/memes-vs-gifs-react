@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import {
     GEN_RANDOM_CAPTIONS_R,
     GEN_RANDOM_CAPTIONS_PG,
-    GEN_RANDOM_CAPTIONS_ALL,
-    CLEAR_CAPTIONS
+    GEN_RANDOM_CAPTIONS_ALL
 } from '../actionTypes'
 import NewCaptionForm from './NewCaptionForm'
 
@@ -60,7 +59,7 @@ class GenerateCaption extends Component {
                     </select>
                 </h4>
                 {this.state.isActive ? <NewCaptionForm /> : null}
-                <h3></h3>
+                <h3> </h3>
             </div>
         )
     }
@@ -69,8 +68,7 @@ class GenerateCaption extends Component {
 const mapDispatchToProps = dispatch => ({
     genRandomCaptionsR: () => dispatch({ type: GEN_RANDOM_CAPTIONS_R }),
     genRandomCaptionsPG: () => dispatch({ type: GEN_RANDOM_CAPTIONS_PG }),
-    genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL }),
-    clearCaptions: () => dispatch({ type: CLEAR_CAPTIONS })
+    genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL })
 })
 
 export default connect(null, mapDispatchToProps)(GenerateCaption)

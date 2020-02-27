@@ -1,7 +1,8 @@
 import {
     LOADING_CAPTIONS,
     SET_CAPTIONS,
-    CLEAR_CAPTIONS
+    CLEAR_CAPTIONS,
+    ADD_SAVED_CAPTION
 } from '../actionTypes'
 
 const setCaptions = captions => {
@@ -25,6 +26,28 @@ export const getCaptions = () => {
         } catch (err) {
             alert("Failed to load captions")
         }
+    }
+}
+
+export function sendSavedCaption(captionObj) {
+    console.log(captionObj)
+
+    const objData = {
+        text: captionObj.text,
+        rating: captionObj.rating
+    }
+
+    return (dispatch) => {
+        fetch("http://localhost:3000/api/v1/captions", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(objData)
+        })
+            .then(res => res.json())
+            .then(savedCaption => dispatch({ type: ADD_SAVED_CAPTION, payload: savedCaption }))
     }
 }
 

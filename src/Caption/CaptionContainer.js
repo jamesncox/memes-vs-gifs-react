@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import GenerateCaption from './GenerateCaption'
 import Caption from './Caption'
-import NewCaptionForm from './NewCaptionForm'
 import { connect } from 'react-redux'
 import { getCaptions, clearCaptions } from '../actions/captions'
 
