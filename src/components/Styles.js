@@ -29,7 +29,7 @@ const SavedMemeCard = styled.div`
 `
 
 const SavedGifCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.90);
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
