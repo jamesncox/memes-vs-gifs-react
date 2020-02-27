@@ -10,8 +10,8 @@ class MemeHome extends Component {
                 <h1 className="header">What Do You Meme?</h1>
                 <MemeContainer />
                 <CaptionContainer />
-                <h4>Thank you for playing What Do You Meme?</h4>
-            </div>
+                <h4 style={{ width: "100%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Thank you for playing What Do You Meme?</h4>
+            </div >
         )
     }
 }

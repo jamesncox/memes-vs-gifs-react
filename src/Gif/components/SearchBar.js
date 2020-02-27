@@ -19,7 +19,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <h4><form className="my-form" onSubmit={this.handleSubmit.bind(this)}>
+                <h4 syle={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}><form className="my-form" onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" placeholder="Search a category" onChange={this.handleChange} />
                     <input type="submit" value="Find a Gif" />
                 </form></h4>

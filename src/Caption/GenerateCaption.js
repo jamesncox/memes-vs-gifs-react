@@ -44,13 +44,15 @@ class GenerateCaption extends Component {
     render() {
         return (
             <div>
-                <h4>
+                <h4 style={{ width: "20%", backgroundColor: "rgba(0, 0, 0, 0.80)" }}>
                     <FormButton onClick={this.handleShow}>Create Your Own Caption</FormButton>
                     {' '}
                     <FormButton onClick={this.handleHide}>Hide Form</FormButton>
-                    <br></br>
-                    <br></br>
-                    <CaptionButton onClick={this.handleClick}>Caption Cards</CaptionButton>
+                    {/* <br></br> */}
+                </h4>
+                {this.state.isActive ? <NewCaptionForm /> : null}
+                <br></br>
+                <h4 style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}><CaptionButton onClick={this.handleClick}>Caption Cards</CaptionButton>
                     {'  '}
                     <select id="selectedRating">
                         <option value="All">All captions</option>
@@ -58,7 +60,6 @@ class GenerateCaption extends Component {
                         <option value="R">NSFW only</option>
                     </select>
                 </h4>
-                {this.state.isActive ? <NewCaptionForm /> : null}
                 <h3> </h3>
             </div>
         )

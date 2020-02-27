@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { CaptionForm } from './CaptionStyles'
-import { SET_CAPTION_INPUT } from '../actionTypes'
 import { connect } from 'react-redux'
 import { sendSavedCaption } from '../actions/captions'
 
 class NewCaptionForm extends Component {
     state = {
         text: '',
-        rating: 'PG'
+        rating: ''
     }
 
     handleChange = (e) => {
@@ -18,7 +17,6 @@ class NewCaptionForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        // this.props.setCaptionInput(this.state)
 
         const text = this.state.text
         const rating = this.state.rating
@@ -40,7 +38,7 @@ class NewCaptionForm extends Component {
                     <textarea placeholder="Create a hilarious caption!!" name="text" value={this.state.text} onChange={e => this.handleChange(e)} />
                     <br></br>
                     <br></br>
-                    Give your caption a PG or R rating
+                    Give your caption a PG or NSFW rating
                    <br></br>
                     <br></br>
                     <select id="selectedRating" name="rating" value={this.state.rating} onChange={e => this.handleChange(e)}>
@@ -60,10 +58,5 @@ class NewCaptionForm extends Component {
 const mapStateToProps = state => ({
     captionInput: state.captions.captionInput
 })
-
-// const mapDispatchToProps = dispatch => ({
-//     setCaptionInput: (text) => dispatch({ type: SET_CAPTION_INPUT, payload: text }),
-//     saveCaption: (captionObj) => dispatch({ type: SAVE_CAPTION, payload: captionObj })
-// })
 
 export default connect(mapStateToProps, { sendSavedCaption })(NewCaptionForm)
