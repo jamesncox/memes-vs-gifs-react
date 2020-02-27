@@ -51,3 +51,7 @@
 
 # Textarea
     <textarea> This tag for draggable text </textarea>
+
+# Sign Up Gif options
+    Connor McGregor
+    https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp

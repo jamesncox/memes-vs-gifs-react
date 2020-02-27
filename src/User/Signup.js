@@ -32,7 +32,7 @@ class Signup extends Component {
             <>
                 <h1 className="header">Sign up</h1>
                 <LoginCard className="zoom">
-                    Sign up
+                    <img src={"https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp"} alt={"Connor McGregor"} />
                     <h3> </h3>
                     <form onSubmit={this.handleSignup.bind(this)}>
                         <input type="text" placeholder="Username" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
@@ -41,7 +41,7 @@ class Signup extends Component {
                         {' '}
                         <input type="password" placeholder="Password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
                         {' '}
-                        <input type="submit" value="Sign up" />
+                        <input type="submit" value="Create Profile" />
                     </form>
                 </LoginCard>
             </>

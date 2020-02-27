@@ -28,7 +28,7 @@ class Login extends Component {
             <>
                 <h1 className="header">Login</h1>
                 <LoginCard className="zoom">
-                    Login
+                    <img src={"https://i.giphy.com/media/l0IxYD16t9PDEdg9q/giphy.webp"} alt={"Robert Redford"} />
                     <h3> </h3>
                     <form onSubmit={e => this.handleLogin(e)}>
                         <input type="text" placeholder="Username" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
