@@ -6,6 +6,7 @@ import {
     GEN_RANDOM_CAPTIONS_PG,
     GEN_RANDOM_CAPTIONS_ALL
 } from '../actionTypes'
+import NewCaptionForm from './NewCaptionForm'
 
 class GenerateCaption extends Component {
 
