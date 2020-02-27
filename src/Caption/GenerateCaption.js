@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import {
     GEN_RANDOM_CAPTIONS_R,
     GEN_RANDOM_CAPTIONS_PG,
-    GEN_RANDOM_CAPTIONS_ALL
+    GEN_RANDOM_CAPTIONS_ALL,
+    CLEAR_CAPTIONS
 } from '../actionTypes'
 import NewCaptionForm from './NewCaptionForm'
 
@@ -24,6 +25,12 @@ class GenerateCaption extends Component {
         }
     }
 
+    // handleCreate = () => {
+    //     if (this.props.clearCaptions()) {
+    //         this.props.clearCaptions()
+    //     }
+    // }
+
     render() {
         return (
             <div>
@@ -33,8 +40,10 @@ class GenerateCaption extends Component {
                         <option value="All">All captions</option>
                         <option value="PG">PG only</option>
                         <option value="R">NSFW only</option>
-                    </select></h4>
-                <h1>{' '}</h1>
+                    </select>
+                    {' '}
+                    <CaptionButton onClick={this.handleCreate}>Create Your Own Caption</CaptionButton></h4>
+                <h3> </h3>
             </div>
         )
     }
@@ -43,7 +52,8 @@ class GenerateCaption extends Component {
 const mapDispatchToProps = dispatch => ({
     genRandomCaptionsR: () => dispatch({ type: GEN_RANDOM_CAPTIONS_R }),
     genRandomCaptionsPG: () => dispatch({ type: GEN_RANDOM_CAPTIONS_PG }),
-    genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL })
+    genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL }),
+    clearCaptions: () => dispatch({ type: CLEAR_CAPTIONS })
 })
 
 export default connect(null, mapDispatchToProps)(GenerateCaption)
