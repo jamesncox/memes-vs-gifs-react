@@ -38,7 +38,7 @@ const CaptionCard = styled.div`
 `
 
 const CaptionForm = styled.div`
-  background-color: rgba(0, 27, 49, 0.85);
+  background-color: #001f3fe8;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;

@@ -32,7 +32,7 @@ class NewCaptionForm extends Component {
 
     render() {
         return (
-            <CaptionForm className="zoom">
+            <CaptionForm className="big-zoom">
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <br></br>
                     <textarea placeholder="Create a hilarious caption!!" name="text" value={this.state.text} onChange={e => this.handleChange(e)} />

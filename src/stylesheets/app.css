@@ -32,8 +32,8 @@
     border-radius: .25in;
   }
 
-  .hidden {
-    display: none;
+  .test-color {
+    color: #001f3fe8;
   }
 
   .loader {
@@ -90,7 +90,7 @@
     transform: scale(1.15); 
   }
 
-  .saved-zoom {
+  .big-zoom {
     background-color: 000308d2;
     color: white;
     font-family: Helvetica, sans-serif;
@@ -105,10 +105,10 @@
     transition: transform .3s;
   }
   
-  .saved-zoom:hover {
+  .big-zoom:hover {
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.05); 
+    transform: scale(1.30); 
   }
 
   .header {
