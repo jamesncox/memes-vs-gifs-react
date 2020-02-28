@@ -17,6 +17,7 @@ import Signup from './User/Signup'
 import { connect } from 'react-redux';
 import { getMemes, getSavedMemes } from './actions/memes'
 import { getSavedGifs } from './actions/gifs'
+import { setToken } from './actions/sessions'
 
 class App extends Component {
 
@@ -25,7 +26,9 @@ class App extends Component {
     this.props.getSavedMemes()
     this.props.getSavedGifs()
     // need to put fetch for cookies here to set cookie to always have available
-    // fetch('http://localhost:3000/api/v1//auth-check')
+    fetch('http://localhost:3000/api/v1/auth-check')
+      .then(res => res.json())
+      .then(token => this.props.setToken(token.csrf_auth_token))
   }
 
   render() {
@@ -66,4 +69,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getMemes, getSavedMemes, getSavedGifs })(App)
+export default connect(null, { getMemes, getSavedMemes, getSavedGifs, setToken })(App)

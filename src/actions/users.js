@@ -3,6 +3,7 @@ import {
 } from '../actionTypes'
 
 export function signupUser(user) {
+    console.log("in action, the user obj sending to DB is ", user)
 
     const userObj = {
         username: user.username,

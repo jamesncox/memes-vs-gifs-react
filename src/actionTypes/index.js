@@ -26,6 +26,7 @@ const CLEAR_CAPTIONS = 'CLEAR_CAPTIONS'
 const ADD_SAVED_CAPTION = 'ADD_SAVED_CAPTION'
 
 const SET_USER = 'SET_USER'
+const SET_TOKEN = 'SET_TOKEN'
 
 export {
     LOADING_MEMES,
@@ -55,5 +56,6 @@ export {
     CLEAR_CAPTIONS,
     ADD_SAVED_CAPTION,
 
-    SET_USER
+    SET_USER,
+    SET_TOKEN
 }
