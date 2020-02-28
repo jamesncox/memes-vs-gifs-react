@@ -30,7 +30,7 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
             return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
         case LOADING_SAVED_MEMES:
-            return { ...state, loading: true }
+            return { ...state, all: [...state.all], loading: true }
 
         case SET_SAVED_MEMES:
             return { ...state, savedMemes: action.savedMemes, loading: false }

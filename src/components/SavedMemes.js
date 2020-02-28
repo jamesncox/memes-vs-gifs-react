@@ -6,13 +6,11 @@ import { getSavedMemes } from '../actions/memes'
 class SavedMemes extends Component {
 
     render() {
-        // I need to get the CaptionJoin id from CaptionJoins create action to set as the key
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
-                console.log(savedMeme)
                 return (
-                    < SavedMemeCard className="saved-zoom" key={savedMeme.id.created_at} >
-                        <img src={savedMeme.meme_url} alt={savedMeme.id.created_at} />
+                    < SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id} >
+                        <img src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
                         <h2>{caption.text}</h2>
                     </SavedMemeCard >
                 )
@@ -23,7 +21,7 @@ class SavedMemes extends Component {
             return (
                 <>
                     <h3>Loading memes...</h3>
-                    <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading gifs..."} />
+                    <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading memes..."} />
                 </>
             )
         } else {
