@@ -46,7 +46,7 @@ class SavedMemes extends Component {
             })
         })
 
-        if (!this.props.loading) {
+        if (this.props.loading) {
             return (
                 <>
                     <h3>Loading memes...</h3>

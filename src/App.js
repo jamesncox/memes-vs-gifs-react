@@ -15,12 +15,13 @@ import UserProfile from './User/UserProfile'
 import Login from './User/Login'
 import Signup from './User/Signup'
 import { connect } from 'react-redux';
-import { getSavedMemes } from './actions/memes'
+import { getMemes, getSavedMemes } from './actions/memes'
 import { getSavedGifs } from './actions/gifs'
 
 class App extends Component {
 
   componentDidMount() {
+    this.props.getMemes()
     this.props.getSavedMemes()
     this.props.getSavedGifs()
     // need to put fetch for cookies here to set cookie to always have available
@@ -65,4 +66,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getSavedMemes, getSavedGifs })(App)
+export default connect(null, { getMemes, getSavedMemes, getSavedGifs })(App)
