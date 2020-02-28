@@ -5,21 +5,20 @@ import {
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
     // START_MEME_POST_REQUEST,
-    ADD_SAVED_MEME,
-    // LOAD_SAVED_MEMES
+    ADD_SAVED_MEME
 } from '../actionTypes'
 
 const setSavedMemes = savedMemes => {
     return { type: SET_SAVED_MEMES, savedMemes: savedMemes }
 }
 
+const setMemes = memes => {
+    return { type: SET_MEMES, memes: memes }
+}
+
 export const clearMeme = () => {
     return { type: CLEAR_MEME }
 }
-
-// export const loadSavedMemes = () => {
-//     return { type: LOAD_SAVED_MEMES }
-// }
 
 export const getMemes = () => {
     return async dispatch => {
@@ -31,7 +30,7 @@ export const getMemes = () => {
             }
             const memeData = await res.json()
             const memeList = memeData.data.memes
-            dispatch({ type: SET_MEMES, memes: memeList })
+            dispatch(setMemes(memeList))
         } catch (err) {
             alert("Failed to load memes")
         }

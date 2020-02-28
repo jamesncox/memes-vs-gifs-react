@@ -6,8 +6,7 @@ import {
     // START_MEME_POST_REQUEST,
     ADD_SAVED_MEME,
     LOADING_SAVED_MEMES,
-    SET_SAVED_MEMES,
-    LOAD_SAVED_MEMES
+    SET_SAVED_MEMES
 } from '../actionTypes'
 
 export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [], loading: false }, action) => {
@@ -26,7 +25,6 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
             return { ...state, randomMeme: null }
 
         case ADD_SAVED_MEME:
-            console.log(action.payload)
             return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
         case LOADING_SAVED_MEMES:
@@ -34,9 +32,6 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
 
         case SET_SAVED_MEMES:
             return { ...state, savedMemes: action.savedMemes, loading: false }
-
-        case LOAD_SAVED_MEMES:
-            return state.savedMemes
 
         default:
             return state

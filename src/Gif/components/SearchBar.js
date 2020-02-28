@@ -29,17 +29,17 @@ class SearchBar extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return ({
+        query: state.gifs.query
+    })
+}
+
 const mapDispatchToProps = dispatch => {
     return ({
         setQueryInput: (text) => dispatch({ type: SET_QUERY_INPUT, payload: text }),
         getQueriedGifs: () => dispatch(getQueriedGifs()),
         clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION })
-    })
-}
-
-const mapStateToProps = state => {
-    return ({
-        query: state.gifs.query
     })
 }
 

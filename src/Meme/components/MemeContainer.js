@@ -39,8 +39,7 @@ class MemeContainer extends Component {
 
 const mapStateToProps = state => ({
     randomMeme: state.memes.randomMeme,
-    loading: state.memes.loading,
-    savedMemes: state.memes.savedMemes
+    loading: state.memes.loading
 })
 
 export default connect(mapStateToProps, { getMemes, clearMeme, clearCaptions })(MemeContainer)
