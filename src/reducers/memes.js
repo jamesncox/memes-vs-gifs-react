@@ -3,13 +3,12 @@ import {
     SET_MEMES,
     GEN_RANDOM_MEME,
     CLEAR_MEME,
-    // START_MEME_POST_REQUEST,
     ADD_SAVED_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES
 } from '../actionTypes'
 
-export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [], loading: false }, action) => {
+export default (state = { all: [], randomMeme: null, savedMemes: [], loading: false }, action) => {
     switch (action.type) {
         case LOADING_MEMES:
             return { ...state, all: [...state.all], loading: true }

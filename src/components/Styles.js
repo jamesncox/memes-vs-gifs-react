@@ -42,11 +42,12 @@ const SavedGifCard = styled.div`
   display: inline-table;
 `
 
-const DisplayGrid = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    padding: 10px;
+const FilterButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
 `
 
-export { GameLinkCard, SavedMemeCard, SavedGifCard, DisplayGrid }
+export { GameLinkCard, SavedMemeCard, SavedGifCard, FilterButton }
