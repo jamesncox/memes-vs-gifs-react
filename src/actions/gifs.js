@@ -43,7 +43,6 @@ export const getQueriedGifs = () => {
 }
 
 export function sendGifRequest(sendObj) {
-    console.log(sendObj)
 
     const objData = {
         gif_url: sendObj.gifURL,

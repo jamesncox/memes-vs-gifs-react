@@ -30,7 +30,6 @@ export const getCaptions = () => {
 }
 
 export function sendSavedCaption(captionObj) {
-    console.log(captionObj)
 
     const objData = {
         text: captionObj.text,
@@ -50,5 +49,3 @@ export function sendSavedCaption(captionObj) {
             .then(savedCaption => dispatch({ type: ADD_SAVED_CAPTION, payload: savedCaption }))
     }
 }
-
-// caption (Post) including only the id of saved caption

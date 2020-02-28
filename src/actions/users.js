@@ -3,7 +3,6 @@ import {
 } from '../actionTypes'
 
 export function signupUser(user) {
-    console.log(user)
 
     const userObj = {
         username: user.username,
