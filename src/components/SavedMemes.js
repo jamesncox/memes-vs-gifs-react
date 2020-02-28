@@ -9,7 +9,7 @@ class SavedMemes extends Component {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
                 return (
-                    <SavedMemeCard className="saved-zoom" key={savedMeme.meme_id}>
+                    <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
                         <img src={savedMeme.meme_url} alt={savedMeme.id} />
                         <h2>{caption.text}</h2>
                     </SavedMemeCard>
@@ -43,21 +43,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { getSavedMemes })(SavedMemes)
-
-
-
-// return (
-//     <div className="parent">
-//      <Slider>
-//       {data.map(value => {
-//        return (
-//         <div key={value} className="child">
-//          {value}
-//         </div>
-//        );
-//       })}
-//      </Slider>
-//     </div>
-//    );
-//   }
-//  }

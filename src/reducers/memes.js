@@ -22,11 +22,12 @@ export default (state = { all: [], randomMeme: null, sendMeme: [], savedMemes: [
             return { ...state, randomMeme: randMeme }
 
         case CLEAR_MEME:
-            return { all: [] }
+            return { ...state, randomMeme: null }
 
         // ADD_SAVED_MEME is the action called by my Meme post request
         // Need to refactor to update the store, call the method every time a meme is saved
         case ADD_SAVED_MEME:
+            console.log(action.payload)
             return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
         // LOADING_SAVED_MEMES needs to be called on App componentDidMount with initial load of all memes from DB

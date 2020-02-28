@@ -23,6 +23,7 @@ class App extends Component {
   componentDidMount() {
     this.props.getSavedMemes()
     this.props.getSavedGifs()
+    // need to put fetch for cookies here to set cookie to always have available
     // fetch('http://localhost:3000/api/v1//auth-check')
   }
 

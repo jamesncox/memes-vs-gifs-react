@@ -25,7 +25,7 @@ export default (state = { all: [], randomGif: null, query: '', savedGifs: [], lo
             return { ...state, randomGif: randGif }
 
         case CLEAR_GIF:
-            return { all: [] }
+            return { ...state, randomGif: null }
 
         // See notes in Meme.js reducer for what I need to refactor 
         case ADD_SAVED_GIF:
