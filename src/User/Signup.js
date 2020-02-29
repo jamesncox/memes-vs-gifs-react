@@ -6,8 +6,9 @@ import { signupUser } from '../actions/users'
 class Signup extends Component {
     state = {
         username: '',
+        email: '',
         password: '',
-        email: ''
+        password_confirmation: ''
 
     }
 
@@ -23,7 +24,8 @@ class Signup extends Component {
         this.setState({
             username: '',
             email: '',
-            password: ''
+            password: '',
+            password_confirmation: ''
         })
     }
 
@@ -41,6 +43,7 @@ class Signup extends Component {
                         {' '}
                         <input type="password" placeholder="Password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
                         {' '}
+                        <input type="password" placeholder="Password confirmation" name="password_confirmation" value={this.state.password_confirmation} onChange={e => this.handleChange(e)} />
                         <input type="submit" value="Create Profile" />
                     </form>
                 </LoginCard>

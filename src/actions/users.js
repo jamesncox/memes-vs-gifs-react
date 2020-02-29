@@ -7,9 +7,12 @@ export function signupUser(user) {
     return async (dispatch, getState) => {
 
         const userObj = {
-            username: user.username,
-            email: user.email,
-            password: user.password
+            user: {
+                username: user.username,
+                email: user.email,
+                password: user.password,
+                password_confirmation: user.password_confirmation
+            }
         }
 
         const state = getState()
