@@ -7,10 +7,6 @@ import { clearCaptions } from '../../actions/captions'
 
 class MemeContainer extends Component {
 
-    // componentDidMount() {
-    //     this.props.getMemes()
-    // }
-
     componentWillUnmount() {
         this.props.clearMeme()
         this.props.clearCaptions()

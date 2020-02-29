@@ -26,6 +26,7 @@ const CLEAR_CAPTIONS = 'CLEAR_CAPTIONS'
 const ADD_SAVED_CAPTION = 'ADD_SAVED_CAPTION'
 
 const SET_USER = 'SET_USER'
+const SET_ERRORS = 'SET_ERRORS'
 const SET_TOKEN = 'SET_TOKEN'
 
 export {
@@ -57,5 +58,6 @@ export {
     ADD_SAVED_CAPTION,
 
     SET_USER,
+    SET_ERRORS,
     SET_TOKEN
 }
