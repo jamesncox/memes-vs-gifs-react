@@ -35,6 +35,7 @@ class SavedMemes extends Component {
     }
 
     render() {
+        console.log(this.props.savedMemes)
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
                 return (
@@ -51,6 +52,13 @@ class SavedMemes extends Component {
                 <>
                     <h3>Loading memes...</h3>
                     <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading memes..."} />
+                </>
+            )
+        } else if (this.props.savedMemes.length === 0) {
+            return (
+                <>
+                    <h3>No saved memes yet</h3>
+                    <img src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
                 </>
             )
         } else {
