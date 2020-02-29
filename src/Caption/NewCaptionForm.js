@@ -22,7 +22,6 @@ class NewCaptionForm extends Component {
         const rating = this.state.rating
         const captionObj = { text, rating }
         this.props.sendSavedCaption(captionObj)
-
         this.setState({
             text: '',
             rating: 'PG'
