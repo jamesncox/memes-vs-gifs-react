@@ -69,4 +69,12 @@ const ErrorCard = styled.div`
   padding: 30px;
   display: inline-table;
 `
-export { SavedMemeCard, SavedGifCard, LoginCard, SignupCard, ErrorCard }
+
+const CloseButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+`
+export { SavedMemeCard, SavedGifCard, LoginCard, SignupCard, ErrorCard, CloseButton }

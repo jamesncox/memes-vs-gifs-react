@@ -1,6 +1,11 @@
 import {
-    SET_USER
+    SET_USER,
+    CLEAR_USER
 } from '../actionTypes'
+
+export const clearUser = () => {
+    return { type: CLEAR_USER }
+}
 
 export function signupUser(user) {
     console.log("in action, the user obj sending to DB is ", user)

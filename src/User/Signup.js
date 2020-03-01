@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { LoginCard } from './UserStyles'
+import { LoginCard, ErrorCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
-import { signupUser } from '../actions/users'
+import { signupUser, clearUser } from '../actions/users'
 import Errors from './Errors'
 
 class Signup extends Component {
@@ -9,8 +9,21 @@ class Signup extends Component {
         username: '',
         email: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
+        isActive: false
 
+    }
+
+    handleShow = () => {
+        this.setState({
+            isActive: true
+        })
+    }
+
+    handleHide = () => {
+        this.setState({
+            isActive: false
+        })
     }
 
     handleChange = e => {
@@ -30,63 +43,70 @@ class Signup extends Component {
         })
     }
 
+    displaySignupForm = () => {
+        return (
+            <LoginCard>
+                <img src={"https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp"} alt={"Connor McGregor"} />
+                <h3> </h3>
+                <form onSubmit={this.handleSignup.bind(this)}>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                        value={this.state.username}
+                        onChange={e => this.handleChange(e)}
+                    />
+                    <p> </p>
+                    <input
+                        type="text"
+                        placeholder="Email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={e => this.handleChange(e)}
+                    />
+                    <p> </p>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={e => this.handleChange(e)}
+                    />
+                    <p> </p>
+                    <input
+                        type="password"
+                        placeholder="Password confirmation"
+                        name="password_confirmation"
+                        value={this.state.password_confirmation}
+                        onChange={e => this.handleChange(e)}
+                    />
+                    <p> </p>
+                    <input type="submit" value="Create Profile" />
+                </form>
+            </LoginCard>
+        )
+    }
+
+    resetUser = () => {
+        return (
+            <CloseButton onclick={this.handleHide}>Close</CloseButton>
+        )
+    }
+
     render() {
-        console.log(this.props.user)
-        if (this.props.errors) {
-            return (
-                <Errors />
-            )
-        } else {
-            return (
-                <>
-                    <h1 className="header">Sign up</h1>
-                    <LoginCard>
-                        <img src={"https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp"} alt={"Connor McGregor"} />
-                        <h3> </h3>
-                        <form onSubmit={this.handleSignup.bind(this)}>
-                            <input
-                                type="text"
-                                placeholder="Username"
-                                name="username"
-                                value={this.state.username}
-                                onChange={e => this.handleChange(e)}
-                            />
-                            <p> </p>
-                            <input
-                                type="text"
-                                placeholder="Email"
-                                name="email"
-                                value={this.state.email}
-                                onChange={e => this.handleChange(e)}
-                            />
-                            <p> </p>
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={e => this.handleChange(e)}
-                            />
-                            <p> </p>
-                            <input
-                                type="password"
-                                placeholder="Password confirmation"
-                                name="password_confirmation"
-                                value={this.state.password_confirmation}
-                                onChange={e => this.handleChange(e)}
-                            />
-                            <p> </p>
-                            <input type="submit" value="Create Profile" />
-                        </form>
-                    </LoginCard>
-                </>
-            )
-        }
+        return (
+            <div>
+                {this.displaySignupForm()}
+                {/* {this.state.isActive ? <Errors /> : null} */}
+                {/* {this.state.isActive ? this.resetUser() : null} */}
+            </div>
+        )
     }
 }
+
 
 const mapStateToProps = state => ({
     errors: state.users.user.errors
 })
 
-export default connect(mapStateToProps, { signupUser })(Signup)
+export default connect(mapStateToProps, { signupUser, clearUser })(Signup)
