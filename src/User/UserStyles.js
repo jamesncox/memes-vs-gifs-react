@@ -61,12 +61,12 @@ const ErrorCard = styled.div`
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
-  width: 2.5in;
-  height: 2in;
+  width: 4in;
+  height: 1in;
   border-radius: .25in;
   margin: 10px;
   display: inline-block;
-  padding: 10px;
+  padding: 30px;
   display: inline-table;
 `
 export { SavedMemeCard, SavedGifCard, LoginCard, SignupCard, ErrorCard }
