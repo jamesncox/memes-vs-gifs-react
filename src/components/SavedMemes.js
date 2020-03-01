@@ -18,21 +18,21 @@ class SavedMemes extends Component {
     //     }
     // }
 
-    filterByRating = () => {
-        return (
-            <>
-                <h4 style={{ width: "15%", backgroundColor: "rgba(0, 0, 0, 0.85)" }}>
-                    < select id="selectedRating" >
-                        <option value="All">All captions</option>
-                        <option value="PG">PG only</option>
-                        <option value="R">NSFW only</option>
-                    </select >
-                    {' '}
-                    <FilterButton onClick={this.handleClick}>Filter by rating</FilterButton>
-                </h4>
-            </>
-        )
-    }
+    // filterByRating = () => {
+    //     return (
+    //         <>
+    //             <h4 style={{ width: "15%", backgroundColor: "rgba(0, 0, 0, 0.85)" }}>
+    //                 < select id="selectedRating" >
+    //                     <option value="All">All captions</option>
+    //                     <option value="PG">PG only</option>
+    //                     <option value="R">NSFW only</option>
+    //                 </select >
+    //                 {' '}
+    //                 <FilterButton onClick={this.handleClick}>Filter by rating</FilterButton>
+    //             </h4>
+    //         </>
+    //     )
+    // }
 
     render() {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {

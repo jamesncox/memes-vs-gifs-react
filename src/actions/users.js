@@ -8,7 +8,6 @@ export const clearUser = () => {
 }
 
 export function signupUser(user) {
-    console.log("in action, the user obj sending to DB is ", user)
     return async (dispatch, getState) => {
 
         const userObj = {
