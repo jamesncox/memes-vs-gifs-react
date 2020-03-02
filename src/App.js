@@ -60,7 +60,7 @@ class App extends Component {
               <Login />
             </Route>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     );
