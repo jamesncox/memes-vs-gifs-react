@@ -2,6 +2,12 @@
     font-family: sans-serif;
     text-align: center;
   }
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
   
   body {
     background-image: url("https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
@@ -30,6 +36,28 @@
     background: rgba(0, 0, 0, 0.80);
     color:  #F8F8FF;
     border-radius: .25in;
+  }
+
+  .footer {
+    position: absolute;
+    border-radius: .20in;
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color:  rgba(0, 0, 0, 0.850);
+    font-family: Arial;
+  }
+
+  .thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+  }
+  
+  .thumbnail:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   }
 
   .test-color {
@@ -88,6 +116,27 @@
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.15); 
+  }
+
+  .saved-zoom {
+    background-color: 000308d2;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    width: 2.5in;
+    height: 4in;
+    border-radius: .25in;
+    margin: 10px;
+    display: inline-block;
+    padding: 10px;
+    display: inline-table;
+    transition: transform .4s;
+  }
+  
+  .saved-zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(2); 
   }
 
   .big-zoom {

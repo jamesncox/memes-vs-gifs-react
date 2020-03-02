@@ -39,8 +39,8 @@ class SavedMemes extends Component {
             return savedMeme.captions.map(caption => {
                 return (
                     <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
-                        <img src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
-                        <h2>{caption.text}</h2>
+                        <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
+                        <h2 style={{ fontSize: "15px" }} >{caption.text}</h2>
                     </SavedMemeCard>
                 )
             })

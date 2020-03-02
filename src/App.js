@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import './stylesheets/app.css';
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 import MemeHome from './Meme/components/MemeHome'
 import GifHome from './Gif/components/GiphyHome'
 import Home from './Home'
@@ -59,7 +60,7 @@ class App extends Component {
               <Login />
             </Route>
           </Switch>
-
+          <Footer />
         </div>
       </Router>
     );

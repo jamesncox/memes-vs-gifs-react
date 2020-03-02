@@ -19,8 +19,8 @@ const SavedMemeCard = styled.div`
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
-  width: 2.5in;
-  height: 4in;
+  width: 1in;
+  height: 1in;
   border-radius: .25in;
   margin: 10px;
   display: inline-block;
@@ -33,8 +33,8 @@ const SavedGifCard = styled.div`
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
-  width: 2.5in;
-  height: 4in;
+  width: 1in;
+  height: 1in;
   border-radius: .25in;
   margin: 10px;
   display: inline-block;

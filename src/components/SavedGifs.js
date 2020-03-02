@@ -10,8 +10,8 @@ class SavedGifs extends Component {
             return savedGif.captions.map(caption => {
                 return (
                     <SavedGifCard className="saved-zoom" key={savedGif.id + caption.id}>
-                        <img src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
-                        <h2>{caption.text}</h2>
+                        <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                        <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
                     </SavedGifCard>
                 )
             })
