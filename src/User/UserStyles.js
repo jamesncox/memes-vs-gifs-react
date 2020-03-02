@@ -57,7 +57,7 @@ const SignupCard = styled.div`
 `
 
 const ErrorCard = styled.div`
-  background-color: #32003bd2;
+  background-color: rgba(199, 0, 0, 0.815);
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
