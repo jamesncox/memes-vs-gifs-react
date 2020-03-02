@@ -6,7 +6,6 @@ import { CLEAR_USER } from '../actionTypes'
 class Errors extends Component {
 
     handleClick = () => {
-        console.log("close button clicked...")
         this.props.clearUser()
     }
 
@@ -24,12 +23,8 @@ class Errors extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    errors: state.users.user.errors
-})
-
 const mapDispatchToProps = dispatch => ({
     clearUser: () => dispatch({ type: CLEAR_USER })
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Errors)
+export default connect(null, mapDispatchToProps)(Errors)

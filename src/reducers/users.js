@@ -1,10 +1,9 @@
 import {
     SET_USER,
-    CLEAR_USER,
-    USER_ERRORS
+    CLEAR_USER
 } from '../actionTypes'
 
-export default (state = { user: {}, errors: [] }, action) => {
+export default (state = { user: {} }, action) => {
     switch (action.type) {
 
         case SET_USER:
@@ -13,10 +12,6 @@ export default (state = { user: {}, errors: [] }, action) => {
 
         case CLEAR_USER:
             return { ...state, user: {} }
-
-        case USER_ERRORS:
-            const errors = state.users.errors
-            return { ...state, errors: errors }
 
         default:
             return state
