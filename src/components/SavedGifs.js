@@ -9,10 +9,12 @@ class SavedGifs extends Component {
         const savedGifAndCaptionList = this.props.savedGifs.map(savedGif => {
             return savedGif.captions.map(caption => {
                 return (
-                    <SavedGifCard className="saved-zoom" key={savedGif.id + caption.id}>
-                        <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
-                        <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
-                    </SavedGifCard>
+                    <>
+                        <SavedGifCard className="saved-zoom" key={savedGif.id + caption.id}>
+                            <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                            <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
+                        </SavedGifCard>
+                    </>
                 )
             })
         })

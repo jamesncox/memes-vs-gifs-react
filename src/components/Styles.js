@@ -50,4 +50,20 @@ const FilterButton = styled.button`
   font-family: Helvetica, sans-serif;
 `
 
-export { GameLinkCard, SavedMemeCard, SavedGifCard, FilterButton }
+const ModalCaptionCard = styled.div`
+background-color: rgba(0, 0, 0, 0.95) ;
+  color: white;
+  border: 3px solid white;
+  font-family: Helvetica, sans-serif;
+  font-size: 25px;
+  width: 3in;
+  height: 1in;
+  border-radius: .25in;
+  margin: auto;
+  display: inline-block;
+  padding: 10px;
+  display: inline-table;
+`
+
+
+export { GameLinkCard, SavedMemeCard, SavedGifCard, FilterButton, ModalCaptionCard }

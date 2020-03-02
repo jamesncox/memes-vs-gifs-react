@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SavedMemeCard, FilterButton } from './Styles'
+import { SavedMemeCard, ModalCaptionCard, FilterButton } from './Styles'
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
 
@@ -38,10 +38,22 @@ class SavedMemes extends Component {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
                 return (
-                    <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
-                        <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
-                        <h2 style={{ fontSize: "15px" }} >{caption.text}</h2>
-                    </SavedMemeCard>
+                    <>
+                        <a class="lightbox" href={`#${savedMeme.id}`}>
+                            <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
+                                <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
+                                <h2 style={{ fontSize: "15px" }} >{caption.text}</h2>
+                            </SavedMemeCard>
+                        </a>
+
+                        <div class="lightbox-target" id={savedMeme.id}>
+                            <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
+                            <ModalCaptionCard>
+                                {caption.text}
+                            </ModalCaptionCard>
+                            <a class="lightbox-close" href="/saved-memes"></a>
+                        </div>
+                    </>
                 )
             })
         })
