@@ -12,7 +12,7 @@ class UserProfile extends Component {
                         <a href={`#${savedMeme.id}`}>
                             <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
                                 <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
-                                <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
+                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>
 
@@ -63,7 +63,7 @@ class UserProfile extends Component {
                         <a href={`#${savedGif.id}`}>
                             <SavedMemeCard className="saved-zoom" key={savedGif.id + caption.id}>
                                 <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
-                                <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
+                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>
 
