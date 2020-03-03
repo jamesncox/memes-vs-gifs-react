@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SavedMemeCard, SavedGifCard } from './UserStyles'
+import { SavedMemeCard } from './UserStyles'
 import { connect } from 'react-redux'
 
 class UserProfile extends Component {
@@ -16,7 +16,7 @@ class UserProfile extends Component {
             })
         })
 
-        if (this.props.loading) {
+        if (this.props.loadingGifs) {
             return (
                 <>
                     <h3>Loading gifs...</h3>
@@ -52,7 +52,7 @@ class UserProfile extends Component {
             })
         })
 
-        if (this.props.loading) {
+        if (this.props.loadingMemes) {
             return (
                 <>
                     <h3>Loading memes...</h3>
@@ -92,9 +92,9 @@ class UserProfile extends Component {
 const mapStateToProps = state => ({
     user: state.users.user,
     savedGifs: state.gifs.savedGifs,
-    loading: state.gifs.loading,
+    loadingGifs: state.gifs.loading,
     savedMemes: state.memes.savedMemes,
-    loading: state.memes.loading
+    loadingMemes: state.memes.loading
 })
 
 export default connect(mapStateToProps)(UserProfile)

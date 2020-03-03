@@ -26,7 +26,7 @@ class App extends Component {
     this.props.getMemes()
     this.props.getSavedMemes()
     this.props.getSavedGifs()
-    // this.props.getToken()
+    this.props.getToken()
   }
 
   render() {

@@ -46,12 +46,12 @@ class SavedMemes extends Component {
                             </SavedMemeCard>
                         </a>
 
-                        <div class="lightbox-target" id={savedMeme.id}>
+                        <div className="lightbox-target" id={savedMeme.id}>
                             <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
                             <ModalCaptionCard>
                                 {caption.text}
                             </ModalCaptionCard>
-                            <a class="lightbox-close" href="/saved-memes"></a>
+                            <a className="lightbox-close" href="/saved-memes"></a>
                         </div>
                     </>
                 )

@@ -28,10 +28,10 @@ export function signupUser(user) {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                // 'X-CSRF-TOKEN': token
+                'X-CSRF-TOKEN': token
             },
-            body: JSON.stringify(userObj)
-            // credentials: 'include'
+            body: JSON.stringify(userObj),
+            credentials: 'include'
         })
             .then(res => res.json())
             .then(savedUser => dispatch({ type: SET_USER, payload: savedUser }))
