@@ -39,19 +39,21 @@ class SavedMemes extends Component {
             return savedMeme.captions.map(caption => {
                 return (
                     <>
-                        <a class="lightbox" href={`#${savedMeme.id}`}>
+                        <a href={`#${savedMeme.id}`}>
                             <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
-                                <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
-                                <h2 style={{ fontSize: "15px" }} >{caption.text}</h2>
+                                <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
                             </SavedMemeCard>
                         </a>
 
-                        <div className="lightbox-target" id={savedMeme.id}>
-                            <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.id + caption.id} />
-                            <ModalCaptionCard>
-                                {caption.text}
-                            </ModalCaptionCard>
-                            <a className="lightbox-close" href="/saved-memes"></a>
+                        <div id={`${savedMeme.id}`} className="overlay">
+                            <div className="modal-popup">
+                                <a className="close" href="#">&times;</a>
+                                <SavedMemeCard key={savedMeme.id + caption.id}>
+                                    <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                    <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+                                </SavedMemeCard>
+                            </div>
                         </div>
                     </>
                 )

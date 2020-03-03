@@ -24,18 +24,6 @@ const MyForm = styled.form`
   font-family: Helvetica, sans-serif;
 `
 
-const StyledBody = styled.div`
-  background: url('https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-`
-
 const SaveButton = styled.button`
   border-radius: .10in;
   background-color: rgba(0, 0, 0, 0.00);
@@ -44,7 +32,7 @@ const SaveButton = styled.button`
   font-family: Helvetica, sans-serif;
 `
 
-export { GiphyCard, NextBtn, MyForm, StyledBody, SaveButton }
+export { GiphyCard, NextBtn, MyForm, SaveButton }
 
 
 

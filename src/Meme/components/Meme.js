@@ -33,7 +33,7 @@ class Meme extends Component {
             <>
                 <div className="zoom">
                     <MemeCard>
-                        <img style={{ width: "500px", heigth: "500px" }} src={this.props.memesURL} alt={this.props.name} />
+                        <img style={{ width: "500px" }} src={this.props.memesURL} alt={this.props.name} />
                         <h2>{this.props.chosenCaption.text}</h2>
                         {this.renderSaveButton()}
                     </MemeCard>
