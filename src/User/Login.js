@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { LoginCard } from './UserStyles'
+import { connect } from 'react-redux'
+import { loginUser } from '../actions/users'
+import Errors from './Errors'
 
 class Login extends Component {
     state = {
@@ -15,11 +18,18 @@ class Login extends Component {
 
     handleLogin = e => {
         e.preventDefault()
+        this.props.loginUser(this.state)
         this.setState({
             username: '',
             password: ''
         })
     }
+
+    // renderErrors = () => {
+    //     if (this.props.user.errors) {
+    //         return <Errors errors={this.props.user.errors} />
+    //     }
+    // }
 
     render() {
         return (
@@ -43,4 +53,8 @@ class Login extends Component {
     }
 }
 
-export default Login
+const mapStateToProps = state => ({
+    user: state.users.user
+})
+
+export default connect(mapStateToProps, { loginUser })(Login)
