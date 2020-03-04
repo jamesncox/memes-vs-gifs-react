@@ -6,11 +6,10 @@ import { sendSavedCaption } from '../actions/captions'
 class NewCaptionForm extends Component {
     state = {
         text: '',
-        rating: 'PG'
+        rating: ''
     }
 
     handleChange = (e) => {
-        console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -27,32 +26,35 @@ class NewCaptionForm extends Component {
         this.props.sendSavedCaption(captionObj)
         this.setState({
             text: '',
-            rating: 'PG'
+            rating: ''
         })
 
     }
 
     render() {
         return (
-            <CaptionForm className="big-zoom">
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <br></br>
-                    <textarea placeholder="Create a hilarious caption!!" name="text" value={this.state.text} onChange={e => this.handleChange(e)} />
-                    <br></br>
-                    <br></br>
-                    Give your caption a PG or NSFW rating
+            <>
+                <CaptionForm className="big-zoom">
+                    <form onSubmit={this.handleSubmit.bind(this)}>
+                        <br></br>
+                        <textarea placeholder="Create a hilarious caption!!" name="text" value={this.state.text} onChange={e => this.handleChange(e)} />
+                        <br></br>
+                        <br></br>
+                        Give your caption a PG or NSFW rating
                    <br></br>
-                    <br></br>
-                    <select id="selectedRating" name="rating" value={this.state.rating} onChange={e => this.handleChange(e)}>
-                        <option value="PG">PG</option>
-                        <option value="R">NSFW</option>
-                    </select>
-                    {' '}
-                    <input type="submit" value="Create Caption" />
-                    <br></br>
-                    <br></br>
-                </form>
-            </CaptionForm>
+                        <br></br>
+                        <select id="selectedRating" name="rating" value={this.state.rating} onChange={e => this.handleChange(e)}>
+                            <option value="">Select rating</option>
+                            <option value="PG">PG</option>
+                            <option value="R">NSFW</option>
+                        </select>
+                        {' '}
+                        <input type="submit" value="Create Caption" />
+                        <br></br>
+                        <br></br>
+                    </form>
+                </CaptionForm>
+            </>
         )
     }
 }

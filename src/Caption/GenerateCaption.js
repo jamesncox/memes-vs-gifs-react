@@ -7,6 +7,7 @@ import {
     GEN_RANDOM_CAPTIONS_ALL
 } from '../actionTypes'
 import NewCaptionForm from './NewCaptionForm'
+import Errors from './Errors'
 
 class GenerateCaption extends Component {
 
@@ -41,6 +42,13 @@ class GenerateCaption extends Component {
         }
     }
 
+    renderErrors = () => {
+        console.log(this.props)
+        if (this.props.caption.errors) {
+            return <Errors errors={this.props.caption.errors} />
+        }
+    }
+
     render() {
         return (
             <div>
@@ -48,9 +56,11 @@ class GenerateCaption extends Component {
                     <FormButton onClick={this.handleShow}>Create Your Own Caption</FormButton>
                     {' '}
                     <FormButton onClick={this.handleHide}>Hide Form</FormButton>
-                    {/* <br></br> */}
+                    <br></br>
                 </h4>
                 {this.state.isActive ? <NewCaptionForm /> : null}
+                <br></br>
+                {this.renderErrors()}
                 <br></br>
                 <h4 style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}><CaptionButton onClick={this.handleClick}>Caption Cards</CaptionButton>
                     {'  '}
@@ -66,10 +76,14 @@ class GenerateCaption extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    caption: state.captions.chosenCaption
+})
+
 const mapDispatchToProps = dispatch => ({
     genRandomCaptionsR: () => dispatch({ type: GEN_RANDOM_CAPTIONS_R }),
     genRandomCaptionsPG: () => dispatch({ type: GEN_RANDOM_CAPTIONS_PG }),
     genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL })
 })
 
-export default connect(null, mapDispatchToProps)(GenerateCaption)
+export default connect(mapStateToProps, mapDispatchToProps)(GenerateCaption)

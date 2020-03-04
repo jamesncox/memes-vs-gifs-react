@@ -52,4 +52,26 @@ const CaptionForm = styled.div`
   display: inline-table;
 `
 
-export { CaptionButton, FormButton, CaptionCard, SelectButton, CaptionForm }
+const ErrorCard = styled.div`
+  background-color: rgba(199, 0, 0, 0.815);
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  width: 4in;
+  height: 1in;
+  border-radius: .25in;
+  margin: 10px;
+  display: inline-block;
+  padding: 30px;
+  display: inline-table;
+`
+
+const CloseButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.00);
+  color:  #F8F8FF;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+`
+
+export { CaptionButton, FormButton, CaptionCard, SelectButton, CaptionForm, ErrorCard, CloseButton }
