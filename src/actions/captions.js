@@ -30,7 +30,6 @@ export const getCaptions = () => {
 }
 
 export function sendSavedCaption(captionObj) {
-    console.log(captionObj)
 
     const objData = {
         text: captionObj.text,

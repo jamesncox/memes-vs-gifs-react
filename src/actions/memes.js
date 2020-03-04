@@ -72,7 +72,7 @@ export const getSavedMemes = () => {
             const savedMemeData = await res.json()
             dispatch(setSavedMemes(savedMemeData))
         } catch (err) {
-            console.log("error fetching saved memes from API")
+            alert("error fetching saved memes from API")
         }
     }
 }

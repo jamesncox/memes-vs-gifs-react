@@ -17,7 +17,6 @@ class Meme extends Component {
     }
 
     handleClick = () => {
-        console.log(this.props)
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
 

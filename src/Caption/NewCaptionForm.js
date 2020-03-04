@@ -17,7 +17,6 @@ class NewCaptionForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
 
         const text = this.state.text
         const rating = this.state.rating

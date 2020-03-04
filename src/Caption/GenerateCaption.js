@@ -43,7 +43,6 @@ class GenerateCaption extends Component {
     }
 
     renderErrors = () => {
-        console.log(this.props)
         if (this.props.caption.errors) {
             return <Errors errors={this.props.caption.errors} />
         }
