@@ -6,7 +6,7 @@ import { sendSavedCaption } from '../actions/captions'
 class NewCaptionForm extends Component {
     state = {
         text: '',
-        rating: ''
+        rating: 'PG'
     }
 
     handleChange = (e) => {
@@ -25,7 +25,7 @@ class NewCaptionForm extends Component {
         this.props.sendSavedCaption(captionObj)
         this.setState({
             text: '',
-            rating: ''
+            rating: 'PG'
         })
 
     }
@@ -43,7 +43,6 @@ class NewCaptionForm extends Component {
                    <br></br>
                         <br></br>
                         <select id="selectedRating" name="rating" value={this.state.rating} onChange={e => this.handleChange(e)}>
-                            <option value="">Select rating</option>
                             <option value="PG">PG</option>
                             <option value="R">NSFW</option>
                         </select>
