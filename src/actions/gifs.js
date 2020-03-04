@@ -48,7 +48,8 @@ export function sendGifRequest(sendObj) {
         gif_url: sendObj.gifURL,
         gif_id: sendObj.gifId,
         text: sendObj.captionText,
-        caption_id: sendObj.captionId
+        caption_id: sendObj.captionId,
+        user_id: sendObj.userId
     }
 
     return (dispatch) => {

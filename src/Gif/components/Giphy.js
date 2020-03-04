@@ -24,7 +24,8 @@ class Giphy extends Component {
         const gifId = this.props.randomGif.id
         const captionText = this.props.chosenCaption.text
         const captionId = this.props.chosenCaption.id
-        const sendObj = { gifURL, gifId, captionText, captionId }
+        const userId = this.props.user.id
+        const sendObj = { gifURL, gifId, captionText, captionId, userId }
         this.props.sendGifRequest(sendObj)
     }
 
@@ -44,7 +45,8 @@ class Giphy extends Component {
 }
 const mapStateToProps = state => ({
     chosenCaption: state.captions.chosenCaption,
-    randomGif: state.gifs.randomGif
+    randomGif: state.gifs.randomGif,
+    user: state.users.user
 })
 
 export default connect(mapStateToProps, { sendGifRequest })(Giphy)

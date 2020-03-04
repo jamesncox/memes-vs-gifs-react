@@ -38,7 +38,6 @@ export const getMemes = () => {
 }
 
 export function sendMemeRequest(sendObj) {
-    console.log("sendObj is", sendObj)
 
     const objData = {
         meme_url: sendObj.memeURL,
@@ -47,8 +46,6 @@ export function sendMemeRequest(sendObj) {
         caption_id: sendObj.captionId,
         user_id: sendObj.userId
     }
-
-    console.log("objdata is", objData)
 
     return (dispatch) => {
         fetch("http://localhost:3000/api/v1/caption_joins", {
