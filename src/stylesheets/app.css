@@ -342,11 +342,11 @@
 
 .modal-popup{
   margin: 70px auto;
-  padding: 20px;
+  padding: 20px auto;
   background: rgba(255, 255, 255, 0);
   border-radius: 5px;
   width: 30%;
-  position: relative;
+  position: auto;
   transition: all 5s ease-in-out;
 }
 
@@ -356,10 +356,10 @@
   font-family: Tahoma, Arial, sans-serif;
 }
 .modal-popup .close {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 30px;
-  /* transition: all 200ms; */
+  /* transition: all 500ms; */
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;

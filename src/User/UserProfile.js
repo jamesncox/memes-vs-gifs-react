@@ -19,7 +19,7 @@ class UserProfile extends Component {
                         <div id={`${savedMeme.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedMemeCard key={savedMeme.id + caption.id}>
+                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
                                     <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedMemeCard>
@@ -70,7 +70,7 @@ class UserProfile extends Component {
                         <div id={`${savedGif.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedMemeCard key={savedGif.id + caption.id}>
+                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
                                     <img style={{ width: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedMemeCard>

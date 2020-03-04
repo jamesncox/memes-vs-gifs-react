@@ -13,14 +13,14 @@ class SavedGifs extends Component {
                         <a href={`#${savedGif.id}`}>
                             <SavedGifCard className="saved-zoom" key={savedGif.id + caption.id}>
                                 <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
-                                <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
+                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedGifCard>
                         </a>
 
                         <div id={`${savedGif.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedGifCard key={savedGif.id + caption.id}>
+                                <SavedGifCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
                                     <img style={{ width: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedGifCard>

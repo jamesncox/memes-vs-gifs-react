@@ -42,15 +42,15 @@ class SavedMemes extends Component {
                         <a href={`#${savedMeme.id}`}>
                             <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
                                 <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
-                                <h2 style={{ fontSize: "15px" }}>{caption.text}</h2>
+                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>
 
                         <div id={`${savedMeme.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedMemeCard key={savedMeme.id + caption.id}>
-                                    <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
+                                    <img style={{ width: "400px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedMemeCard>
                             </div>
@@ -77,7 +77,7 @@ class SavedMemes extends Component {
         } else {
             return (
                 <div>
-                    <h1 className="header">Everyone's favorite memes</h1>
+                    <h1 className="header">Everyone's saved memes</h1>
                     {/* {this.filterByRating()} */}
                     <h3> </h3>
                     {savedMemeAndCaptionList}
