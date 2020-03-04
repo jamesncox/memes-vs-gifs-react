@@ -30,10 +30,12 @@ export const getCaptions = () => {
 }
 
 export function sendSavedCaption(captionObj) {
+    console.log(captionObj)
 
     const objData = {
         text: captionObj.text,
-        rating: captionObj.rating
+        rating: captionObj.rating,
+        user_id: captionObj.userId
     }
 
     return (dispatch) => {

@@ -6,10 +6,11 @@ import { sendSavedCaption } from '../actions/captions'
 class NewCaptionForm extends Component {
     state = {
         text: '',
-        rating: ''
+        rating: 'PG'
     }
 
     handleChange = (e) => {
+        console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -17,10 +18,12 @@ class NewCaptionForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        console.log(this.state)
 
         const text = this.state.text
         const rating = this.state.rating
-        const captionObj = { text, rating }
+        const userId = this.props.user.id
+        const captionObj = { text, rating, userId }
         this.props.sendSavedCaption(captionObj)
         this.setState({
             text: '',
@@ -55,7 +58,8 @@ class NewCaptionForm extends Component {
 }
 
 const mapStateToProps = state => ({
-    captionInput: state.captions.captionInput
+    captionInput: state.captions.captionInput,
+    user: state.users.user
 })
 
 export default connect(mapStateToProps, { sendSavedCaption })(NewCaptionForm)
