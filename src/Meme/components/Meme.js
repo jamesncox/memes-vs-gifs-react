@@ -17,6 +17,7 @@ class Meme extends Component {
     }
 
     handleClick = () => {
+        console.log(this.props)
         let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
 
@@ -24,7 +25,8 @@ class Meme extends Component {
         const memeId = this.props.randomMeme.id
         const captionText = this.props.chosenCaption.text
         const captionId = this.props.chosenCaption.id
-        const sendObj = { memeURL, memeId, captionText, captionId }
+        const userId = this.props.user.id
+        const sendObj = { memeURL, memeId, captionText, captionId, userId }
         this.props.sendMemeRequest(sendObj)
     }
 
@@ -45,7 +47,8 @@ class Meme extends Component {
 
 const mapStateToProps = state => ({
     chosenCaption: state.captions.chosenCaption,
-    randomMeme: state.memes.randomMeme
+    randomMeme: state.memes.randomMeme,
+    user: state.users.user
 })
 
 export default connect(mapStateToProps, { sendMemeRequest })(Meme)
