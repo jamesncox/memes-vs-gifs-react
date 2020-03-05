@@ -39,17 +39,17 @@ class SavedMemes extends Component {
             return savedMeme.captions.map(caption => {
                 return (
                     <>
-                        <a href={`#${savedMeme.id}`}>
-                            <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
+                        <a href={`#${savedMeme.meme_id + caption.id}`}>
+                            <SavedMemeCard className="saved-zoom" key={savedMeme.meme_id + caption.id}>
                                 <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>
 
-                        <div id={`${savedMeme.id}`} className="overlay">
+                        <div id={`${savedMeme.meme_id + caption.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
+                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.meme_id + caption.id}>
                                     <img style={{ width: "400px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedMemeCard>

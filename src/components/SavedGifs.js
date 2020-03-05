@@ -10,14 +10,14 @@ class SavedGifs extends Component {
             return savedGif.captions.map(caption => {
                 return (
                     <>
-                        <a href={`#${savedGif.id}`}>
+                        <a href={`#${savedGif.gif_id + caption.id}`}>
                             <SavedGifCard className="saved-zoom" key={savedGif.id + caption.id}>
                                 <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedGifCard>
                         </a>
 
-                        <div id={`${savedGif.id}`} className="overlay">
+                        <div id={`${savedGif.gif_id + caption.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
                                 <SavedGifCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
