@@ -21,7 +21,7 @@ class Signup extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.user && !prevProps.user) {
             this.setState({
-                shouldRedirect: true
+                shouldRedirect: false
             })
         }
     }
@@ -34,7 +34,7 @@ class Signup extends Component {
 
     handleSignup = e => {
         e.preventDefault()
-        this.props.signupUser(this.state)
+        this.props.signupUser(this.props.token, this.state)
         this.setState({
             username: '',
             email: '',
@@ -102,7 +102,8 @@ class Signup extends Component {
 }
 
 const mapStateToProps = state => ({
-    user: state.users.user
+    user: state.users.user,
+    token: state.sessions.token
 })
 
 export default connect(mapStateToProps, { signupUser })(Signup)

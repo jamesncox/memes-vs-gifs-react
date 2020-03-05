@@ -43,7 +43,7 @@ class SavedGifs extends Component {
             return (
                 <>
                     <h3>No saved gifs yet</h3>
-                    <img src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img src={"https://media.giphy.com/media/3o85xscgnCWS8Xxqik/giphy.gif"} alt={"Tumbleweed gif"} />
                 </>
             )
         } else {
