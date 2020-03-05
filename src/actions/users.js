@@ -41,6 +41,8 @@ export function signupUser(user) {
 export function loginUser(user) {
     return async (dispatch, getState) => {
 
+        console.log(user)
+
         const userObj = {
             user: {
                 username: user.username,
