@@ -50,4 +50,13 @@ const FilterButton = styled.button`
   font-family: Helvetica, sans-serif;
 `
 
-export { GameLinkCard, SavedMemeCard, SavedGifCard, FilterButton }
+const LogOutButton = styled.button`
+  border-radius: .10in;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  position: relative;
+`
+
+export { GameLinkCard, SavedMemeCard, SavedGifCard, FilterButton, LogOutButton }

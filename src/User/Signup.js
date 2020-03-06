@@ -54,6 +54,9 @@ class Signup extends Component {
         return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
             <>
                 <h1 className="header">Sign up</h1>
+                <div>
+                    {this.renderErrors()}
+                </div>
                 <LoginCard>
                     <img src={"https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp"} alt={"Connor McGregor"} />
                     <h3> </h3>
@@ -93,9 +96,6 @@ class Signup extends Component {
                         <input type="submit" value="Create Profile" />
                     </form>
                 </LoginCard>
-                <div>
-                    {this.renderErrors()}
-                </div>
             </>
 
         )
