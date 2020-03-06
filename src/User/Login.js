@@ -25,12 +25,14 @@ class Login extends Component {
         })
     }
 
-    renderErrors = () => {
-        if (this.props.user.errors) {
-            return <Errors errors={this.props.user.errors} />
-        }
-    }
+    // debug renderErrors not working being Null
+    // renderErrors = () => {
+    //     if (this.props.user.errors) {
+    //         return <Errors errors={this.props.user.errors} />
+    //     }
+    // }
 
+    // create a conditional that IF a user is logged in, render a message that must signout first or something
     render() {
         return (
             <>
@@ -48,7 +50,7 @@ class Login extends Component {
                         <input type="submit" value="Login" />
                     </form>
                 </LoginCard>
-                {this.renderErrors()}
+                {/* {this.renderErrors()} */}
             </>
         )
     }
