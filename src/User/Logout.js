@@ -13,6 +13,7 @@ class Logout extends Component {
     render() {
         return (
             <>
+                <h3> </h3>
                 <img src={"https://media.giphy.com/media/8Bl38gdtUK7WDdi59y/giphy.gif"} alt={"Deadpool says goodbye"} />
                 <h3> </h3>
                 <h4> Thanks for visiting Memes-vs-Gifs.

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { LoginCard } from './UserStyles'
+import { LoginCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { signupUser } from '../actions/users'
@@ -46,56 +46,87 @@ class Signup extends Component {
         }
     }
 
+    handleClick = () => {
+        this.setState({
+            shouldRedirect: true
+        })
+    }
+
+    renderSuccessMessage = () => {
+        if (this.props.user) {
+            return (
+                <LoginCard>
+                    <img src={"https://media.giphy.com/media/slOhiKAVFgwr6/giphy.gif"} alt={"Elf congratulations"} />
+                    <h3> </h3>
+                    {this.props.user.username}, your profile was successfully created!
+                    <h3> </h3>
+                    <CloseButton onClick={this.handleClick}> Your profile </CloseButton>
+                </LoginCard>
+            )
+        }
+    }
+
     // create a conditional that IF a user is logged in, render a message that must signout first or something
     render() {
-        return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
-            <>
-                <h1 className="header">Sign up</h1>
-                <div>
-                    {this.renderErrors()}
-                </div>
-                <LoginCard>
-                    <img src={"https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp"} alt={"Connor McGregor"} />
-                    <h3> </h3>
-                    <form onSubmit={this.handleSignup.bind(this)}>
-                        <input
-                            type="text"
-                            placeholder="Username"
-                            name="username"
-                            value={this.state.username}
-                            onChange={e => this.handleChange(e)}
-                        />
-                        <p> </p>
-                        <input
-                            type="text"
-                            placeholder="Email"
-                            name="email"
-                            value={this.state.email}
-                            onChange={e => this.handleChange(e)}
-                        />
-                        <p> </p>
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={e => this.handleChange(e)}
-                        />
-                        <p> </p>
-                        <input
-                            type="password"
-                            placeholder="Password confirmation"
-                            name="password_confirmation"
-                            value={this.state.password_confirmation}
-                            onChange={e => this.handleChange(e)}
-                        />
-                        <p> </p>
-                        <input type="submit" value="Create Profile" />
-                    </form>
-                </LoginCard>
-            </>
+        if (!this.props.user === null) {
+            return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
+                <>
+                    <h1 className="header">Sign up</h1>
+                    <div>
+                        {this.renderSuccessMessage()}
+                    </div>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <h1 className="header">Sign up</h1>
+                    <div>
+                        {this.renderErrors()}
+                    </div>
+                    <LoginCard>
+                        <img src={"https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp"} alt={"Connor McGregor"} />
+                        <h3> </h3>
+                        <form onSubmit={this.handleSignup.bind(this)}>
+                            <input
+                                type="text"
+                                placeholder="Username"
+                                name="username"
+                                value={this.state.username}
+                                onChange={e => this.handleChange(e)}
+                            />
+                            <p> </p>
+                            <input
+                                type="text"
+                                placeholder="Email"
+                                name="email"
+                                value={this.state.email}
+                                onChange={e => this.handleChange(e)}
+                            />
+                            <p> </p>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={e => this.handleChange(e)}
+                            />
+                            <p> </p>
+                            <input
+                                type="password"
+                                placeholder="Password confirmation"
+                                name="password_confirmation"
+                                value={this.state.password_confirmation}
+                                onChange={e => this.handleChange(e)}
+                            />
+                            <p> </p>
+                            <input type="submit" value="Create Profile" />
+                        </form>
+                    </LoginCard>
+                </>
 
-        )
+            )
+        }
     }
 }
 

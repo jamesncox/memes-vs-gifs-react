@@ -8,11 +8,6 @@ class NavBar extends Component {
     render() {
         return (
             <div className="navbar" >
-
-                <Link to="/">Meme vs Gifs</Link>
-                <Link to="/saved-gifs">Saved Gifs</Link>
-                <Link to="/saved-memes">Saved Memes</Link>
-
                 <div className="dropdown">
                     <button className="dropbtn">User
                      <i className="fa fa-caret-down"></i>
@@ -24,6 +19,9 @@ class NavBar extends Component {
                         <Link to="/logout">Log out</Link>
                     </div>
                 </div>
+                <Link to="/">Meme vs Gifs</Link>
+                <Link to="/saved-gifs">Saved Gifs</Link>
+                <Link to="/saved-memes">Saved Memes</Link>
             </div>
         )
     }
