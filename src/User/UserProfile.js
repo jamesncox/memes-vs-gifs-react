@@ -6,10 +6,8 @@ class UserProfile extends Component {
 
 
     displayUserMemes() {
-
         const savedMemeAndCaptionList = (id) => {
-            const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins.user_id === id)
-            console.log(this.props.savedMemes)
+            const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins[0].user_id === id)
             return (
                 userMemes.map(savedMeme => {
                     return savedMeme.captions.map(caption => {
@@ -65,30 +63,33 @@ class UserProfile extends Component {
     }
 
     displayUserGifs() {
-        const savedGifAndCaptionList = this.props.savedGifs.map(savedGif => {
-            return savedGif.captions.map(caption => {
-                return (
-                    <>
-                        <a href={`#${savedGif.gif_id + caption.id}`}>
-                            <SavedMemeCard className="saved-zoom" key={savedGif.id + caption.id}>
-                                <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
-                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
-                            </SavedMemeCard>
-                        </a>
-
-                        <div id={`${savedGif.gif_id + caption.id}`} className="overlay">
-                            <div className="modal-popup">
-                                <a className="close" href="#">&times;</a>
-                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
-                                    <img style={{ width: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
-                                    <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+        const savedGifAndCaptionList = (id) => {
+            const userGifs = this.props.savedGifs.filter(gif => gif.caption_joins[0].user_id === id)
+            userGifs.map(savedGif => {
+                return savedGif.captions.map(caption => {
+                    return (
+                        <>
+                            <a href={`#${savedGif.gif_id + caption.id}`}>
+                                <SavedMemeCard className="saved-zoom" key={savedGif.id + caption.id}>
+                                    <img style={{ width: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                                    {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                                 </SavedMemeCard>
+                            </a>
+
+                            <div id={`${savedGif.gif_id + caption.id}`} className="overlay">
+                                <div className="modal-popup">
+                                    <a className="close" href="#">&times;</a>
+                                    <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
+                                        <img style={{ width: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                                        <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+                                    </SavedMemeCard>
+                                </div>
                             </div>
-                        </div>
-                    </>
-                )
+                        </>
+                    )
+                })
             })
-        })
+        }
 
         if (this.props.loadingGifs) {
             return (
@@ -108,7 +109,8 @@ class UserProfile extends Component {
             return (
                 <div>
                     <h4>Your Saved Gifs</h4>
-                    {savedGifAndCaptionList}
+                    <h3> </h3>
+                    {savedGifAndCaptionList(this.props.user.id)}
                 </div>
             )
         }
