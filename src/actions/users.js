@@ -83,8 +83,7 @@ export function setCurrentUser() {
                 throw res
             }
             const userObj = await res.json()
-            if (userObj)
-                dispatch({ type: SET_USER, payload: userObj })
+            dispatch({ type: SET_USER, payload: userObj })
         } catch (err) {
             console.log(err)
         }

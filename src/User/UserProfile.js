@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 class UserProfile extends Component {
 
     displayUserMemes() {
-        console.log(this.props)
         // let userId = this.props.user.id
         // let userMemes = this.props.savedMemes.filter(meme => meme.caption_joins.user_id === userId);
         // console.log(userMemes)
