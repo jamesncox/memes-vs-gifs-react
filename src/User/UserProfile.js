@@ -36,7 +36,7 @@ class UserProfile extends Component {
             )
         }
 
-
+        const hasMemes = this.props.savedMemes.filter(meme => meme.caption_joins[0].user_id === this.props.user.id)
         if (this.props.loadingMemes) {
             return (
                 <>
@@ -44,11 +44,11 @@ class UserProfile extends Component {
                     <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading memes..."} />
                 </>
             )
-        } else if (this.props.savedMemes.length === 0) {
+        } else if (hasMemes.length === 0) {
             return (
                 <>
                     <h3>No saved memes yet</h3>
-                    <img src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img src={"https://media.giphy.com/media/o5oLImoQgGsKY/giphy.gif"} alt={"Tumbleweed gif"} />
                 </>
             )
         } else {
@@ -93,6 +93,7 @@ class UserProfile extends Component {
             )
         }
 
+        const hasGifs = this.props.savedGifs.filter(gif => gif.caption_joins[0].user_id === this.props.user.id)
         if (this.props.loadingGifs) {
             return (
                 <>
@@ -100,11 +101,11 @@ class UserProfile extends Component {
                     <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading gifs..."} />
                 </>
             )
-        } else if (this.props.savedGifs.length === 0) {
+        } else if (hasGifs.length === 0) {
             return (
                 <>
                     <h3>No saved gifs yet</h3>
-                    <img src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img src={"https://media.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif"} alt={"Tumbleweed gif"} />
                 </>
             )
         } else {
