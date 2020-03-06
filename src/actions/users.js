@@ -9,31 +9,34 @@ export const clearUser = () => {
 
 export function signupUser(token, user) {
     return async (dispatch) => {
+        try {
 
-        const userObj = {
-            user: {
-                username: user.username,
-                email: user.email,
-                password: user.password,
-                password_confirmation: user.password_confirmation
+            const formData = {
+                user: {
+                    username: user.username,
+                    email: user.email,
+                    password: user.password,
+                    password_confirmation: user.password_confirmation
+                }
             }
+
+            const res = await fetch("http://localhost:3000/api/v1/signup", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-Token': token
+                },
+                body: JSON.stringify(formData),
+                credentials: 'include'
+            })
+            if (!res.ok) {
+                throw res
+            }
+            const userObj = await res.json()
+            dispatch({ type: SET_USER, payload: userObj })
+        } catch (err) {
+            console.log(err)
         }
-
-        // const state = getState()
-        // const token = state.sessions.token
-        console.log(token)
-
-        await fetch("http://localhost:3000/api/v1/signup", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-Token': token
-            },
-            body: JSON.stringify(userObj),
-            credentials: 'include'
-        })
-            .then(res => res.json())
-            .then(savedUser => dispatch({ type: SET_USER, payload: savedUser }))
     }
 }
 
@@ -64,6 +67,24 @@ export function loginUser(user) {
             }
             const userObj = await res.json()
             dispatch({ type: SET_USER, payload: userObj })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+}
+
+export function setCurrentUser() {
+    return async (dispatch) => {
+        try {
+            const res = await fetch("http://localhost:3000/api/v1/current_user", {
+                credentials: 'include'
+            })
+            if (!res.ok) {
+                throw res
+            }
+            const userObj = await res.json()
+            if (userObj)
+                dispatch({ type: SET_USER, payload: userObj })
         } catch (err) {
             console.log(err)
         }
