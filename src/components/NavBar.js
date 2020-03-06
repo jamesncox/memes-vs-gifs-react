@@ -2,22 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
-import { LogOutButton } from './Styles'
-import { clearCurrentUser } from '../actions/users'
-import { getToken } from '../actions/sessions'
 
 class NavBar extends Component {
-
-    handleClick = () => {
-        this.props.clearCurrentUser()
-        this.props.getToken()
-    }
 
     render() {
         return (
             <div className="navbar" >
 
-                <Link to="/">Home</Link>
+                <Link to="/">Meme vs Gifs</Link>
                 <Link to="/saved-gifs">Saved Gifs</Link>
                 <Link to="/saved-memes">Saved Memes</Link>
 
@@ -29,7 +21,7 @@ class NavBar extends Component {
                         <Link to="/profile">Profile</Link>
                         <Link to="/login">Login</Link>
                         <Link to="/signup">Sign up</Link>
-                        <LogOutButton onClick={this.handleClick}>Log out</LogOutButton>
+                        <Link to="/logout">Log out</Link>
                     </div>
                 </div>
             </div>
@@ -37,4 +29,4 @@ class NavBar extends Component {
     }
 }
 
-export default connect(null, { getSavedMemes, clearCurrentUser, getToken })(NavBar)
+export default connect(null, { getSavedMemes })(NavBar)

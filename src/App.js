@@ -15,6 +15,7 @@ import SavedGifs from './components/SavedGifs'
 import UserProfile from './User/UserProfile'
 import Login from './User/Login'
 import Signup from './User/Signup'
+import Logout from './User/Logout'
 import { connect } from 'react-redux';
 import { getMemes, getSavedMemes } from './actions/memes'
 import { getSavedGifs } from './actions/gifs'
@@ -60,6 +61,9 @@ class App extends Component {
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/logout">
+              <Logout />
             </Route>
           </Switch>
           {/* <Footer /> */}
