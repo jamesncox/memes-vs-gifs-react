@@ -4,35 +4,40 @@ import { connect } from 'react-redux'
 
 class UserProfile extends Component {
 
+
     displayUserMemes() {
-        // let userId = this.props.user.id
-        // let userMemes = this.props.savedMemes.filter(meme => meme.caption_joins.user_id === userId);
-        // console.log(userMemes)
 
-        const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
-            return savedMeme.captions.map(caption => {
-                return (
-                    <>
-                        <a href={`#${savedMeme.meme_id + caption.id}`} >
-                            <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
-                                <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
-                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
-                            </SavedMemeCard>
-                        </a>
+        const savedMemeAndCaptionList = (id) => {
+            const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins.user_id === id)
+            console.log(this.props.savedMemes)
+            return (
+                userMemes.map(savedMeme => {
+                    return savedMeme.captions.map(caption => {
+                        return (
+                            <>
+                                <a href={`#${savedMeme.meme_id + caption.id}`} >
+                                    <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
+                                        <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                        {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
+                                    </SavedMemeCard>
+                                </a>
 
-                        <div id={`${savedMeme.meme_id + caption.id}`} className="overlay" >
-                            <div className="modal-popup">
-                                <a className="close" href="#">&times;</a>
-                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
-                                    <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
-                                    <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
-                                </SavedMemeCard>
-                            </div>
-                        </div>
-                    </>
-                )
-            })
-        })
+                                <div id={`${savedMeme.meme_id + caption.id}`} className="overlay" >
+                                    <div className="modal-popup">
+                                        <a className="close" href="#">&times;</a>
+                                        <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
+                                            <img style={{ width: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                            <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+                                        </SavedMemeCard>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                })
+            )
+        }
+
 
         if (this.props.loadingMemes) {
             return (
@@ -53,7 +58,7 @@ class UserProfile extends Component {
                 <div>
                     <h4>Your Saved Memes</h4>
                     <h3> </h3>
-                    {savedMemeAndCaptionList}
+                    {savedMemeAndCaptionList(this.props.user.id)}
                 </div>
             )
         }

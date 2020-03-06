@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { ErrorCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
-import { CLEAR_USER } from '../actionTypes'
+import { CLEAR_ERRORS } from '../actionTypes'
 
 class Errors extends Component {
 
     handleClick = () => {
-        this.props.clearUser()
+        this.props.clearErrors()
     }
 
     render() {
@@ -24,7 +24,7 @@ class Errors extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    clearUser: () => dispatch({ type: CLEAR_USER })
+    clearErrors: () => dispatch({ type: CLEAR_ERRORS })
 })
 
 export default connect(null, mapDispatchToProps)(Errors)

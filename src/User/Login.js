@@ -25,11 +25,11 @@ class Login extends Component {
         })
     }
 
-    // renderErrors = () => {
-    //     if (this.props.user.errors) {
-    //         return <Errors errors={this.props.user.errors} />
-    //     }
-    // }
+    renderErrors = () => {
+        if (this.props.user.errors) {
+            return <Errors errors={this.props.user.errors} />
+        }
+    }
 
     render() {
         return (
@@ -48,6 +48,7 @@ class Login extends Component {
                         <input type="submit" value="Login" />
                     </form>
                 </LoginCard>
+                {this.renderErrors()}
             </>
         )
     }

@@ -18,13 +18,14 @@ class Signup extends Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.user && !prevProps.user) {
-            this.setState({
-                shouldRedirect: false
-            })
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     console.log(this.props.user, prevProps.user)
+    //     if (this.props.user && !prevProps.user) {
+    //         this.setState({
+    //             shouldRedirect: true
+    //         })
+    //     }
+    // }
 
     handleChange = e => {
         this.setState({
@@ -44,8 +45,8 @@ class Signup extends Component {
     }
 
     renderErrors = () => {
-        if (this.props.user.errors) {
-            return <Errors errors={this.props.user.errors} />
+        if (this.props.errors.length > 0) {
+            return <Errors errors={this.props.errors} />
         }
     }
 
@@ -103,6 +104,7 @@ class Signup extends Component {
 
 const mapStateToProps = state => ({
     user: state.users.user,
+    errors: state.users.errors,
     token: state.sessions.token
 })
 

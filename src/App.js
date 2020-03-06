@@ -19,6 +19,7 @@ import { connect } from 'react-redux';
 import { getMemes, getSavedMemes } from './actions/memes'
 import { getSavedGifs } from './actions/gifs'
 import { getToken } from './actions/sessions'
+import { setCurrentUser } from './actions/users'
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
     this.props.getSavedMemes()
     this.props.getSavedGifs()
     this.props.getToken()
+    this.props.setCurrentUser()
   }
 
   render() {
@@ -67,4 +69,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getMemes, getSavedMemes, getSavedGifs, getToken })(App)
+export default connect(null, { getMemes, getSavedMemes, getSavedGifs, getToken, setCurrentUser })(App)

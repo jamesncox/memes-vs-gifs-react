@@ -1,41 +1,45 @@
 import {
     SET_USER,
-    CLEAR_USER
+    CLEAR_USER,
+    USER_ERRORS,
+    CLEAR_ERRORS
 } from '../actionTypes'
 
 export const clearUser = () => {
     return { type: CLEAR_USER }
 }
 
+export const clearErrors = () => {
+    return { type: CLEAR_ERRORS }
+}
+
 export function signupUser(token, user) {
     return async (dispatch) => {
-        try {
-
-            const formData = {
-                user: {
-                    username: user.username,
-                    email: user.email,
-                    password: user.password,
-                    password_confirmation: user.password_confirmation
-                }
+        const formData = {
+            user: {
+                username: user.username,
+                email: user.email,
+                password: user.password,
+                password_confirmation: user.password_confirmation
             }
+        }
 
-            const res = await fetch("http://localhost:3000/api/v1/signup", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-Token': token
-                },
-                body: JSON.stringify(formData),
-                credentials: 'include'
-            })
-            if (!res.ok) {
-                throw res
-            }
-            const userObj = await res.json()
+        const res = await fetch("http://localhost:3000/api/v1/signup", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': token
+            },
+            body: JSON.stringify(formData),
+            credentials: 'include'
+        })
+
+        const userObj = await res.json()
+        console.log(userObj)
+        if (userObj.errors) {
+            dispatch({ type: USER_ERRORS, payload: userObj.errors })
+        } else {
             dispatch({ type: SET_USER, payload: userObj })
-        } catch (err) {
-            console.log(err)
         }
     }
 }
@@ -66,9 +70,13 @@ export function loginUser(user) {
                 throw res
             }
             const userObj = await res.json()
-            dispatch({ type: SET_USER, payload: userObj })
+            if (userObj.errors) {
+                dispatch({ type: USER_ERRORS, payload: userObj.errors })
+            } else {
+                dispatch({ type: SET_USER, payload: userObj })
+            }
         } catch (err) {
-            console.log(err)
+            alert(err)
         }
     }
 }
@@ -83,9 +91,31 @@ export function setCurrentUser() {
                 throw res
             }
             const userObj = await res.json()
+            console.log(userObj)
             dispatch({ type: SET_USER, payload: userObj })
         } catch (err) {
-            console.log(err)
+            alert(err)
         }
+    }
+}
+
+export function clearCurrentUser() {
+    return async (dispatch, getState) => {
+
+        const state = getState()
+        const token = state.sessions.token
+
+        const res = await fetch("http://localhost:3000/api/v1/logout", {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': token
+            },
+            credentials: 'include'
+        })
+        if (!res.ok) {
+            throw res
+        }
+        dispatch({ type: CLEAR_USER })
     }
 }
