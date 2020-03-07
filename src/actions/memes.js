@@ -78,13 +78,12 @@ export const getSavedMemes = () => {
     }
 }
 
-// export const deleteMeme = (id) => {
-//     return (dispatch) => {
-//         fetch(`http://localhost:3000/api/v1/memes/${id}`), {
-//             method: "DELETE"
-//         })
-//     .then(res => res.json())
-//     .then(meme => dispatch({ type: DELETE_MEME, payload: meme }))
-//     )
-// }
-// }
+export function deleteMeme(id) {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/api/v1/memes/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(meme => dispatch({ type: DELETE_MEME, payload: meme.id }))
+    }
+}

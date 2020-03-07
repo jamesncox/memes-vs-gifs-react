@@ -17,9 +17,8 @@ class UserProfile extends Component {
         })
     }
 
-    handleDelete = () => {
-        console.log("clicked...")
-        // this.props.deleteMeme(this.props)
+    handleDelete = (id) => {
+        this.props.deleteMeme(id)
     }
 
     renderLoginMessage = () => {
@@ -182,4 +181,4 @@ const mapStateToProps = state => ({
     loggedIn: state.users.loggedIn
 })
 
-export default connect(mapStateToProps)(UserProfile)
+export default connect(mapStateToProps, { deleteMeme })(UserProfile)
