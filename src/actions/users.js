@@ -1,5 +1,6 @@
 import {
     SET_USER,
+    LOGGED_IN,
     CLEAR_USER,
     USER_ERRORS,
     CLEAR_ERRORS
@@ -11,6 +12,10 @@ export const clearUser = () => {
 
 export const clearErrors = () => {
     return { type: CLEAR_ERRORS }
+}
+
+export const logOutUser = () => {
+    return { type: LOGGED_IN, payload: false }
 }
 
 export function signupUser(token, user) {
@@ -35,11 +40,11 @@ export function signupUser(token, user) {
         })
 
         const userObj = await res.json()
-        console.log(userObj)
         if (userObj.errors) {
             dispatch({ type: USER_ERRORS, payload: userObj.errors })
         } else {
             dispatch({ type: SET_USER, payload: userObj })
+            dispatch({ type: LOGGED_IN, payload: true })
         }
     }
 }
@@ -91,7 +96,6 @@ export function setCurrentUser() {
                 throw res
             }
             const userObj = await res.json()
-            console.log(userObj)
             dispatch({ type: SET_USER, payload: userObj })
         } catch (err) {
             alert(err)

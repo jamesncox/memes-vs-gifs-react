@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { clearCurrentUser } from '../actions/users'
+import { clearCurrentUser, logOutUser } from '../actions/users'
 import { getToken } from '../actions/sessions'
 
 class Logout extends Component {
 
     componentDidMount() {
         this.props.clearCurrentUser()
+        this.props.logOutUser()
         this.props.getToken()
     }
 
@@ -23,4 +24,4 @@ class Logout extends Component {
     }
 }
 
-export default connect(null, { clearCurrentUser, getToken })(Logout) 
+export default connect(null, { clearCurrentUser, getToken, logOutUser })(Logout) 

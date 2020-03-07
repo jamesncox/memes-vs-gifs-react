@@ -68,7 +68,7 @@ class Signup extends Component {
 
     // create a conditional that IF a user is logged in, render a message that must signout first or something
     render() {
-        if (!this.props.user === null) {
+        if (this.props.loggedIn === true) {
             return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
                 <>
                     <h1 className="header">Sign up</h1>
@@ -133,7 +133,8 @@ class Signup extends Component {
 const mapStateToProps = state => ({
     user: state.users.user,
     errors: state.users.errors,
-    token: state.sessions.token
+    token: state.sessions.token,
+    loggedIn: state.users.loggedIn
 })
 
 export default connect(mapStateToProps, { signupUser })(Signup)
