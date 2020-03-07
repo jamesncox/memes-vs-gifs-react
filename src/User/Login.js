@@ -55,6 +55,7 @@ class Login extends Component {
 
     // create a conditional that IF a user is logged in, render a message that must signout first or something
     render() {
+        console.log(this.props)
         if (this.props.loggedIn === true) {
             return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
                 <>
@@ -69,7 +70,7 @@ class Login extends Component {
                 <>
                     <h1 className="header">Login</h1>
                     <div>
-                        {/* {this.renderErrors()} */}
+                        {this.renderErrors()}
                     </div>
                     <LoginCard className="zoom">
                         <img src={"https://i.giphy.com/media/l0IxYD16t9PDEdg9q/giphy.webp"} alt={"Robert Redford"} />

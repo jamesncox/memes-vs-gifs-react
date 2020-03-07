@@ -12,7 +12,7 @@ class Errors extends Component {
     render() {
         return (
             <ErrorCard>
-                <h2>Could not create account!</h2>
+                <h2>Uh oh! Something went wrong</h2>
                 {this.props.errors.map(error => {
                     return <li key={error}> {error} </li>
                 })}
