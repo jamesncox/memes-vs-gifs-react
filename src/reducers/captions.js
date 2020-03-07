@@ -7,10 +7,19 @@ import {
     SET_CHOSEN_CAPTION,
     CLEAR_CHOSEN_CAPTION,
     CLEAR_CAPTIONS,
-    ADD_SAVED_CAPTION
+    ADD_SAVED_CAPTION,
+    CAPTION_ERRORS,
+    CLEAR_CAPTION_ERRORS
 } from '../actionTypes'
 
-export default (state = { all: [], loading: false, randomCaptions: null, chosenCaption: {}, captionInput: "" }, action) => {
+export default (state = {
+    all: [],
+    loading: false,
+    randomCaptions: null,
+    chosenCaption: {},
+    captionInput: "",
+    errors: null
+}, action) => {
     switch (action.type) {
 
         case LOADING_CAPTIONS:
@@ -44,6 +53,12 @@ export default (state = { all: [], loading: false, randomCaptions: null, chosenC
 
         case ADD_SAVED_CAPTION:
             return { ...state, chosenCaption: action.payload }
+
+        case CAPTION_ERRORS:
+            return { ...state, errors: action.payload }
+
+        case CLEAR_CAPTION_ERRORS:
+            return { ...state, errors: null }
 
         default:
             return state

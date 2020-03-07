@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { ErrorCard, CloseButton } from './CaptionStyles'
 import { connect } from 'react-redux'
-import { CLEAR_CHOSEN_CAPTION } from '../actionTypes'
+import { CLEAR_CAPTION_ERRORS } from '../actionTypes'
 
 class Errors extends Component {
 
     handleClick = () => {
-        this.props.clearCreatedCaption()
+        this.props.clearErrors()
     }
 
     render() {
         return (
             <ErrorCard>
-                <h2>Could not create caption</h2>
+                <h3>Could not create caption</h3>
                 {this.props.errors.map(error => {
                     return <li key={error}> {error} </li>
                 })}
@@ -24,7 +24,7 @@ class Errors extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    clearCreatedCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION })
+    clearErrors: () => dispatch({ type: CLEAR_CAPTION_ERRORS })
 })
 
 export default connect(null, mapDispatchToProps)(Errors)

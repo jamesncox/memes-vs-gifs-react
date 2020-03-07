@@ -2,7 +2,8 @@ import {
     LOADING_CAPTIONS,
     SET_CAPTIONS,
     CLEAR_CAPTIONS,
-    ADD_SAVED_CAPTION
+    ADD_SAVED_CAPTION,
+    CAPTION_ERRORS
 } from '../actionTypes'
 
 const setCaptions = captions => {
@@ -29,24 +30,29 @@ export const getCaptions = () => {
     }
 }
 
-export function sendSavedCaption(captionObj) {
+export function sendSavedCaption(caption) {
+    return async (dispatch) => {
 
-    const objData = {
-        text: captionObj.text,
-        rating: captionObj.rating,
-        user_id: captionObj.userId
-    }
+        const formData = {
+            text: caption.text,
+            rating: caption.rating,
+            user_id: caption.userId
+        }
 
-    return (dispatch) => {
-        fetch("http://localhost:3000/api/v1/captions", {
+        const res = await fetch("http://localhost:3000/api/v1/captions", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(objData)
+            body: JSON.stringify(formData),
+            credentials: 'include'
         })
-            .then(res => res.json())
-            .then(savedCaption => dispatch({ type: ADD_SAVED_CAPTION, payload: savedCaption }))
+        const captionObj = await res.json()
+        if (captionObj.errors) {
+            dispatch({ type: CAPTION_ERRORS, payload: captionObj.errors })
+        } else {
+            dispatch({ type: ADD_SAVED_CAPTION, payload: captionObj })
+        }
     }
 }
