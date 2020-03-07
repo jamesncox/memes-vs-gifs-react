@@ -77,7 +77,7 @@ class SavedMemes extends Component {
         } else {
             return (
                 <div>
-                    <h1 className="header">Everyone's saved memes</h1>
+                    <h1 className="header">Everyone's shared memes</h1>
                     {/* {this.filterByRating()} */}
                     <h3> </h3>
                     {savedMemeAndCaptionList}

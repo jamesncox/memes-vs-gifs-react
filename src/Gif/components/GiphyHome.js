@@ -31,7 +31,7 @@ class GiphyHome extends Component {
 
     render() {
         if (this.props.loggedIn === false) {
-            return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
+            return this.state.shouldRedirect ? (<Redirect to="/login" />) : (
                 <>
                     <h1 className="header">That's What You Gif!</h1>
                     {this.renderLoginMessage()}

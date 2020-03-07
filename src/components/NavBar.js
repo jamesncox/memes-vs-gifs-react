@@ -20,8 +20,8 @@ class NavBar extends Component {
                     </div>
                 </div>
                 <Link to="/">Meme vs Gifs</Link>
-                <Link to="/saved-memes">Saved Memes</Link>
-                <Link to="/saved-gifs">Saved Gifs</Link>
+                <Link to="/saved-memes">Shared Memes</Link>
+                <Link to="/saved-gifs">Shared Gifs</Link>
             </div>
         )
     }

@@ -49,7 +49,7 @@ class SavedGifs extends Component {
         } else {
             return (
                 <div>
-                    <h1 className="header">Everyone's favorite gifs</h1>
+                    <h1 className="header">Everyone's shared gifs</h1>
                     {savedGifAndCaptionList}
                 </div>
             )
