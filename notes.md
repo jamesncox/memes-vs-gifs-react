@@ -2,25 +2,25 @@
 
 # Still to do:
 
-[]  Refactor the saved memes and gifs actions/reducers to load on initial app load (componentDidMount) and then update store with every new save.
+[x]  Refactor the saved memes and gifs actions/reducers to load on initial app load (componentDidMount) and then update store with every new save.
 
-[]  What do I need for user auth / session handling syncning up with my rails api?
+[x]  What do I need for user auth / session handling syncning up with my rails api?
 
 [x] Break down my Meme and Gif game into Redux actions/reducer and bring those over here.
 
-[]  Create a user sign up and login form / component
+[x]  Create a user sign up and login form / component
 
 [x] Create show pages for Saved Memes and Saved Gifs
         These show pages will show all the saved memes and gifs that any user sends to the database
 
-[]  Create a User Profile component that renders only the user's saved memes and gifs
+[x]  Create a User Profile component that renders only the user's saved memes and gifs
 
-[]  After User can signup/login/logout, will need to have logic for things like:
-    []  Checking to see if a meme/gif and caption combo has alreawdy been created
-    []  Showing the specific User's creations will have to be checked
-    []  Potentially having the saved meme/gifs page organized by user
+[x]  After User can signup/login/logout, will need to have logic for things like:
+    [x]  Checking to see if a meme/gif and caption combo has alreawdy been created
+    [x]  Showing the specific User's creations will have to be checked
+    [x]  Potentially having the saved meme/gifs page organized by user
 
-[] I'd like to display saved Memes/Gifs in a carousel.
+[x] I'd like to display saved Memes/Gifs in a carousel.
 
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
