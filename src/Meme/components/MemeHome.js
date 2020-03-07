@@ -20,7 +20,7 @@ class MemeHome extends Component {
     renderLoginMessage = () => {
         return (
             <LoginCard>
-                <img src={"https://media.giphy.com/media/1zSz5MVw4zKg0/giphy.gif"} alt={"Elf congratulations"} />
+                <img src={"https://media.giphy.com/media/1zSz5MVw4zKg0/giphy.gif"} alt={"Jonah Hill stop that"} />
                 <h3> </h3>
                 You must be logged in to create a meme!
                     <h3> </h3>
@@ -31,7 +31,7 @@ class MemeHome extends Component {
 
     render() {
         if (this.props.loggedIn === false) {
-            return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
+            return this.state.shouldRedirect ? (<Redirect to="/login" />) : (
                 <>
                     <h1 className="header">What Do You Meme?</h1>
                     {this.renderLoginMessage()}
