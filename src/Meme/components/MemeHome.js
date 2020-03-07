@@ -33,14 +33,14 @@ class MemeHome extends Component {
         if (this.props.loggedIn === false) {
             return this.state.shouldRedirect ? (<Redirect to="/login" />) : (
                 <>
-                    <h1 className="header">What Do You Meme?</h1>
+                    <h1 className="header">That's What You Meme?!</h1>
                     {this.renderLoginMessage()}
                 </>
             )
         } else {
             return (
                 <div>
-                    <h1 className="header">What Do You Meme?</h1>
+                    <h1 className="header">That's What You Meme?!</h1>
                     <MemeContainer />
                     <CaptionContainer />
                     <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>

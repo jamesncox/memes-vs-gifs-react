@@ -2,8 +2,7 @@ import {
     SET_USER,
     USER_ERRORS,
     CLEAR_USER,
-    CLEAR_ERRORS,
-    LOGGED_IN
+    CLEAR_ERRORS
 } from '../actionTypes'
 
 export default (state = { user: {}, errors: [], loggedIn: false }, action) => {
@@ -12,11 +11,7 @@ export default (state = { user: {}, errors: [], loggedIn: false }, action) => {
         case SET_USER:
             return { ...state, user: action.payload, loggedIn: true }
 
-        // case LOGGED_IN:
-        //     return { ...state, loggedIn: action.payload }
-
         case USER_ERRORS:
-            // console.log(action.payload)
             return { ...state, errors: action.payload }
 
         case CLEAR_USER:

@@ -2,7 +2,6 @@ import { SET_TOKEN } from '../actionTypes'
 
 const setToken = (token) => {
     return dispatch => {
-        // console.log("inside session action", token)
         dispatch({ type: SET_TOKEN, payload: token })
     }
 }

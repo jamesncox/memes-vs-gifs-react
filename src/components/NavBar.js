@@ -2,8 +2,13 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
+import { GiphyLogo } from '../assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif'
 
 class NavBar extends Component {
+
+    renderImage() {
+        return <img src={GiphyLogo} alt="powerered by Giphy" />
+    }
 
     render() {
         return (
@@ -22,6 +27,7 @@ class NavBar extends Component {
                 <Link to="/">Meme vs Gifs</Link>
                 <Link to="/saved-memes">Created Memes</Link>
                 <Link to="/saved-gifs">Created Gifs</Link>
+                {this.renderImage()}
             </div>
         )
     }
