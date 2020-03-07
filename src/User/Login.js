@@ -27,12 +27,11 @@ class Login extends Component {
         })
     }
 
-    // debug renderErrors not working being Null
-    // renderErrors = () => {
-    //     if (this.props.user.errors) {
-    //         return <Errors errors={this.props.user.errors} />
-    //     }
-    // }
+    renderErrors = () => {
+        if (this.props.errors.length > 0) {
+            return <Errors errors={this.props.errors} />
+        }
+    }
 
     handleClick = () => {
         this.setState({
@@ -93,6 +92,7 @@ class Login extends Component {
 
 const mapStateToProps = state => ({
     user: state.users.user,
+    errors: state.users.errors,
     loggedIn: state.users.loggedIn
 })
 

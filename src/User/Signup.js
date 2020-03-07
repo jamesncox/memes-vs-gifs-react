@@ -18,11 +18,6 @@ class Signup extends Component {
         }
     }
 
-    // create a popup that displays styled card is user successfully logged in
-    // and when they click the button to close the card, will redirect them to their profile
-    // OR
-    // create a loading pop up and once loading is complete, set shouldRedirect: true and show profile
-
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -66,7 +61,6 @@ class Signup extends Component {
         }
     }
 
-    // create a conditional that IF a user is logged in, render a message that must signout first or something
     render() {
         if (this.props.loggedIn === true) {
             return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (
