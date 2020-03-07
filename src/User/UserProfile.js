@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { userMemes } from './UserMemes'
 import { deleteMeme } from '../actions/memes'
+import { deleteGif } from '../actions/gifs'
 
 class UserProfile extends Component {
 
@@ -17,8 +18,12 @@ class UserProfile extends Component {
         })
     }
 
-    handleDelete = (id) => {
+    handleDeleteMeme = (id) => {
         this.props.deleteMeme(id)
+    }
+
+    handleDeleteGif = (id) => {
+        this.props.deleteGif(id)
     }
 
     renderLoginMessage = () => {
@@ -55,7 +60,7 @@ class UserProfile extends Component {
                                         <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
                                             <img style={{ width: "400px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
-                                            <CloseButton key={savedMeme.id + caption.id} onClick={() => this.handleDelete(savedMeme.id)} style={{ fontSize: "15px " }}>Delete</CloseButton>
+                                            <CloseButton key={savedMeme.id + caption.id} onClick={() => this.handleDeleteMeme(savedMeme.id)} style={{ fontSize: "15px " }}>Delete</CloseButton>
                                         </SavedMemeCard>
                                     </div>
                                 </div>
@@ -113,6 +118,7 @@ class UserProfile extends Component {
                                         <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
                                             <img style={{ width: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+                                            <CloseButton key={savedGif.id + caption.id} onClick={() => this.handleDeleteGif(savedGif.id)} style={{ fontSize: "15px " }}>Delete</CloseButton>
                                         </SavedMemeCard>
                                     </div>
                                 </div>
@@ -181,4 +187,4 @@ const mapStateToProps = state => ({
     loggedIn: state.users.loggedIn
 })
 
-export default connect(mapStateToProps, { deleteMeme })(UserProfile)
+export default connect(mapStateToProps, { deleteMeme, deleteGif })(UserProfile)
