@@ -79,6 +79,7 @@ export function loginUser(user) {
                 dispatch({ type: USER_ERRORS, payload: userObj.errors })
             } else {
                 dispatch({ type: SET_USER, payload: userObj })
+                dispatch({ type: LOGGED_IN, payload: true })
             }
         } catch (err) {
             alert(err)
@@ -97,6 +98,7 @@ export function setCurrentUser() {
             }
             const userObj = await res.json()
             dispatch({ type: SET_USER, payload: userObj })
+            dispatch({ type: LOGGED_IN, payload: true })
         } catch (err) {
             alert(err)
         }

@@ -44,9 +44,9 @@ class Login extends Component {
         if (this.props.user) {
             return (
                 <LoginCard>
-                    <img src={"https://media.giphy.com/media/slOhiKAVFgwr6/giphy.gif"} alt={"Elf congratulations"} />
+                    <img src={"https://media.giphy.com/media/3o7aDgf134NzaaHI8o/giphy.gif"} alt={"Elf congratulations"} />
                     <h3> </h3>
-                    You are already logged in, {this.props.user.username}.
+                    You are logged in, {this.props.user.username}!
                     <h3> </h3>
                     <CloseButton onClick={this.handleClick}> Your profile </CloseButton>
                 </LoginCard>
