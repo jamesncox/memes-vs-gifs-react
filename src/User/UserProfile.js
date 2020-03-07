@@ -1,8 +1,31 @@
 import React, { Component } from 'react'
-import { SavedMemeCard } from './UserStyles'
+import { SavedMemeCard, LoginCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class UserProfile extends Component {
+
+    state = {
+        shouldRedirect: false
+    }
+
+    handleClick = () => {
+        this.setState({
+            shouldRedirect: true
+        })
+    }
+
+    renderLoginMessage = () => {
+        return (
+            <LoginCard>
+                <img src={"https://media.giphy.com/media/voZqawzMMG4Lu/giphy.gif"} alt={"Elf congratulations"} />
+                <h3> </h3>
+                You must be logged in to view your profile.
+                    <h3> </h3>
+                <CloseButton onClick={this.handleClick}>Login</CloseButton>
+            </LoginCard>
+        )
+    }
 
 
     displayUserMemes() {
@@ -120,14 +143,25 @@ class UserProfile extends Component {
     }
 
     render() {
-        return (
-            <>
-                <h1 className="header">Welcome {this.props.user.username}</h1>
-                {this.displayUserMemes()}
-                {this.displayUserGifs()}
-                <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>
-            </>
-        )
+        if (this.props.loggedIn === false) {
+            return this.state.shouldRedirect ? (<Redirect to="/login" />) : (
+                <>
+
+                    <div>
+                        {this.renderLoginMessage()}
+                    </div>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <h1 className="header">Welcome {this.props.user.username}</h1>
+                    {this.displayUserMemes()}
+                    {this.displayUserGifs()}
+                    <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>
+                </>
+            )
+        }
     }
 }
 
@@ -136,7 +170,8 @@ const mapStateToProps = state => ({
     savedGifs: state.gifs.savedGifs,
     loadingGifs: state.gifs.loading,
     savedMemes: state.memes.savedMemes,
-    loadingMemes: state.memes.loading
+    loadingMemes: state.memes.loading,
+    loggedIn: state.users.loggedIn
 })
 
 export default connect(mapStateToProps)(UserProfile)

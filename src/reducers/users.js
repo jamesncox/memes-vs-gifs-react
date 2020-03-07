@@ -3,28 +3,24 @@ import {
     USER_ERRORS,
     CLEAR_USER,
     CLEAR_ERRORS,
-    LOGGED_IN,
-    LOGGED_OUT
+    LOGGED_IN
 } from '../actionTypes'
 
 export default (state = { user: {}, errors: [], loggedIn: false }, action) => {
     switch (action.type) {
 
         case SET_USER:
-            return { ...state, user: action.payload }
+            return { ...state, user: action.payload, loggedIn: true }
 
-        case LOGGED_IN:
-            return { ...state, loggedIn: action.payload }
-
-        case LOGGED_OUT:
-            return { ...state, loggedIn: false }
+        // case LOGGED_IN:
+        //     return { ...state, loggedIn: action.payload }
 
         case USER_ERRORS:
             // console.log(action.payload)
             return { ...state, errors: action.payload }
 
         case CLEAR_USER:
-            return { ...state, user: {} }
+            return { ...state, user: null, loggedIn: false }
 
         case CLEAR_ERRORS:
             return { ...state, errors: [] }

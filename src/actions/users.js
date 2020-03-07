@@ -14,9 +14,9 @@ export const clearErrors = () => {
     return { type: CLEAR_ERRORS }
 }
 
-export const logOutUser = () => {
-    return { type: LOGGED_IN, payload: false }
-}
+// const logOutUser = () => {
+//     return { type: LOGGED_IN, payload: false }
+// }
 
 export function signupUser(token, user) {
     return async (dispatch) => {
@@ -44,7 +44,7 @@ export function signupUser(token, user) {
             dispatch({ type: USER_ERRORS, payload: userObj.errors })
         } else {
             dispatch({ type: SET_USER, payload: userObj })
-            dispatch({ type: LOGGED_IN, payload: true })
+            // dispatch({ type: LOGGED_IN, payload: true })
         }
     }
 }
@@ -79,7 +79,7 @@ export function loginUser(user) {
                 dispatch({ type: USER_ERRORS, payload: userObj.errors })
             } else {
                 dispatch({ type: SET_USER, payload: userObj })
-                dispatch({ type: LOGGED_IN, payload: true })
+                // dispatch({ type: LOGGED_IN, payload: true })
             }
         } catch (err) {
             alert(err)
@@ -98,7 +98,7 @@ export function setCurrentUser() {
             }
             const userObj = await res.json()
             dispatch({ type: SET_USER, payload: userObj })
-            dispatch({ type: LOGGED_IN, payload: true })
+            // dispatch({ type: LOGGED_IN, payload: true })
         } catch (err) {
             alert(err)
         }
@@ -123,5 +123,6 @@ export function clearCurrentUser() {
             throw res
         }
         dispatch({ type: CLEAR_USER })
+        // dispatch({ type: LOGGED_IN, payload: false })
     }
 }
