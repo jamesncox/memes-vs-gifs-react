@@ -4,33 +4,30 @@ import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
 
 class SavedMemes extends Component {
+    // handleClick = () => {
+    //     const selectedRating = document.getElementById("selectedRating")
+    //     const filteredCaptions = Object.values(captions.filter(c => c.rating === selectedRating.value))
 
-    //filter by captions rating
+    //     if (selectedRating.value === "All") {
+    //         this.props.showAll(captions)
+    //     } else {
+    //         this.props.showFiltered(filteredCaptions)
+    //     }
+    // }
 
-    handleClick = () => {
-        const selectedRating = document.getElementById("selectedRating")
-        // const filteredCaptions = Object.values(captions.filter(c => c.rating === selectedRating.value))
-
-        // if (selectedRating.value === "All") {
-        //     this.props.showAll(captions)
-        // } else {
-        //     this.props.showFiltered(filteredCaptions)
-        // }
-    }
-
-    filterByRating = () => {
-        return (
-            <>
-                < select id="selectedRating" >
-                    <option value="All">All captions</option>
-                    <option value="PG">PG</option>
-                    <option value="R">NSFW</option>
-                </select >
-                {' '}
-                <FilterButton onClick={this.handleClick}>Filter by rating</FilterButton>
-            </>
-        )
-    }
+    // filterByRating = () => {
+    //     return (
+    //         <>
+    //             < select id="selectedRating" >
+    //                 <option value="All">All captions</option>
+    //                 <option value="PG">PG</option>
+    //                 <option value="R">NSFW</option>
+    //             </select >
+    //             {' '}
+    //             <FilterButton onClick={this.handleClick}>Filter by rating</FilterButton>
+    //         </>
+    //     )
+    // }
 
     render() {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
@@ -75,9 +72,8 @@ class SavedMemes extends Component {
         } else {
             return (
                 <div>
-                    <h1 className="header">Everyone's created memes
-                    {this.filterByRating()}</h1>
-                    {/* <h3> </h3> */}
+                    <h1 className="header">Everyone's created memes</h1>
+                    <h3> </h3>
                     {savedMemeAndCaptionList}
                 </div>
             )

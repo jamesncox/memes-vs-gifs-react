@@ -42,11 +42,11 @@ class GenerateCaption extends Component {
         }
     }
 
-    // renderErrors = () => {
-    //     if (this.props.caption.errors) {
-    //         return <Errors errors={this.props.caption.errors} />
-    //     }
-    // }
+    renderErrors = () => {
+        if (this.props.caption.errors) {
+            return <Errors errors={this.props.caption.errors} />
+        }
+    }
 
     render() {
         return (
@@ -57,10 +57,10 @@ class GenerateCaption extends Component {
                     <FormButton onClick={this.handleHide}>Hide Form</FormButton>
                     <br></br>
                 </h4>
+                {this.renderErrors()}
+                <br></br>
                 {this.state.isActive ? <NewCaptionForm /> : null}
                 <br></br>
-                {/* {this.renderErrors()}
-                <br></br> */}
                 <h4 style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}><CaptionButton onClick={this.handleClick}>Caption Cards</CaptionButton>
                     {'  '}
                     <select id="selectedRating">
