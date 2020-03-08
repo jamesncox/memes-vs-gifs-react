@@ -8,25 +8,21 @@ This app utilizes a Rails API back-end with a postgreSQL database, as well as a 
 
 The Back-End: The following end-points are utilized in the API to fetch data:
 
-'http://localhost:3000/api/v1/users'
+'http://localhost:3000/api/v1/login' - Post request to Session create action to set a session ID for an existing user.
 
-'http://localhost:3000/api/v1/login'
+'http://localhost:3000/api/v1/signup' - Post request to User create action to sign up a new user.
 
-'http://localhost:3000/api/v1/signup'
+'http://localhost:3000/api/v1/current_user' - Get request to custom route to keep a signed-in User logged in, even on page refresh.
 
-'http://localhost:3000/api/v1/current_user'
+'http://localhost:3000/api/v1/logout - Delete request to the destroy the signed-in user's session, logging them out.
 
-'http://localhost:3000/api/v1/logout'
+'http://localhost:3000/api/v1/captions' - Get, Post and Delete requests to see all the captions from the database, create new captions, and delete a selected caption.
 
-'http://localhost:3000/api/v1/captions'
+'http://localhost:3000/api/v1/auth_check' - Get request to custom route in Sessions controller to set the CSRF-Token every time App.js component mounts, storing in state, and able to send back with every request. 
 
-'http://localhost:3000/api/v1/caption_joins'
+'http://localhost:3000/api/v1/memes' - Get and post requests to populate app with User-created meme/caption combos, and delete them from their profile page.
 
-'http://localhost:3000/api/v1/auth_check'
-
-'http://localhost:3000/api/v1/memes' - This is the index of all the stores and contains nested items for each store. This end-point has get, post and patch routes for creating and updating stores.
-
-'http://localhost:3000/api/v1/gifs' - This end-point will get all items and has post and patch routes for creating and updating items.
+'http://localhost:3000/api/v1/gifs' - Get and post requests to populate app with User-created gif/caption combos, and delete them from their profile page.
 
 The Front-End: The front-end uses Javascript to asynchronously make get, post and patch requests to the API to populate the page with data and update the API. The data and functionality of the front-end was encapsulated in classes and methods.
 
