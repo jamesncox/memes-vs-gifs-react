@@ -29,7 +29,7 @@ class UserProfile extends Component {
     renderLoginMessage = () => {
         return (
             <LoginCard>
-                <img src={"https://media.giphy.com/media/voZqawzMMG4Lu/giphy.gif"} alt={"Elf congratulations"} />
+                <img style={{ width: "700px" }} src={"https://media.giphy.com/media/voZqawzMMG4Lu/giphy.gif"} alt={"Nothing to see here"} />
                 <h3> </h3>
                 You must be logged in to view your profile.
                     <h3> </h3>
