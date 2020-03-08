@@ -20,12 +20,11 @@ The Back-End: The following end-points are utilized in the API to fetch data:
 
 'http://localhost:3000/api/v1/auth_check' - Get request to custom route in Sessions controller to set the CSRF-Token every time App.js component mounts, storing in state, and able to send back with every request. 
 
-'http://localhost:3000/api/v1/memes' - Get and post requests to populate app with User-created meme/caption combos, and delete them from their profile page.
+'http://localhost:3000/api/v1/memes' - Get and Post requests to populate app with User-created meme/caption combos, and delete them from their profile page.
 
-'http://localhost:3000/api/v1/gifs' - Get and post requests to populate app with User-created gif/caption combos, and delete them from their profile page.
+'http://localhost:3000/api/v1/gifs' - Get and Post requests to populate app with User-created gif/caption combos, and delete them from their profile page.
 
-The Front-End: The front-end uses Javascript to asynchronously make get, post and patch requests to the API to populate the page with data and update the API. The data and functionality of the front-end was encapsulated in classes and methods.
-
+The Front-End: Utilizes a React framework, structured with Redux to store almost all of state in the Redux store, and make it accessible to any component in my app. The app features Redux, Thunk, React Router, and styled with a combination of CSS and Styled Components.
 ### `yarn start`
 
 Runs the app in the development mode.<br />
