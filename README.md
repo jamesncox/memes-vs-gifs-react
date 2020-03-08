@@ -35,6 +35,9 @@ To run Memes vs Gifs, complete the following steps:
 - From memes-vs-gifs-react run 'yarn start' to start the React server, hosted on http://localhost:3001
 - Memes vs Gifs server in a new browser window or tab automatically, but if it doesn't, navigate to http://localhost:3001 
 - Click around and see the behaviour of the app before you are signed in, then create an account under the signup page, and begin creating memes, gifs and captions! 
+- Enjoy the app!
+
+If you have any feedback for my application, don't hesitate to let me know. Thank you for checking it out!
 
 
 ### `yarn start`
