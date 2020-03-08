@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
-// import { GiphyLogo } from '../assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif'
+import { logo } from '../assets/images/PoweredBy_200px-Black_HorizLogo.png'
 
 class NavBar extends Component {
 
@@ -23,7 +23,7 @@ class NavBar extends Component {
                 <Link to="/">Meme vs Gifs</Link>
                 <Link to="/saved-memes">Created Memes</Link>
                 <Link to="/saved-gifs">Created Gifs</Link>
-                {/* <img src={GiphyLogo} alt="powerered by Giphy" /> */}
+                {/* <img src={logo} alt="Powered by Giphy" /> */}
             </div>
         )
     }

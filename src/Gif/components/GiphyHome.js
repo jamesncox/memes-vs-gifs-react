@@ -33,14 +33,14 @@ class GiphyHome extends Component {
         if (this.props.loggedIn === false) {
             return this.state.shouldRedirect ? (<Redirect to="/login" />) : (
                 <>
-                    <h1 className="header">That's What You Gif!</h1>
+                    <h1 className="header">You Gif What You Gif!</h1>
                     {this.renderLoginMessage()}
                 </>
             )
         } else {
             return (
                 <div>
-                    <h1 className="header">That's What You Gif!</h1>
+                    <h1 className="header">You Gif What You Gif!</h1>
                     <GiphyContainer />
                     <CaptionContainer />
                     <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>
