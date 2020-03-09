@@ -8,17 +8,15 @@ class Giphy extends Component {
     renderSaveButton = () => {
         if (this.props.chosenCaption.text) {
             return (
-                <SaveButton className="popup" onClick={this.handleClick}>
-                    Save
-                    <span className="popuptext" id="myPopup">Gif saved!</span>
-                </SaveButton>
+                <SaveButton onClick={this.handleClick}>Save</SaveButton>
             )
         }
     }
 
     handleClick = () => {
-        let popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
+        let x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 
         const gifURL = this.props.giphyURL
         const gifId = this.props.randomGif.id
@@ -38,6 +36,7 @@ class Giphy extends Component {
                         <h2>{this.props.chosenCaption.text}</h2>
                         {this.renderSaveButton()}
                     </GiphyCard>
+                    <div style={{ marginLeft: "-75px" }} id="snackbar">Gif saved!</div>
                 </div>
             </>
         )

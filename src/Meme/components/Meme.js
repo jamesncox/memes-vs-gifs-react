@@ -8,9 +8,7 @@ class Meme extends Component {
     renderSaveButton = () => {
         if (this.props.chosenCaption.text) {
             return (
-                <>
-                    <SaveButton onClick={this.handleClick}>Save</SaveButton>
-                </>
+                <SaveButton onClick={this.handleClick}>Save</SaveButton>
             )
         }
     }
