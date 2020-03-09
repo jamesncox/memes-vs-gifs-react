@@ -258,18 +258,18 @@
 
 
   /* CSS for saved message popup on gif/meme card */
-  .popup {
+  /* .popup {
     position: relative;
     display: inline-block;
-    /* cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none; */
-    user-select: none;
-  }
+    cursor: pointer; */
+    /* -webkit-user-select: none; */
+    /* -moz-user-select: none; */
+    /* -ms-user-select: none; */
+    /* user-select: none; */
+  /* } */
   
   /* The actual popup */
-  .popup .popuptext {
+  /* .popup .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: whitesmoke ;
@@ -282,10 +282,10 @@
     bottom: 200%;
     left: 50%;
     margin-left: -80px;
-  }
+  } */
   
   /* Popup arrow */
-  .popup .popuptext::after {
+  /* .popup .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -294,29 +294,29 @@
     border-width: 5px;
     border-style: solid;
     border-color: whitesmoke transparent transparent transparent;
-  }
+  } */
   
   /* Toggle this class - hide and show the popup */
-  .popup .show {
+  /* .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1.5s linear forwards;
     animation: fadeIn 1.5s linear forwards;
-  }
+  } */
   
   /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
+  /* @-webkit-keyframes fadeIn {
     0% { opacity: 0; }
     10% { opacity: 1; }
     80% { opacity: 1; }
     100% { opacity: 0; }
-  }
+  } */
   
-  @keyframes fadeIn {
+  /* @keyframes fadeIn {
     0% { opacity: 0; }
     10% { opacity: 1; }
     80% { opacity: 1; }
     100% { opacity: 0; }
-  }
+  } */
 
 /* CSS for modal popup image display SavedGifs/SavedMemes/User Profile   */
 
@@ -376,4 +376,48 @@
   .saved-popup{
     width: 70%;
   }
+}
+
+/* snackbar pop up */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 50px;
+  margin-left: -85px;
+  background-color: #06D85F;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 100px;
+  font-size: 25px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {center: 0; opacity: 0;} 
+  to {center: 0; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {center: 0; opacity: 0;}
+  to {center: 0; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {center: 0; opacity: 1;} 
+  to {center: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {center: 0; opacity: 1;}
+  to {center: 0; opacity: 0;}
 }
