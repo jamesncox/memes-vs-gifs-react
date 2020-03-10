@@ -24,7 +24,7 @@ const FormButton = styled.button`
 `
 
 const CaptionCard = styled.div`
-  background-color: #32003bd2;
+  background-color: #41004dd2;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
