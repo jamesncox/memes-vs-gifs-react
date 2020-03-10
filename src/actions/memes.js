@@ -79,6 +79,7 @@ export const getSavedMemes = () => {
 }
 
 export function deleteMeme(id) {
+    console.log(id)
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/memes/${id}`, {
             method: "DELETE"

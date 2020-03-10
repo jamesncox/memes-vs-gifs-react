@@ -32,7 +32,7 @@ class UserProfile extends Component {
                 <img style={{ width: "700px" }} src={"https://media.giphy.com/media/voZqawzMMG4Lu/giphy.gif"} alt={"Nothing to see here"} />
                 <h3> </h3>
                 You must be logged in to view your profile.
-                    <h3> </h3>
+                <h3> </h3>
                 <CloseButton onClick={this.handleClick}>Login</CloseButton>
             </LoginCard>
         )
@@ -42,7 +42,6 @@ class UserProfile extends Component {
     displayUserMemes() {
         const savedMemeAndCaptionList = (id) => {
             const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins[0].user_id === id)
-            debugger
             return (
                 userMemes.map(savedMeme => {
                     return savedMeme.captions.map(caption => {
