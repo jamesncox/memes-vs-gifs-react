@@ -6,7 +6,8 @@ import {
     CLEAR_GIF,
     ADD_SAVED_GIF,
     LOADING_SAVED_GIFS,
-    SET_SAVED_GIFS
+    SET_SAVED_GIFS,
+    DELETE_GIF
 } from '../actionTypes'
 
 export default (state = { all: [], randomGif: null, query: '', savedGifs: [], loading: false }, action) => {
@@ -35,6 +36,11 @@ export default (state = { all: [], randomGif: null, query: '', savedGifs: [], lo
 
         case SET_SAVED_GIFS:
             return { ...state, savedGifs: action.savedGifs, loading: false }
+
+        case DELETE_GIF:
+            const persistedGifs = state.savedGifs.filter(gif => gif.id !== action.payload)
+            return { ...state, savedGifs: persistedGifs }
+
 
         default:
             return state

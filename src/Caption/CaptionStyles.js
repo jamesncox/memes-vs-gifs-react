@@ -60,9 +60,9 @@ const ErrorCard = styled.div`
   width: 4in;
   height: 1in;
   border-radius: .25in;
-  margin: 10px;
+  margin: 5px;
   display: inline-block;
-  padding: 30px;
+  padding: 15px;
   display: inline-table;
 `
 

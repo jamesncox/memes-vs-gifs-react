@@ -5,7 +5,8 @@ import {
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
     // START_MEME_POST_REQUEST,
-    ADD_SAVED_MEME
+    ADD_SAVED_MEME,
+    DELETE_MEME
 } from '../actionTypes'
 
 const setSavedMemes = savedMemes => {
@@ -74,5 +75,15 @@ export const getSavedMemes = () => {
         } catch (err) {
             alert("error fetching saved memes from API")
         }
+    }
+}
+
+export function deleteMeme(id) {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/api/v1/memes/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(meme => dispatch({ type: DELETE_MEME, payload: meme.id }))
     }
 }

@@ -58,3 +58,68 @@
 # Sign Up Gif options
     Connor McGregor
     https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp
+
+    
+# css for old version of toggled pop up / might need at some point
+  /* CSS for saved message popup on gif/meme card */
+  /* .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; */
+    /* -webkit-user-select: none; */
+    /* -moz-user-select: none; */
+    /* -ms-user-select: none; */
+    /* user-select: none; */
+  /* } */
+  
+  /* The actual popup */
+  /* .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: whitesmoke ;
+    color: buttontext;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 200%;
+    left: 50%;
+    margin-left: -80px;
+  } */
+  
+  /* Popup arrow */
+  /* .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: whitesmoke transparent transparent transparent;
+  } */
+  
+  /* Toggle this class - hide and show the popup */
+  /* .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1.5s linear forwards;
+    animation: fadeIn 1.5s linear forwards;
+  } */
+  
+  /* Add animation (fade in the popup) */
+  /* @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  } */
+  
+  /* @keyframes fadeIn {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  } */
+
+/* CSS for modal popup image display SavedGifs/SavedMemes/User Profile   */

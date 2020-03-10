@@ -31,7 +31,6 @@ class SavedGifs extends Component {
             })
         })
 
-
         if (this.props.loading) {
             return (
                 <>
@@ -43,13 +42,13 @@ class SavedGifs extends Component {
             return (
                 <>
                     <h3>No saved gifs yet</h3>
-                    <img src={"https://media.giphy.com/media/3o85xscgnCWS8Xxqik/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img style={{ width: "500px" }} src={"https://media.giphy.com/media/3o85xscgnCWS8Xxqik/giphy.gif"} alt={"Tumbleweed gif"} />
                 </>
             )
         } else {
             return (
                 <div>
-                    <h1 className="header">Everyone's created gifs</h1>
+                    <h1 style={{ width: "5in" }} className="header">Everyone's created gifs</h1>
                     {savedGifAndCaptionList}
                 </div>
             )

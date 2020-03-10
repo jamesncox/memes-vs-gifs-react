@@ -5,7 +5,8 @@ import {
     CLEAR_GIF,
     LOADING_SAVED_GIFS,
     ADD_SAVED_GIF,
-    SET_SAVED_GIFS
+    SET_SAVED_GIFS,
+    DELETE_GIF
 } from '../actionTypes'
 
 const setQueriedGifs = gifs => {
@@ -79,5 +80,15 @@ export const getSavedGifs = () => {
         } catch (err) {
             alert("error fetching saved memes from API")
         }
+    }
+}
+
+export function deleteGif(id) {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/api/v1/gifs/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(gif => dispatch({ type: DELETE_GIF, payload: gif.id }))
     }
 }

@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
-// import { GiphyLogo } from '../assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif'
+import { logo } from '../assets/images/PoweredBy_200px-Black_HorizLogo.png'
+
 
 class NavBar extends Component {
 
@@ -20,13 +21,17 @@ class NavBar extends Component {
                         <Link to="/logout">Log out</Link>
                     </div>
                 </div>
-                <Link to="/">Meme vs Gifs</Link>
-                <Link to="/saved-memes">Created Memes</Link>
-                <Link to="/saved-gifs">Created Gifs</Link>
-                {/* <img src={GiphyLogo} alt="powerered by Giphy" /> */}
+                <Link to="/">Create!</Link>
+                <Link to="/saved-memes">Memes</Link>
+                <Link to="/saved-gifs">Gifs</Link>
+                {/* <img src={logo} alt="Powered by Giphy" /> */}
             </div>
         )
     }
 }
 
-export default connect(null, { getSavedMemes })(NavBar)
+const mapStateToProps = state => ({
+    user: state.users.user
+})
+
+export default connect(mapStateToProps, { getSavedMemes })(NavBar)

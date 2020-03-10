@@ -51,7 +51,7 @@ class Signup extends Component {
         if (this.props.user) {
             return (
                 <LoginCard>
-                    <img src={"https://media.giphy.com/media/slOhiKAVFgwr6/giphy.gif"} alt={"Elf congratulations"} />
+                    <img style={{ width: "650px" }} src={"https://media.giphy.com/media/slOhiKAVFgwr6/giphy.gif"} alt={"Elf congratulations"} />
                     <h3> </h3>
                     {this.props.user.username}, your profile was successfully created!
                     <h3> </h3>

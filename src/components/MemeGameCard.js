@@ -15,8 +15,8 @@ class MemeGameCard extends Component {
         } else {
             return (
                 <GameLinkCard onClick={this.props.handleNav} className="zoom">
-                    <h1>What Do You Meme?</h1>
-                    <img src={"https://i.kym-cdn.com/photos/images/newsfeed/000/000/130/disaster-girl.jpg"} alt={"Girl Burning House"}></img>
+                    <h1>That's What You Meme?</h1>
+                    <img style={{ width: "500px", height: "350px" }} src={"https://i.kym-cdn.com/photos/images/newsfeed/000/000/130/disaster-girl.jpg"} alt={"Girl Burning House"}></img>
                 </GameLinkCard>
             )
         }

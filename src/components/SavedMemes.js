@@ -45,7 +45,7 @@ class SavedMemes extends Component {
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
                                 <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.meme_id + caption.id}>
-                                    <img style={{ width: "400px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                    <img style={{ width: "400px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedMemeCard>
                             </div>
@@ -66,13 +66,13 @@ class SavedMemes extends Component {
             return (
                 <>
                     <h3>No saved memes yet</h3>
-                    <img src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img style={{ width: "500px" }} src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
                 </>
             )
         } else {
             return (
                 <div>
-                    <h1 className="header">Everyone's created memes</h1>
+                    <h1 style={{ width: "6in" }} className="header">Everyone's created memes</h1>
                     <h3> </h3>
                     {savedMemeAndCaptionList}
                 </div>

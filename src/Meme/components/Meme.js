@@ -8,17 +8,15 @@ class Meme extends Component {
     renderSaveButton = () => {
         if (this.props.chosenCaption.text) {
             return (
-                <SaveButton className="popup" onClick={this.handleClick}>
-                    Save
-                        <span className="popuptext" id="myPopup">Meme saved!</span>
-                </SaveButton>
+                <SaveButton onClick={this.handleClick}>Save</SaveButton>
             )
         }
     }
 
     handleClick = () => {
-        let popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
+        let x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 
         const memeURL = this.props.memesURL
         const memeId = this.props.randomMeme.id
@@ -34,10 +32,11 @@ class Meme extends Component {
             <>
                 <div className="zoom">
                     <MemeCard>
-                        <img style={{ width: "500px" }} src={this.props.memesURL} alt={this.props.name} />
+                        <img style={{ width: "400px" }} src={this.props.memesURL} alt={this.props.name} />
                         <h2>{this.props.chosenCaption.text}</h2>
                         {this.renderSaveButton()}
                     </MemeCard>
+                    <div id="snackbar">Meme saved!</div>
                 </div>
             </>
         )

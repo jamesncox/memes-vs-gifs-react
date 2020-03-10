@@ -31,6 +31,7 @@
     margin-bottom: 20px;
     margin: auto;
     padding: 20px;
+    box-shadow: 1px 1px 2px #000000;
     font-size: 18px;
     text-align: center;
     background: rgba(0, 0, 0, 0.80);
@@ -43,9 +44,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 30px;
+    box-shadow: 2px 2px 4px #000000;
     text-align: center;
+    text-shadow: 2px 2px 4px #000000;
     width: 30%;
-    background: #290030d2;
+    background: #41004dd2;
     color: white;
     font-size: 40px;
     border-radius: .05in;
@@ -74,7 +77,7 @@
   }
 
   .test-color {
-    color: #001f3fe8;
+    color: #ffffff00;
   }
 
   .loader {
@@ -253,70 +256,7 @@
     display: block;
   }
 
-
-  /* CSS for saved message popup on gif/meme card */
-  .popup {
-    position: relative;
-    display: inline-block;
-    /* cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none; */
-    user-select: none;
-  }
-  
-  /* The actual popup */
-  .popup .popuptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: whitesmoke ;
-    color: buttontext;
-    text-align: center;
-    border-radius: 10px;
-    padding: 15px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 200%;
-    left: 50%;
-    margin-left: -80px;
-  }
-  
-  /* Popup arrow */
-  .popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: whitesmoke transparent transparent transparent;
-  }
-  
-  /* Toggle this class - hide and show the popup */
-  .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1.5s linear forwards;
-    animation: fadeIn 1.5s linear forwards;
-  }
-  
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-/* CSS for modal popup image display SavedGifs/SavedMemes/User Profile   */
-
+  /* modal for selected meme or gif */
   .overlay {
   position: fixed;
   top: 0;
@@ -373,4 +313,47 @@
   .saved-popup{
     width: 70%;
   }
+}
+
+/* snackbar pop up */
+#snackbar {
+  visibility: hidden;
+  min-width: 50px;
+  margin-left: -85px;
+  background-color: #06D85F;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 100px;
+  font-size: 25px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {center: 0; opacity: 0;} 
+  to {center: 0; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {center: 0; opacity: 0;}
+  to {center: 0; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {center: 0; opacity: 1;} 
+  to {center: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {center: 0; opacity: 1;}
+  to {center: 0; opacity: 0;}
 }
