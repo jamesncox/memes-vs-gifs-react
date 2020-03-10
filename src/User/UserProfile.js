@@ -42,6 +42,7 @@ class UserProfile extends Component {
     displayUserMemes() {
         const savedMemeAndCaptionList = (id) => {
             const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins[0].user_id === id)
+            debugger
             return (
                 userMemes.map(savedMeme => {
                     return savedMeme.captions.map(caption => {
