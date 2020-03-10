@@ -25,7 +25,6 @@ export default (state = { all: [], randomMeme: null, savedMemes: [], loading: fa
             return { ...state, randomMeme: null }
 
         case ADD_SAVED_MEME:
-            console.log(action.payload)
             return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
         case LOADING_SAVED_MEMES:

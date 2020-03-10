@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { SavedMemeCard, LoginCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { userMemes } from './UserMemes'
+// import { userMemes } from './UserMemes'
 import { deleteMeme } from '../actions/memes'
 import { deleteGif } from '../actions/gifs'
 

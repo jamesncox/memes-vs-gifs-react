@@ -42,7 +42,7 @@ export function sendMemeRequest(sendObj) {
 
     const objData = {
         meme_url: sendObj.memeURL,
-        meme_id: sendObj.memeId,
+        meme_id: sendObj.memeId + (Math.random() * 100),
         text: sendObj.captionText,
         caption_id: sendObj.captionId,
         user_id: sendObj.userId

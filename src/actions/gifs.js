@@ -47,7 +47,7 @@ export function sendGifRequest(sendObj) {
 
     const objData = {
         gif_url: sendObj.gifURL,
-        gif_id: sendObj.gifId,
+        gif_id: sendObj.gifId + Math.random(),
         text: sendObj.captionText,
         caption_id: sendObj.captionId,
         user_id: sendObj.userId
