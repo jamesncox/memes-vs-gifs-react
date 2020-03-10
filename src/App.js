@@ -23,6 +23,7 @@ import { getToken } from './actions/sessions'
 import { setCurrentUser } from './actions/users'
 
 class App extends Component {
+  //test commit
 
   componentDidMount() {
     this.props.getMemes()
