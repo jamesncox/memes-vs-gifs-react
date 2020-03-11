@@ -6,21 +6,20 @@ const SavedMemeCard = styled.div`
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   width: 1in;
-  height: 1in;
+  height: .5in;
   border-radius: .25in;
   margin: 10px;
   display: inline-block;
   padding: 10px;
   display: inline-table;
 `
-
 const SavedGifCard = styled.div`
   background-color: #32003bd2;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   width: 1in;
-  height: 1in;
+  height: .1in;
   border-radius: .25in;
   margin: 10px;
   display: inline-block;

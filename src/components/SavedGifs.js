@@ -12,7 +12,7 @@ class SavedGifs extends Component {
                     <>
                         <a href={`#${savedGif.gif_id + caption.id}`}>
                             <SavedGifCard className="saved-zoom" key={savedGif.id + caption.id}>
-                                <img style={{ width: "200px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                                <img style={{ width: "150px", height: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedGifCard>
                         </a>
@@ -21,7 +21,7 @@ class SavedGifs extends Component {
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
                                 <SavedGifCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
-                                    <img style={{ width: "550px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                                    <img style={{ width: "550px", maxHeight: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedGifCard>
                             </div>

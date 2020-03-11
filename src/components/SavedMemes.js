@@ -36,7 +36,7 @@ class SavedMemes extends Component {
                     <>
                         <a href={`#${savedMeme.meme_id + caption.id}`}>
                             <SavedMemeCard className="saved-zoom" key={savedMeme.meme_id + caption.id}>
-                                <img style={{ width: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                <img style={{ width: "150px", height: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>
@@ -45,7 +45,7 @@ class SavedMemes extends Component {
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
                                 <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.meme_id + caption.id}>
-                                    <img style={{ width: "400px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                    <img style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                 </SavedMemeCard>
                             </div>
