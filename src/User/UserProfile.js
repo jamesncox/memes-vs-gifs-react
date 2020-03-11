@@ -137,24 +137,24 @@ class UserProfile extends Component {
                     return savedMeme.captions.map(caption => {
                         return (
                             <>
-                                <a href={`#${savedMeme.id}`} >
+                                <a href={`#${savedMeme.meme_id}`} >
                                     <ThumbnailCard className="saved-zoom" key={savedMeme.id}>
                                         <img
                                             className="thumbnail"
                                             src={savedMeme.meme_url}
-                                            alt={savedMeme.id}
+                                            alt={savedMeme.meme_id}
                                         />
                                     </ThumbnailCard>
                                 </a>
 
-                                <div id={`${savedMeme.id}`} className="overlay" >
+                                <div id={`${savedMeme.meme_id}`} className="overlay" >
                                     <div className="modal-popup">
                                         <a className="close" href="#">&times;</a>
-                                        <PopupCard key={savedMeme.id}>
+                                        <PopupCard key={savedMeme.meme_id}>
                                             <img
                                                 style={{ maxWidth: "500px", maxHeight: "500px" }}
                                                 src={savedMeme.meme_url}
-                                                alt={savedMeme.id}
+                                                alt={savedMeme.meme_id}
                                             />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                             <CloseButton

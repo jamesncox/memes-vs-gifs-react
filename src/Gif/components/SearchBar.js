@@ -21,7 +21,7 @@ class SearchBar extends Component {
             <div>
                 <h4 syle={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}><form className="my-form" onSubmit={this.handleSubmit.bind(this)}>
                     <img style={{ width: "150px", float: "left", marginRight: "-150px" }} src={require('../../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
-                    <input type="text" placeholder="Search a category" onChange={this.handleChange} />
+                    <input style={{ width: "200px" }} type="text" placeholder="Search keyword or phrase" onChange={this.handleChange} />
                     <input type="submit" value="Find a Gif" />
                 </form></h4>
                 <h1>{' '}</h1>
