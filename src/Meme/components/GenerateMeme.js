@@ -14,7 +14,6 @@ class GenerateMeme extends Component {
         return (
             <div>
                 <h4 syle={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}><MemeButton onClick={this.handleClick}>Random Meme</MemeButton></h4>
-                <h1>{' '}</h1>
             </div>
         )
     }

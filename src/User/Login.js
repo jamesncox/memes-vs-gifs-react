@@ -42,7 +42,7 @@ class Login extends Component {
     renderSuccessMessage = () => {
         if (this.props.user) {
             return (
-                <LoginCard style={{ marginBottom: "70px" }}>
+                <LoginCard style={{ marginBottom: "40px" }}>
                     <img src={"https://media.giphy.com/media/3o7aDgf134NzaaHI8o/giphy.gif"} alt={"Robert Redform welcome back"} />
                     <h3> </h3>
                     Welcome back, {this.props.user.username}!
@@ -71,7 +71,7 @@ class Login extends Component {
                     <div>
                         {this.renderErrors()}
                     </div>
-                    <LoginCard className="zoom">
+                    <LoginCard>
                         <img src={"https://i.giphy.com/media/l0IxYD16t9PDEdg9q/giphy.webp"} alt={"Robert Redford"} />
                         <h3> </h3>
                         <form onSubmit={e => this.handleLogin(e)}>

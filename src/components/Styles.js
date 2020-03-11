@@ -8,7 +8,7 @@ const GameLinkCard = styled.div`
   width: 2.5in;
   height: 4in;
   border-radius: .25in;
-  margin: 10px;
+  margin: 25px;
   display: inline-block;
   padding: 10px;
   display: inline-table;
