@@ -76,7 +76,7 @@ class UserProfile extends Component {
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                             <CloseButton
                                                 key={savedGif.id}
-                                                onClick={() => { this.handleDeleteGif(savedGif.id); this.handleDeleteCaptionJoin(savedGif.caption_joins[0].id) }}
+                                                onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) { this.handleDeleteGif(savedGif.id); this.handleDeleteCaptionJoin(savedGif.caption_joins[0].id) } }}
                                                 style={{ fontSize: "15px " }}>
                                                 Delete
                                             </CloseButton>
@@ -159,7 +159,7 @@ class UserProfile extends Component {
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                             <CloseButton
                                                 key={savedMeme.id}
-                                                onClick={() => { this.handleDeleteMeme(savedMeme.id); this.handleDeleteCaptionJoin(savedMeme.caption_joins[0].id) }}
+                                                onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.handleDeleteMeme(savedMeme.id); this.handleDeleteCaptionJoin(savedMeme.caption_joins[0].id) }}
                                                 style={{ fontSize: "15px " }}>
                                                 Delete
                                             </CloseButton>
