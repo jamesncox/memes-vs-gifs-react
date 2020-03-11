@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SavedMemeCard, ModalCaptionCard, FilterButton } from './Styles'
+import { SavedMemeCard } from './Styles'
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
 
@@ -12,7 +12,7 @@ class SavedMemes extends Component {
                     <>
                         <a href={`#${savedMeme.id}`}>
                             <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
-                                <img style={{ width: "150px", height: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id} />
+                                <img className="thumbnail" src={savedMeme.meme_url} alt={savedMeme.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>

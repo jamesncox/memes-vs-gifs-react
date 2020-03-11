@@ -12,7 +12,7 @@ class SavedGifs extends Component {
                     <>
                         <a href={`#${savedGif.id}`}>
                             <SavedGifCard className="saved-zoom" key={savedGif.id}>
-                                <img style={{ width: "150px", height: "150px" }} src={savedGif.gif_url} alt={savedGif.id} />
+                                <img className="thumbnail" src={savedGif.gif_url} alt={savedGif.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedGifCard>
                         </a>
