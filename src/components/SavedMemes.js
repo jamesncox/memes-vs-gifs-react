@@ -4,48 +4,24 @@ import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
 
 class SavedMemes extends Component {
-    // handleClick = () => {
-    //     const selectedRating = document.getElementById("selectedRating")
-    //     const filteredCaptions = Object.values(captions.filter(c => c.rating === selectedRating.value))
-
-    //     if (selectedRating.value === "All") {
-    //         this.props.showAll(captions)
-    //     } else {
-    //         this.props.showFiltered(filteredCaptions)
-    //     }
-    // }
-
-    // filterByRating = () => {
-    //     return (
-    //         <>
-    //             < select id="selectedRating" >
-    //                 <option value="All">All captions</option>
-    //                 <option value="PG">PG</option>
-    //                 <option value="R">NSFW</option>
-    //             </select >
-    //             {' '}
-    //             <FilterButton onClick={this.handleClick}>Filter by rating</FilterButton>
-    //         </>
-    //     )
-    // }
 
     render() {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
                 return (
                     <>
-                        <a href={`#${savedMeme.meme_id + caption.id}`}>
-                            <SavedMemeCard className="saved-zoom" key={savedMeme.meme_id + caption.id}>
-                                <img style={{ width: "150px", height: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                        <a href={`#${savedMeme.id}`}>
+                            <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
+                                <img style={{ width: "150px", height: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id} />
                                 {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                             </SavedMemeCard>
                         </a>
 
-                        <div id={`${savedMeme.meme_id + caption.id}`} className="overlay">
+                        <div id={`${savedMeme.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.meme_id + caption.id}>
-                                    <img style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id}>
+                                    <img style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                     <h5>by: {savedMeme.username}</h5>
                                 </SavedMemeCard>

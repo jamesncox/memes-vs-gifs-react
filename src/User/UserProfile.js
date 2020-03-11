@@ -48,13 +48,12 @@ class UserProfile extends Component {
             const userGifs = this.props.savedGifs.filter(gif => gif.caption_joins[0].user_id === id)
             return (
                 userGifs.map(savedGif => {
-                    console.log(savedGif.caption_joins[0].id)
                     return savedGif.captions.map(caption => {
                         return (
                             <>
                                 <a href={`#${savedGif.id}`}>
-                                    <SavedMemeCard className="saved-zoom" key={savedGif.id + caption.id}>
-                                        <img style={{ width: "150px", height: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                                    <SavedMemeCard className="saved-zoom" key={savedGif.id}>
+                                        <img style={{ width: "150px", height: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id} />
                                         {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                                     </SavedMemeCard>
                                 </a>
@@ -62,8 +61,8 @@ class UserProfile extends Component {
                                 <div id={`${savedGif.id}`} className="overlay">
                                     <div className="modal-popup">
                                         <a className="close" href="#">&times;</a>
-                                        <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
-                                            <img style={{ width: "500px", maxHeight: "600px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
+                                        <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id}>
+                                            <img style={{ width: "500px", maxHeight: "600px" }} src={savedGif.gif_url} alt={savedGif.gif_id} />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                             <CloseButton
                                                 key={savedGif.id}
@@ -115,21 +114,21 @@ class UserProfile extends Component {
                     return savedMeme.captions.map(caption => {
                         return (
                             <>
-                                <a href={`#${savedMeme.meme_id + caption.id}`} >
-                                    <SavedMemeCard className="saved-zoom" key={savedMeme.id + caption.id}>
-                                        <img style={{ width: "150px", minHeight: "150px", maxHeight: "150px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                <a href={`#${savedMeme.id}`} >
+                                    <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
+                                        <img style={{ width: "150px", minHeight: "150px", maxHeight: "150px" }} src={savedMeme.meme_url} alt={savedMeme.id} />
                                         {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                                     </SavedMemeCard>
                                 </a>
 
-                                <div id={`${savedMeme.meme_id + caption.id}`} className="overlay" >
+                                <div id={`${savedMeme.id}`} className="overlay" >
                                     <div className="modal-popup">
                                         <a className="close" href="#">&times;</a>
-                                        <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
-                                            <img style={{ maxWidth: "500px", maxHeight: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
+                                        <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id}>
+                                            <img style={{ maxWidth: "500px", maxHeight: "500px" }} src={savedMeme.meme_url} alt={savedMeme.id} />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                             <CloseButton
-                                                key={savedMeme.id + caption.id}
+                                                key={savedMeme.id}
                                                 onClick={() => { this.handleDeleteMeme(savedMeme.id); this.handleDeleteCaptionJoin(savedMeme.caption_joins[0].id) }}
                                                 style={{ fontSize: "15px " }}>
                                                 Delete
