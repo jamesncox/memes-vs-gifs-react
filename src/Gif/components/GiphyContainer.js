@@ -40,7 +40,6 @@ class GiphyContainer extends Component {
                 <SearchBar />
                 <NextButton handleClick={this.handleClick} />
                 {this.renderRandomGiphy()}
-                <h1>{' '}</h1>
             </div>
         )
     }
