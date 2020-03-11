@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { ThumbnailCard, PopupCard, LoginCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-// import { userMemes } from './UserMemes'
 import { deleteMeme } from '../actions/memes'
 import { deleteGif } from '../actions/gifs'
 import { deleteCaptionJoin } from '../actions/captionJoins'
@@ -34,7 +33,11 @@ class UserProfile extends Component {
     renderLoginMessage = () => {
         return (
             <LoginCard>
-                <img style={{ width: "700px" }} src={"https://media.giphy.com/media/voZqawzMMG4Lu/giphy.gif"} alt={"Nothing to see here"} />
+                <img
+                    style={{ width: "700px" }}
+                    src={"https://media.giphy.com/media/voZqawzMMG4Lu/giphy.gif"}
+                    alt={"Nothing to see here"}
+                />
                 <h3> </h3>
                 You must be logged in to view your profile.
                 <h3> </h3>
@@ -92,23 +95,33 @@ class UserProfile extends Component {
             return (
                 <>
                     <h3>Loading gifs...</h3>
-                    <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading gifs..."} />
+                    <img
+                        src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"}
+                        alt={"Loading gifs..."}
+                    />
                 </>
             )
         } else if (hasGifs.length === 0) {
             return (
                 <>
                     <h3>No saved gifs yet</h3>
-                    <img src={"https://media.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img
+                        src={"https://media.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif"}
+                        alt={"Tumbleweed gif"}
+                    />
                 </>
             )
         } else {
             return (
                 <div>
                     <h4>
-                        <img style={{ width: "150px", float: "left", marginRight: "-150px" }} src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
-
-                        Your Saved Gifs</h4>
+                        <img
+                            style={{ width: "150px", float: "right", marginLeft: "-150px" }}
+                            src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')}
+                            alt="Powered By Giphy"
+                        />
+                        Your Saved Gifs
+                        </h4>
                     <h3> </h3>
                     {savedGifAndCaptionList(this.props.user.id)}
                 </div>
