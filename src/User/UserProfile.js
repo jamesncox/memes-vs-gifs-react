@@ -105,7 +105,10 @@ class UserProfile extends Component {
         } else {
             return (
                 <div>
-                    <h4>Your Saved Gifs</h4>
+                    <h4>
+                        <img style={{ width: "150px", float: "left", marginRight: "-150px" }} src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
+
+                        Your Saved Gifs</h4>
                     <h3> </h3>
                     {savedGifAndCaptionList(this.props.user.id)}
                 </div>

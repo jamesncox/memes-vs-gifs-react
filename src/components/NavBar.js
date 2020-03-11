@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
-import { logo } from '../assets/images/PoweredBy_200px-Black_HorizLogo.png'
-
 
 class NavBar extends Component {
 
@@ -24,7 +22,7 @@ class NavBar extends Component {
                 <Link to="/">Create!</Link>
                 <Link to="/saved-memes">Memes</Link>
                 <Link to="/saved-gifs">Gifs</Link>
-                {/* <img src={logo} alt="Powered by Giphy" /> */}
+                <img style={{ float: "right", marginTop: "15px" }} src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
             </div>
         )
     }
