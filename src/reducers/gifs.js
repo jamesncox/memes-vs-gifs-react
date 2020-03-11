@@ -29,6 +29,7 @@ export default (state = { all: [], randomGif: null, query: '', savedGifs: [], lo
             return { ...state, randomGif: null }
 
         case ADD_SAVED_GIF:
+            console.log(action.payload)
             return { ...state, savedGifs: [...state.savedGifs, action.payload] }
 
         case LOADING_SAVED_GIFS:
