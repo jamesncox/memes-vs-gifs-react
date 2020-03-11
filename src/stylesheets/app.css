@@ -40,7 +40,8 @@
   }
 
   h5 {
-    color: rgba(230, 230, 230, 0.767) 
+    font-size: 15px;
+    color: rgb(255, 255, 255);
   }
 
   .header {

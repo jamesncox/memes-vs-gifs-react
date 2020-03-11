@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom'
 // import { userMemes } from './UserMemes'
 import { deleteMeme } from '../actions/memes'
 import { deleteGif } from '../actions/gifs'
+import { deleteCaptionJoin } from '../actions/captionJoins'
 
 class UserProfile extends Component {
 
@@ -24,6 +25,10 @@ class UserProfile extends Component {
 
     handleDeleteGif = (id) => {
         this.props.deleteGif(id)
+    }
+
+    handleDeleteCaptionJoin = (id) => {
+        this.props.deleteCaptionJoin(id)
     }
 
     renderLoginMessage = () => {
@@ -101,6 +106,7 @@ class UserProfile extends Component {
             const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins[0].user_id === id)
             return (
                 userMemes.map(savedMeme => {
+                    console.log(savedMeme.caption_joins[0].id)
                     return savedMeme.captions.map(caption => {
                         return (
                             <>
@@ -117,7 +123,12 @@ class UserProfile extends Component {
                                         <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id + caption.id}>
                                             <img style={{ maxWidth: "500px", maxHeight: "500px" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
-                                            <CloseButton key={savedMeme.id + caption.id} onClick={() => this.handleDeleteMeme(savedMeme.id)} style={{ fontSize: "15px " }}>Delete</CloseButton>
+                                            <CloseButton
+                                                key={savedMeme.id + caption.id}
+                                                onClick={() => { this.handleDeleteMeme(savedMeme.id); this.handleDeleteCaptionJoin(savedMeme.caption_joins[0].id) }}
+                                                style={{ fontSize: "15px " }}>
+                                                Delete
+                                            </CloseButton>
                                         </SavedMemeCard>
                                     </div>
                                 </div>
@@ -186,4 +197,4 @@ const mapStateToProps = state => ({
     loggedIn: state.users.loggedIn
 })
 
-export default connect(mapStateToProps, { deleteMeme, deleteGif })(UserProfile)
+export default connect(mapStateToProps, { deleteMeme, deleteGif, deleteCaptionJoin })(UserProfile)

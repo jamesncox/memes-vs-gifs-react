@@ -33,6 +33,7 @@ class SavedMemes extends Component {
         console.log(this.props.savedMemes)
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
+                console.log(savedMeme.username)
                 return (
                     <>
                         <a href={`#${savedMeme.meme_id + caption.id}`}>
@@ -48,6 +49,7 @@ class SavedMemes extends Component {
                                 <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.meme_id + caption.id}>
                                     <img style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.meme_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+                                    <h5>by: {savedMeme.username}</h5>
                                 </SavedMemeCard>
                             </div>
                         </div>
