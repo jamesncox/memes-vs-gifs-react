@@ -50,7 +50,8 @@ export function sendGifRequest(sendObj) {
         gif_id: sendObj.gifId,
         text: sendObj.captionText,
         caption_id: sendObj.captionId,
-        user_id: sendObj.userId
+        user_id: sendObj.userId,
+        username: sendObj.username
     }
 
     return (dispatch) => {

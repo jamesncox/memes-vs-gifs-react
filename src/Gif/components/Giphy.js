@@ -23,7 +23,8 @@ class Giphy extends Component {
         const captionText = this.props.chosenCaption.text
         const captionId = this.props.chosenCaption.id
         const userId = this.props.user.id
-        const sendObj = { gifURL, gifId, captionText, captionId, userId }
+        const username = this.props.user.username
+        const sendObj = { gifURL, gifId, captionText, captionId, userId, username }
         this.props.sendGifRequest(sendObj)
     }
 

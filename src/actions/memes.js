@@ -45,7 +45,8 @@ export function sendMemeRequest(sendObj) {
         meme_id: sendObj.memeId,
         text: sendObj.captionText,
         caption_id: sendObj.captionId,
-        user_id: sendObj.userId
+        user_id: sendObj.userId,
+        username: sendObj.username
     }
 
     return (dispatch) => {
