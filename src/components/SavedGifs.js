@@ -8,6 +8,7 @@ class SavedGifs extends Component {
     render() {
         const savedGifAndCaptionList = this.props.savedGifs.map(savedGif => {
             return savedGif.captions.map(caption => {
+                console.log(savedGif.username)
                 return (
                     <>
                         <a href={`#${savedGif.gif_id + caption.id}`}>
@@ -23,6 +24,7 @@ class SavedGifs extends Component {
                                 <SavedGifCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
                                     <img style={{ width: "550px", maxHeight: "500px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
+                                    <h5>(created by: {savedGif.username})</h5>
                                 </SavedGifCard>
                             </div>
                         </div>

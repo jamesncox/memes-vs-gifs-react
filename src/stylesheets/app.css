@@ -39,6 +39,10 @@
     border-radius: .05in;
   }
 
+  h5 {
+    color: rgba(230, 230, 230, 0.767) 
+  }
+
   .header {
     margin: auto;
     margin-top: 20px;
