@@ -30,10 +30,8 @@ class SavedMemes extends Component {
     // }
 
     render() {
-        console.log(this.props.savedMemes)
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
-                console.log(savedMeme.username)
                 return (
                     <>
                         <a href={`#${savedMeme.meme_id + caption.id}`}>

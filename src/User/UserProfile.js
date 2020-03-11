@@ -48,23 +48,29 @@ class UserProfile extends Component {
             const userGifs = this.props.savedGifs.filter(gif => gif.caption_joins[0].user_id === id)
             return (
                 userGifs.map(savedGif => {
+                    console.log(savedGif.caption_joins[0].id)
                     return savedGif.captions.map(caption => {
                         return (
                             <>
-                                <a href={`#${savedGif.gif_id + caption.id}`}>
+                                <a href={`#${savedGif.id}`}>
                                     <SavedMemeCard className="saved-zoom" key={savedGif.id + caption.id}>
                                         <img style={{ width: "150px", height: "150px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                         {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
                                     </SavedMemeCard>
                                 </a>
 
-                                <div id={`${savedGif.gif_id + caption.id}`} className="overlay">
+                                <div id={`${savedGif.id}`} className="overlay">
                                     <div className="modal-popup">
                                         <a className="close" href="#">&times;</a>
                                         <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id + caption.id}>
                                             <img style={{ width: "500px", maxHeight: "600px" }} src={savedGif.gif_url} alt={savedGif.gif_id + caption.id} />
                                             <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
-                                            <CloseButton key={savedGif.id + caption.id} onClick={() => this.handleDeleteGif(savedGif.id)} style={{ fontSize: "15px " }}>Delete</CloseButton>
+                                            <CloseButton
+                                                key={savedGif.id}
+                                                onClick={() => { this.handleDeleteGif(savedGif.id); this.handleDeleteCaptionJoin(savedGif.caption_joins[0].id) }}
+                                                style={{ fontSize: "15px " }}>
+                                                Delete
+                                            </CloseButton>
                                         </SavedMemeCard>
                                     </div>
                                 </div>
@@ -106,7 +112,6 @@ class UserProfile extends Component {
             const userMemes = this.props.savedMemes.filter(meme => meme.caption_joins[0].user_id === id)
             return (
                 userMemes.map(savedMeme => {
-                    console.log(savedMeme.caption_joins[0].id)
                     return savedMeme.captions.map(caption => {
                         return (
                             <>
