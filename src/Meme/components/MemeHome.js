@@ -23,7 +23,7 @@ class MemeHome extends Component {
                 <img src={"https://media.giphy.com/media/1zSz5MVw4zKg0/giphy.gif"} alt={"Jonah Hill stop that"} />
                 <h3> </h3>
                 You must be logged in to create a meme!
-                    <h3> </h3>
+                <h3> </h3>
                 <CloseButton onClick={this.handleClick}>Login</CloseButton>
             </LoginCard>
         )
@@ -43,7 +43,7 @@ class MemeHome extends Component {
                     <h1 className="header">That's What You Meme?</h1>
                     <MemeContainer />
                     <CaptionContainer />
-                    <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>
+                    {/* <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4> */}
                 </div >
             )
         }

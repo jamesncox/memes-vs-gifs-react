@@ -66,7 +66,7 @@ class App extends Component {
               <Logout />
             </Route>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     );

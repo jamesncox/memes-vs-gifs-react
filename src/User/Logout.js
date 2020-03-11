@@ -14,9 +14,10 @@ class Logout extends Component {
         return (
             <>
                 <h3> </h3>
-                <img src={"https://media.giphy.com/media/8Bl38gdtUK7WDdi59y/giphy.gif"} alt={"Deadpool says goodbye"} />
-                <h3> </h3>
                 <h4> Thanks for visiting Memes vs Gifs. Please come back soon! </h4>
+                <h3> </h3>
+                <img src={"https://media.giphy.com/media/8Bl38gdtUK7WDdi59y/giphy.gif"} alt={"Deadpool says goodbye"} />
+
             </>
         )
     }

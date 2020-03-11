@@ -23,7 +23,7 @@ class GiphyHome extends Component {
                 <img src={"https://media.giphy.com/media/eeL8EcBBTwSMLACw6F/giphy.gif"} alt={"Elf congratulations"} />
                 <h3> </h3>
                 You must be logged in to create a gif!
-                    <h3> </h3>
+                <h3> </h3>
                 <CloseButton onClick={this.handleClick}>Login</CloseButton>
             </LoginCard>
         )
@@ -43,7 +43,7 @@ class GiphyHome extends Component {
                     <h1 className="header">You Gif What You Gif!</h1>
                     <GiphyContainer />
                     <CaptionContainer />
-                    <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>
+                    {/* <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4> */}
                 </div>
             )
         }

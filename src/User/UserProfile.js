@@ -205,7 +205,7 @@ class UserProfile extends Component {
                     <h1 className="header">Welcome {this.props.user.username}</h1>
                     {this.displayUserGifs()}
                     {this.displayUserMemes()}
-                    <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4>
+                    {/* <h4 style={{ width: "98%", backgroundColor: "rgba(0, 0, 0, 0.50)" }}>Memes Vs Gifs</h4> */}
                 </>
             )
         }

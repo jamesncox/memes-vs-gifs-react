@@ -42,8 +42,8 @@ class Login extends Component {
     renderSuccessMessage = () => {
         if (this.props.user) {
             return (
-                <LoginCard>
-                    <img src={"https://media.giphy.com/media/3o7aDgf134NzaaHI8o/giphy.gif"} alt={"Elf congratulations"} />
+                <LoginCard style={{ marginBottom: "70px" }}>
+                    <img src={"https://media.giphy.com/media/3o7aDgf134NzaaHI8o/giphy.gif"} alt={"Robert Redform welcome back"} />
                     <h3> </h3>
                     Welcome back, {this.props.user.username}!
                     <h3> </h3>
