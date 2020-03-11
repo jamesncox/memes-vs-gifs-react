@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SavedMemeCard } from './Styles'
+import { ThumbnailCard, PopupCard } from './Styles'
 import { connect } from 'react-redux'
 import { getSavedMemes } from '../actions/memes'
 
@@ -11,20 +11,27 @@ class SavedMemes extends Component {
                 return (
                     <>
                         <a href={`#${savedMeme.id}`}>
-                            <SavedMemeCard className="saved-zoom" key={savedMeme.id}>
-                                <img className="thumbnail" src={savedMeme.meme_url} alt={savedMeme.id} />
-                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
-                            </SavedMemeCard>
+                            <ThumbnailCard className="saved-zoom" key={savedMeme.id}>
+                                <img
+                                    className="thumbnail"
+                                    src={savedMeme.meme_url}
+                                    alt={savedMeme.id}
+                                />
+                            </ThumbnailCard>
                         </a>
 
                         <div id={`${savedMeme.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedMemeCard style={{ border: "solid", borderColor: "grey" }} key={savedMeme.id}>
-                                    <img style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }} src={savedMeme.meme_url} alt={savedMeme.id} />
+                                <PopupCard key={savedMeme.id}>
+                                    <img
+                                        style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }}
+                                        src={savedMeme.meme_url}
+                                        alt={savedMeme.id}
+                                    />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                     <h5>by: {savedMeme.username}</h5>
-                                </SavedMemeCard>
+                                </PopupCard>
                             </div>
                         </div>
                     </>
@@ -36,14 +43,21 @@ class SavedMemes extends Component {
             return (
                 <>
                     <h3>Loading memes...</h3>
-                    <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading memes..."} />
+                    <img
+                        src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"}
+                        alt={"Loading memes..."}
+                    />
                 </>
             )
         } else if (this.props.savedMemes.length === 0) {
             return (
                 <>
                     <h3>No saved memes yet</h3>
-                    <img style={{ width: "500px" }} src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img
+                        style={{ width: "500px" }}
+                        src={"https://media.giphy.com/media/Az1CJ2MEjmsp2/giphy.gif"}
+                        alt={"Tumbleweed gif"}
+                    />
                 </>
             )
         } else {

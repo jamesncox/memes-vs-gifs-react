@@ -14,28 +14,29 @@ const GameLinkCard = styled.div`
   display: inline-table;
 `
 
-const SavedMemeCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.95) ;
+const ThumbnailCard = styled.div`
+  background-color: rgba(0, 0, 0, 0.90) ;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   width: 1in;
-  height: 1in;
+  height: .5in;
   border-radius: .25in;
   margin: 10px;
   display: inline-block;
   padding: 10px;
   display: inline-table;
 `
-
-const SavedGifCard = styled.div`
+const PopupCard = styled.div`
   background-color: rgba(0, 0, 0, 0.90);
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   width: 1in;
-  height: 1in;
+  height: .1in;
   border-radius: .25in;
+  border: solid;
+  border-color: rgb(121, 121, 121);
   margin: 10px;
   display: inline-block;
   padding: 10px;
@@ -59,4 +60,4 @@ const LogOutButton = styled.button`
   position: relative;
 `
 
-export { GameLinkCard, SavedMemeCard, SavedGifCard, FilterButton, LogOutButton }
+export { GameLinkCard, ThumbnailCard, PopupCard, FilterButton, LogOutButton }

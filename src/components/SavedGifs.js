@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SavedGifCard } from './Styles'
+import { ThumbnailCard, PopupCard } from './Styles'
 import { connect } from 'react-redux'
 import { getSavedGifs } from '../actions/gifs'
 
@@ -11,20 +11,27 @@ class SavedGifs extends Component {
                 return (
                     <>
                         <a href={`#${savedGif.id}`}>
-                            <SavedGifCard className="saved-zoom" key={savedGif.id}>
-                                <img className="thumbnail" src={savedGif.gif_url} alt={savedGif.id} />
-                                {/* <h2 style={{ fontSize: "15px" }}>{caption.text}</h2> */}
-                            </SavedGifCard>
+                            <ThumbnailCard className="saved-zoom" key={savedGif.id}>
+                                <img
+                                    className="thumbnail"
+                                    src={savedGif.gif_url}
+                                    alt={savedGif.id}
+                                />
+                            </ThumbnailCard>
                         </a>
 
                         <div id={`${savedGif.id}`} className="overlay">
                             <div className="modal-popup">
                                 <a className="close" href="#">&times;</a>
-                                <SavedGifCard style={{ border: "solid", borderColor: "grey" }} key={savedGif.id}>
-                                    <img style={{ width: "550px", maxHeight: "500px" }} src={savedGif.gif_url} alt={savedGif.id} />
+                                <PopupCard key={savedGif.id}>
+                                    <img
+                                        style={{ width: "550px", maxHeight: "500px" }}
+                                        src={savedGif.gif_url}
+                                        alt={savedGif.id}
+                                    />
                                     <h2 style={{ fontSize: "25px" }}>{caption.text}</h2>
                                     <h5>by: {savedGif.username}</h5>
-                                </SavedGifCard>
+                                </PopupCard>
                             </div>
                         </div>
                     </>
@@ -36,14 +43,21 @@ class SavedGifs extends Component {
             return (
                 <>
                     <h3>Loading gifs...</h3>
-                    <img src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"} alt={"Loading gifs..."} />
+                    <img
+                        src={"https://i.giphy.com/media/j37uIbtLm9atRzOtpR/giphy.webp"}
+                        alt={"Loading gifs..."}
+                    />
                 </>
             )
         } else if (this.props.savedGifs.length === 0) {
             return (
                 <>
                     <h3>No saved gifs yet</h3>
-                    <img style={{ width: "500px" }} src={"https://media.giphy.com/media/3o85xscgnCWS8Xxqik/giphy.gif"} alt={"Tumbleweed gif"} />
+                    <img
+                        style={{ width: "500px" }}
+                        src={"https://media.giphy.com/media/3o85xscgnCWS8Xxqik/giphy.gif"}
+                        alt={"Tumbleweed gif"}
+                    />
                 </>
             )
         } else {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const SavedMemeCard = styled.div`
+const ThumbnailCard = styled.div`
   background-color: rgba(0, 0, 0, 0.90) ;
   color: white;
   font-family: Helvetica, sans-serif;
@@ -13,14 +13,16 @@ const SavedMemeCard = styled.div`
   padding: 10px;
   display: inline-table;
 `
-const SavedGifCard = styled.div`
-  background-color: #32003bd2;
+const PopupCard = styled.div`
+  background-color: rgba(0, 0, 0, 0.90);
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   width: 1in;
   height: .1in;
   border-radius: .25in;
+  border: solid;
+  border-color: rgb(121, 121, 121);
   margin: 10px;
   display: inline-block;
   padding: 10px;
@@ -76,4 +78,4 @@ const CloseButton = styled.button`
   font-size: 20px;
   font-family: Helvetica, sans-serif;
 `
-export { SavedMemeCard, SavedGifCard, LoginCard, SignupCard, ErrorCard, CloseButton }
+export { ThumbnailCard, PopupCard, LoginCard, SignupCard, ErrorCard, CloseButton }
