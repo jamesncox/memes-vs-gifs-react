@@ -19,7 +19,16 @@ class NavBar extends Component {
                         <Link to="/logout">Log out</Link>
                     </div>
                 </div>
-                <Link to="/">Create!</Link>
+                <div className="dropdown">
+                    <button className="dropbtn">Create!
+                     <i className="fa fa-caret-down"></i>
+                    </button>
+                    <div className="dropdown-content">
+                        <Link to="/">Home</Link>
+                        <Link to="/meme-game">Meme</Link>
+                        <Link to="/gif-game">Gif</Link>
+                    </div>
+                </div>
                 <Link to="/saved-memes">Memes</Link>
                 <Link to="/saved-gifs">Gifs</Link>
                 <img style={{ float: "right", marginTop: "15px" }} src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />

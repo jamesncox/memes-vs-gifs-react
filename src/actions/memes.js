@@ -48,7 +48,6 @@ export function sendMemeRequest(sendObj) {
         user_id: sendObj.userId,
         username: sendObj.username
     }
-    console.log(objData)
 
     return (dispatch) => {
         fetch("http://localhost:3000/api/v1/caption_joins", {
