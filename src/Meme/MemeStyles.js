@@ -12,7 +12,9 @@ const MemeButton = styled.button`
   border-radius: .10in;
   background-color: rgba(0, 0, 0, 0.00);
   color: #F8F8FF;
-  font-size: 20px;
+  font-size: 18px;
+  margin-right: 15px;
+  maring-left: 15px;
   font-family: Helvetica, sans-serif;
 `
 

@@ -4,8 +4,10 @@ const CaptionButton = styled.button`
   border-radius: .10in;
   background-color: rgba(0, 0, 0, 0.00);
   color:  #F8F8FF;
-  font-size: 20px;
+  font-size: 18px;
   font-family: Helvetica, sans-serif;
+  margin-right: 15px;
+  maring-left: 15px;
 `
 
 const SelectButton = styled.button`
@@ -20,6 +22,8 @@ const FormButton = styled.button`
   background-color: rgba(0, 0, 0, 0.00);
   color:  #F8F8FF;
   font-size: 15px;
+  margin-right: 10px;
+  maring-left: 10px;
   font-family: Helvetica, sans-serif;
 `
 
