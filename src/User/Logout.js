@@ -6,8 +6,10 @@ import { getToken } from '../actions/sessions'
 class Logout extends Component {
 
     componentDidMount() {
-        this.props.clearCurrentUser()
-        this.props.getToken()
+        if (window.confirm('Are you sure you wish to logout?')) {
+            this.props.clearCurrentUser()
+            this.props.getToken()
+        }
     }
 
     render() {
