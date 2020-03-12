@@ -4,7 +4,6 @@ import {
     CLEAR_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
-    // START_MEME_POST_REQUEST,
     ADD_SAVED_MEME,
     DELETE_MEME
 } from '../actionTypes'
@@ -74,7 +73,7 @@ export const getSavedMemes = () => {
             const savedMemeData = await res.json()
             dispatch(setSavedMemes(savedMemeData))
         } catch (err) {
-            alert("error fetching saved memes from API")
+            alert("There was a problem loading everyone's saved memes")
         }
     }
 }
