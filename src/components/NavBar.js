@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux'
-import { getSavedMemes } from '../actions/memes'
+import { Link } from 'react-router-dom'
 
 class NavBar extends Component {
 
@@ -37,8 +35,4 @@ class NavBar extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    user: state.users.user
-})
-
-export default connect(mapStateToProps, { getSavedMemes })(NavBar)
+export default NavBar
