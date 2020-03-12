@@ -65,6 +65,9 @@
     Connor McGregor
     https://i.giphy.com/media/xUOrw5LIxb8S9X1LGg/giphy.webp
 
+# Practice URL for Create Meme (Smiling Batman)
+  https://i.pinimg.com/564x/9a/81/1f/9a811f06c2397cdfd96ea671d44d4fda.jpg
+
     
 # css for old version of toggled pop up / might need at some point
   /* CSS for saved message popup on gif/meme card */

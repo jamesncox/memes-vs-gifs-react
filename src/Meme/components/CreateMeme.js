@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { MemeCard } from '../MemeStyles'
+import { NewMemeForm } from '../MemeStyles'
+import { connect } from 'react-redux'
+import { PREVIEW_MEME } from '../../actionTypes'
 
 class CreateMeme extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            url: ''
+            url: '',
+            id: Math.ceil(Math.random() * 1000)
         }
     }
 
@@ -16,18 +19,20 @@ class CreateMeme extends Component {
         })
     }
 
-    handleSignup = e => {
+    handlePreview = e => {
         e.preventDefault()
         this.props.previewImage(this.state)
         this.setState({
-            url: ''
+            url: '',
+            id: Math.ceil(Math.random() * 1000)
         })
     }
 
     render() {
         return (
-            <MemeCard>
+            <NewMemeForm>
                 <form onSubmit={this.handlePreview.bind(this)}>
+                    Paste in image url
                     <input
                         type="text"
                         placeholder="Image url"
@@ -38,9 +43,13 @@ class CreateMeme extends Component {
                     <p> </p>
                     <input type="submit" value="Preview Image" />
                 </form>
-            </MemeCard>
+            </NewMemeForm>
         )
     }
 }
 
-export default CreateMeme
+const mapDispatchToProps = dispatch => ({
+    previewImage: (previewMeme) => dispatch({ type: PREVIEW_MEME, payload: previewMeme })
+})
+
+export default connect(null, mapDispatchToProps)(CreateMeme)

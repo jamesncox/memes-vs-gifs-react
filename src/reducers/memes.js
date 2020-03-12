@@ -6,7 +6,8 @@ import {
     ADD_SAVED_MEME,
     LOADING_SAVED_MEMES,
     SET_SAVED_MEMES,
-    DELETE_MEME
+    DELETE_MEME,
+    PREVIEW_MEME
 } from '../actionTypes'
 
 export default (state = { all: [], randomMeme: null, savedMemes: [], loading: false }, action) => {
@@ -25,6 +26,7 @@ export default (state = { all: [], randomMeme: null, savedMemes: [], loading: fa
             return { ...state, randomMeme: null }
 
         case ADD_SAVED_MEME:
+            console.log(action.payload)
             return { ...state, savedMemes: [...state.savedMemes, action.payload] }
 
         case LOADING_SAVED_MEMES:
@@ -36,6 +38,9 @@ export default (state = { all: [], randomMeme: null, savedMemes: [], loading: fa
         case DELETE_MEME:
             const persistedMemes = state.savedMemes.filter(meme => meme.id !== action.payload)
             return { ...state, savedMemes: persistedMemes }
+
+        case PREVIEW_MEME:
+            return { ...state, randomMeme: action.payload }
 
         default:
             return state

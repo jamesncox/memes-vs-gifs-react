@@ -42,7 +42,6 @@ class GenerateCaption extends Component {
         }
     }
 
-    // need to refactor this to store errors like users does, so this doesn't read empty/null
     renderErrors = () => {
         if (this.props.errors) {
             return <Errors errors={this.props.errors} />

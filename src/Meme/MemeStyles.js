@@ -37,6 +37,21 @@ const LoginCard = styled.div`
   display: inline-table;
 `
 
+const NewMemeForm = styled.div`
+  background-color: rgb(11, 218, 114);
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  width: 2.5in;
+  height: 1in;
+  border-radius: .25in;
+  border-style: solid;
+  border-color: black;
+  margin: 10px;
+  padding: 10px;
+  display: inline-table;
+`
+
 const CloseButton = styled.button`
   border-radius: .10in;
   background-color: rgba(0, 0, 0, 0.00);
@@ -45,4 +60,4 @@ const CloseButton = styled.button`
   font-family: Helvetica, sans-serif;
 `
 
-export { MemeCard, MemeButton, SaveButton, LoginCard, CloseButton }
+export { MemeCard, MemeButton, SaveButton, LoginCard, CloseButton, NewMemeForm }

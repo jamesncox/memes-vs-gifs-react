@@ -29,11 +29,12 @@ class Meme extends Component {
     }
 
     render() {
+        console.log(this.props.randomMeme)
         return (
             <>
                 <div className="zoom">
                     <MemeCard>
-                        <img style={{ width: "400px" }} src={this.props.memesURL} alt={this.props.name} />
+                        <img style={{ width: "400px" }} src={this.props.memesURL} alt={this.props.id} />
                         <h2>{this.props.chosenCaption.text}</h2>
                         {this.renderSaveButton()}
                     </MemeCard>
