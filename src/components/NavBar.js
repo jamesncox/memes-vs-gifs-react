@@ -9,7 +9,7 @@ class NavBar extends Component {
         return (
             <div className="navbar" >
                 <div className="dropdown">
-                    <button className="dropbtn">User
+                    <button style={{ boxShadow: "none" }} className="dropbtn">User
                      <i className="fa fa-caret-down"></i>
                     </button>
                     <div className="dropdown-content">
@@ -20,7 +20,7 @@ class NavBar extends Component {
                     </div>
                 </div>
                 <div className="dropdown">
-                    <button className="dropbtn">Create!
+                    <button style={{ boxShadow: "none" }} className="dropbtn">Create!
                      <i className="fa fa-caret-down"></i>
                     </button>
                     <div className="dropdown-content">
@@ -32,7 +32,7 @@ class NavBar extends Component {
                 <Link to="/saved-memes">Memes</Link>
                 <Link to="/saved-gifs">Gifs</Link>
                 <img style={{ float: "right", marginTop: "15px" }} src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
-            </div>
+            </div >
         )
     }
 }

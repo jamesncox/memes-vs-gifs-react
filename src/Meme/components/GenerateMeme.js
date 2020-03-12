@@ -31,7 +31,7 @@ class GenerateMeme extends Component {
         return (
             <div>
                 <h4 syle={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}>
-                    <MemeButton onClick={this.handleClick}>Random Meme</MemeButton>
+                    <MemeButton className="button" onClick={this.handleClick}>Random Meme</MemeButton>
                     {' '}
                     <MemeButton onClick={this.handleShow}>Upload meme</MemeButton>
                     {' '}

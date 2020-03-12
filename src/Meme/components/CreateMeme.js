@@ -9,7 +9,7 @@ class CreateMeme extends Component {
         super(props)
         this.state = {
             url: '',
-            id: Math.ceil(Math.random() * 1000)
+            id: Math.ceil(Math.random() * 10000)
         }
     }
 

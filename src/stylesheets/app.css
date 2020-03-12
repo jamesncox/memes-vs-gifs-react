@@ -44,6 +44,23 @@
     color: rgb(255, 255, 255);
   }
 
+  footer {
+    position: auto;
+    border-radius: .05in;
+    padding: 10px;
+    bottom: 10px;
+    width: 98%;
+    overflow: hidden;
+    background-color:  rgba(0, 0, 0, 0.479);
+    color: rgba(255, 255, 255, 0.486);
+    font-size: 25px;
+    font-family: Arial;
+  }
+  
+  button:hover {
+    box-shadow: 0 0 1.5px 1.5px rgb(255, 255, 255);
+  }
+
   .header {
     margin: auto;
     margin-top: 20px;
@@ -57,19 +74,6 @@
     color: white;
     font-size: 40px;
     border-radius: .05in;
-  }
-
-  footer {
-    position: auto;
-    border-radius: .05in;
-    padding: 10px;
-    bottom: 10px;
-    width: 98%;
-    overflow: hidden;
-    background-color:  rgba(0, 0, 0, 0.479);
-    color: rgba(255, 255, 255, 0.486);
-    font-size: 25px;
-    font-family: Arial;
   }
 
   .thumbnail {
