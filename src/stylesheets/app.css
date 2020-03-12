@@ -91,7 +91,7 @@
   }
 
   .test-color {
-    color: rgb(11, 218, 114);
+    color: rgba(0, 255, 128, 0.808);
   }
 
   .loader {

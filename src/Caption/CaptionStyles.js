@@ -38,7 +38,8 @@ const CaptionCard = styled.div`
 `
 
 const CaptionForm = styled.div`
-  background-color: #001f3fe8;
+  background: rgb(43,0,69);
+  background: linear-gradient(308deg, rgba(43,0,69,0.9023984593837535) 27%, rgba(0,0,0,0.908000700280112) 100%);
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;

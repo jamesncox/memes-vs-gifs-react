@@ -33,6 +33,7 @@ class CreateMeme extends Component {
         return (
             <NewMemeForm>
                 <form onSubmit={this.handlePreview.bind(this)}>
+                    <p> </p>
                     Paste in image url
                     <input
                         type="text"
