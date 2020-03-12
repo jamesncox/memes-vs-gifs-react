@@ -53,7 +53,6 @@ class Login extends Component {
         }
     }
 
-    // create a conditional that IF a user is logged in, render a message that must signout first or something
     render() {
         if (this.props.loggedIn === true) {
             return this.state.shouldRedirect ? (<Redirect to="/profile" />) : (

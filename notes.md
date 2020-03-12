@@ -20,7 +20,13 @@
     [x]  Showing the specific User's creations will have to be checked
     [x]  Potentially having the saved meme/gifs page organized by user
 
-[x] I'd like to display saved Memes/Gifs in a carousel.
+[x] Display saved memes and gifs with a modal.
+
+[] Create Meme with external URL
+    []  "previewMeme" state, to hold a potential meme before saving to database
+    []  Once a caption is selected, can then save to database like normal.
+
+[] Should have an "About" page with info about the app, maybe myself and maybe contact info.
 
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
