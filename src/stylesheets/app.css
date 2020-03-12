@@ -61,6 +61,10 @@
     box-shadow: 0 0 1.5px 1.5px rgb(255, 255, 255);
   }
 
+  textarea {
+    height: auto;
+  }
+
   .header {
     margin: auto;
     margin-top: 20px;
@@ -127,7 +131,7 @@
     display: inline-block;
     padding: 10px;
     display: inline-table;
-    transition: transform .4s;
+    transition: transform .5s;
   }
   
   .zoom:hover {

@@ -36,13 +36,21 @@ class NewCaptionForm extends Component {
                 <CaptionForm className="big-zoom">
                     <form onSubmit={this.handleSubmit.bind(this)}>
                         <br></br>
-                        <textarea placeholder="Create a hilarious caption!!" name="text" value={this.state.text} onChange={e => this.handleChange(e)} />
+                        <textarea
+                            placeholder="Create a hilarious caption!!"
+                            name="text" value={this.state.text}
+                            onChange={e => this.handleChange(e)}
+                            rows="5"
+                            cols="25"
+                        />
                         <br></br>
                         <br></br>
                         Give your caption a PG or NSFW rating
                    <br></br>
                         <br></br>
-                        <select id="selectedRating" name="rating" value={this.state.rating} onChange={e => this.handleChange(e)}>
+                        <select id="selectedRating"
+                            name="rating" value={this.state.rating}
+                            onChange={e => this.handleChange(e)}>
                             <option value="PG">PG</option>
                             <option value="R">NSFW</option>
                         </select>
