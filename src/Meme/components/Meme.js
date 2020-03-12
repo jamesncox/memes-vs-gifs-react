@@ -29,7 +29,7 @@ class Meme extends Component {
     }
 
     render() {
-        console.log(this.props.randomMeme)
+        // console.log(this.props.randomMeme)
         return (
             <>
                 <div className="zoom">

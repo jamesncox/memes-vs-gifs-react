@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NewMemeForm } from '../MemeStyles'
 import { connect } from 'react-redux'
-import { PREVIEW_MEME } from '../../actionTypes'
+import { PREVIEW_MEME, CLEAR_CHOSEN_CAPTION } from '../../actionTypes'
 
 class CreateMeme extends Component {
 
@@ -22,6 +22,7 @@ class CreateMeme extends Component {
     handlePreview = e => {
         e.preventDefault()
         this.props.previewImage(this.state)
+        this.props.clearChosenCaption()
         this.setState({
             url: '',
             id: Math.ceil(Math.random() * 1000)
@@ -49,7 +50,8 @@ class CreateMeme extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    previewImage: (previewMeme) => dispatch({ type: PREVIEW_MEME, payload: previewMeme })
+    previewImage: (previewMeme) => dispatch({ type: PREVIEW_MEME, payload: previewMeme }),
+    clearChosenCaption: () => dispatch({ type: CLEAR_CHOSEN_CAPTION })
 })
 
 export default connect(null, mapDispatchToProps)(CreateMeme)

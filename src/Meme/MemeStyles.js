@@ -38,7 +38,7 @@ const LoginCard = styled.div`
 `
 
 const NewMemeForm = styled.div`
-  background-color: rgb(11, 218, 114);
+  background-color: rgb(11, 218, 114, .80);
   color: black;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
