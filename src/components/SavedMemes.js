@@ -25,7 +25,7 @@ class SavedMemes extends Component {
                                 <a className="close" href="#">&times;</a>
                                 <PopupCard key={savedMeme.id}>
                                     <img
-                                        style={{ maxHeight: "500px", marginLeft: "auto", marginRight: "auto" }}
+                                        style={{ maxHeight: "500px", width: "400px", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}
                                         src={savedMeme.meme_url}
                                         alt={savedMeme.id}
                                     />
