@@ -62,7 +62,7 @@ class SavedMemes extends Component {
             )
         } else {
             return (
-                <div>
+                <div key={Math.ceil(Math.random() * 10)}>
                     <h1 style={{ width: "6in" }} className="header">Everyone's created memes</h1>
                     <h3> </h3>
                     {savedMemeAndCaptionList}

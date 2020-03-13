@@ -29,7 +29,9 @@ class NavBar extends Component {
                 </div>
                 <Link to="/saved-memes">Memes</Link>
                 <Link to="/saved-gifs">Gifs</Link>
-                <img style={{ float: "right", marginTop: "15px" }} src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
+                <a href="https://www.giphy.com" target="_blank" style={{ float: "right", bottomPadding: "-15px" }} >
+                    <img src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')} alt="Powered By Giphy" />
+                </a>
             </div >
         )
     }

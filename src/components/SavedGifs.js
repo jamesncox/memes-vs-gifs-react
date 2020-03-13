@@ -62,7 +62,7 @@ class SavedGifs extends Component {
             )
         } else {
             return (
-                <div>
+                <div key={Math.ceil(Math.random() * 10)}>
                     <h1 style={{ width: "5in" }} className="header">Everyone's created gifs</h1>
                     {savedGifAndCaptionList}
                 </div>
