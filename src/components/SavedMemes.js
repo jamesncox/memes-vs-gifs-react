@@ -5,6 +5,21 @@ import { getSavedMemes } from '../actions/memes'
 
 class SavedMemes extends Component {
 
+    // state = {
+    //     likeCounts: {}
+    // }
+
+    // handleLike = (id) => {
+    //     let likes = 1
+    //     if (this.state.likeCounts[id]) { likes = this.state.likeCounts[id] + 1 }
+    //     this.setState({
+    //         likeCounts: {
+    //             ...this.state.likeCounts,
+    //             [id]: likes
+    //         }
+    //     })
+    // }
+
     render() {
         const savedMemeAndCaptionList = this.props.savedMemes.map(savedMeme => {
             return savedMeme.captions.map(caption => {
@@ -17,6 +32,8 @@ class SavedMemes extends Component {
                                     src={savedMeme.meme_url}
                                     alt={savedMeme.id}
                                 />
+                                {/* <button onClick={() => this.handleLike(savedMeme.id)}> Like </button>
+                                <h5>liked: {this.state.likeCounts[savedMeme.id]} times</h5> */}
                             </ThumbnailCard>
                         </a>
 

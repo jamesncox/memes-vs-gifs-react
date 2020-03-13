@@ -1,26 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CaptionCard, SelectButton } from './CaptionStyles'
 import { connect } from 'react-redux'
 import { SET_CHOSEN_CAPTION } from '../actionTypes'
 
-class Caption extends Component {
+function Caption(props) {
 
-    handleClick = (e) => {
-        this.props.setChosenCaption(this.props)
+    const handleClick = () => {
+        props.setChosenCaption(props)
     }
 
-    render() {
-        return (
-            <>
-                <div className="zoom">
-                    <CaptionCard>
-                        <SelectButton onClick={this.handleClick}>Select</SelectButton>
-                        <h2>{this.props.text}</h2>
-                    </CaptionCard>
-                </div>
-            </>
-        )
-    }
+    return (
+        <>
+            <div className="zoom">
+                <CaptionCard>
+                    <SelectButton onClick={handleClick}>Select</SelectButton>
+                    <h2>{props.text}</h2>
+                </CaptionCard>
+            </div>
+        </>
+    )
 }
 
 const mapDispatchToProps = dispatch => {
