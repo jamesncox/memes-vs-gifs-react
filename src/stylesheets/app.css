@@ -194,7 +194,8 @@
   /* Links inside the navbar */
   .navbar a {
     float: left;
-    font-size: 20px;
+    font-size: 23px;
+    margin-top: 3px;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -205,12 +206,13 @@
   .dropdown {
     float: left;
     overflow: hidden;
+    margin-top: 3px;
   }
   
   /* Dropdown button */
   .dropdown .dropbtn {
     position: relative;
-    font-size: 20px;
+    font-size: 23px;
     border: none;
     outline: none;
     color: white;
@@ -231,7 +233,7 @@
     display: none;
     position: absolute;
     background-color: #e7e7e7e5;
-    min-width: 120px;
+    min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: .05in;
