@@ -32,8 +32,8 @@ class SavedMemes extends Component {
                                     src={savedMeme.meme_url}
                                     alt={savedMeme.id}
                                 />
-                                {/* <button onClick={() => this.handleLike(savedMeme.id)}> Like </button>
-                                <h5>liked: {this.state.likeCounts[savedMeme.id]} times</h5> */}
+                                {/* <button onClick={() => this.handleLike(savedMeme.id)}> Like </button> */}
+                                {/* <h5>liked: {this.state.likeCounts[savedMeme.id]} times</h5> */}
                             </ThumbnailCard>
                         </a>
 
