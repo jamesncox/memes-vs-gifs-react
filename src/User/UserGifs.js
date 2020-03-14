@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { ThumbnailCard, PopupCard, LoginCard, CloseButton } from './UserStyles'
+import { ThumbnailCard, PopupCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
-import { deleteMeme } from '../actions/memes'
 import { deleteGif } from '../actions/gifs'
 import { deleteCaptionJoin } from '../actions/captionJoins'
 
@@ -110,4 +109,4 @@ const mapStateToProps = state => ({
     loadingGifs: state.gifs.loading
 })
 
-export default connect(mapStateToProps)(UserGifs)
+export default connect(mapStateToProps, { deleteGif, deleteCaptionJoin })(UserGifs)

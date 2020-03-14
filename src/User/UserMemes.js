@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { ThumbnailCard, PopupCard, LoginCard, CloseButton } from './UserStyles'
+import { ThumbnailCard, PopupCard, CloseButton } from './UserStyles'
 import { connect } from 'react-redux'
 import { deleteMeme } from '../actions/memes'
-import { deleteGif } from '../actions/gifs'
 import { deleteCaptionJoin } from '../actions/captionJoins'
 
 class UserMemes extends Component {
@@ -103,4 +102,4 @@ const mapStateToProps = state => ({
     loadingMemes: state.memes.loading
 })
 
-export default connect(mapStateToProps)(UserMemes)
+export default connect(mapStateToProps, { deleteMeme, deleteCaptionJoin })(UserMemes)
