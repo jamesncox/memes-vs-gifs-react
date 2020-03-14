@@ -31,7 +31,7 @@
 
 [] Should have an "About" page with info about the app, maybe myself and maybe contact info.
 
-[] Add UserGifs and UserMemes components to call in UserProfile Component (presentation/container relationship)
+[x] Add UserGifs and UserMemes components to call in UserProfile Component (presentation/container relationship)
 
 [] Refactor the href / <a> tag </a> problem into onClick and function for popUp/Modal display
 
