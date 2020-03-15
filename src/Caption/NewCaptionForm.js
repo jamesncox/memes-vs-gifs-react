@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { CaptionForm } from './CaptionStyles'
+import { CaptionForm, CaptionCard, SelectButton } from './CaptionStyles'
 import { connect } from 'react-redux'
 import { sendSavedCaption } from '../actions/captions'
+import { PREVIEW_CAPTION, CLEAR_PREVIEW_CAPTION } from '../actionTypes'
 
 class NewCaptionForm extends Component {
     state = {
@@ -30,44 +31,79 @@ class NewCaptionForm extends Component {
 
     }
 
-    render() {
+    handlePreview = (e) => {
+        e.preventDefault()
+
+        const text = this.state.text
+        const rating = this.state.rating
+        const userId = this.props.user.id
+        const captionObj = { text, rating, userId }
+        this.props.previewCaption(captionObj)
+    }
+
+    editCaption = () => {
+        return this.props.clearPreview()
+    }
+
+    renderCaptionPreview = () => {
         return (
-            <>
-                <CaptionForm className="big-zoom">
-                    <form onSubmit={this.handleSubmit.bind(this)}>
-                        <br></br>
-                        <textarea
-                            placeholder="Create a hilarious caption!!"
-                            name="text" value={this.state.text}
-                            onChange={e => this.handleChange(e)}
-                            rows="5"
-                            cols="25"
-                        />
-                        <br></br>
-                        <br></br>
+            <CaptionCard>
+                <SelectButton style={{ margin: "5px" }} onClick={this.handleSubmit}>Select</SelectButton>
+                <SelectButton onClick={this.editCaption}>Edit</SelectButton>
+                <h2>{this.props.captionPreview.text}</h2>
+                <h3>Rating: {this.props.captionPreview.rating}</h3>
+            </CaptionCard >
+        )
+    }
+
+    render() {
+        if (Object.keys(this.props.captionPreview).length > 0) {
+            return this.renderCaptionPreview()
+        } else {
+            return (
+                <>
+                    <CaptionForm className="big-zoom">
+                        <form onSubmit={this.handlePreview.bind(this)}>
+                            <br></br>
+                            <textarea
+                                placeholder="Create a hilarious caption!!"
+                                name="text" value={this.state.text}
+                                onChange={e => this.handleChange(e)}
+                                rows="5"
+                                cols="25"
+                            />
+                            <br></br>
+                            <br></br>
                         Give your caption a PG or NSFW rating
                    <br></br>
-                        <br></br>
-                        <select id="selectedRating"
-                            name="rating" value={this.state.rating}
-                            onChange={e => this.handleChange(e)}>
-                            <option value="PG">PG</option>
-                            <option value="R">NSFW</option>
-                        </select>
-                        {' '}
-                        <input type="submit" value="Create Caption" />
-                        <br></br>
-                        <br></br>
-                    </form>
-                </CaptionForm>
-            </>
-        )
+                            <br></br>
+                            <select id="selectedRating"
+                                name="rating" value={this.state.rating}
+                                onChange={e => this.handleChange(e)}>
+                                <option value="PG">PG</option>
+                                <option value="R">NSFW</option>
+                            </select>
+                            {' '}
+                            <input type="submit" value="Create Caption" />
+                            <br></br>
+                            <br></br>
+                        </form>
+                    </CaptionForm>
+                </>
+            )
+        }
     }
 }
 
 const mapStateToProps = state => ({
-    captionInput: state.captions.captionInput,
+    captionPreview: state.captions.captionPreview,
     user: state.users.user
 })
 
-export default connect(mapStateToProps, { sendSavedCaption })(NewCaptionForm)
+const mapDispatchToProps = dispatch => ({
+    previewCaption: (captionObj) => dispatch({ type: PREVIEW_CAPTION, payload: captionObj }),
+    clearPreview: () => dispatch({ type: CLEAR_PREVIEW_CAPTION }),
+    sendSavedCaption: (captionObj) => dispatch(sendSavedCaption(captionObj))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewCaptionForm)

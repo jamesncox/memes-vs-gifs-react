@@ -3,7 +3,8 @@ import {
     SET_CAPTIONS,
     CLEAR_CAPTIONS,
     ADD_SAVED_CAPTION,
-    CAPTION_ERRORS
+    CAPTION_ERRORS,
+    PREVIEW_CAPTION
 } from '../actionTypes'
 
 const setCaptions = captions => {
@@ -12,6 +13,11 @@ const setCaptions = captions => {
 
 export const clearCaptions = () => {
     return { type: CLEAR_CAPTIONS }
+}
+
+export const previewCaption = (payload) => {
+    console.log("inside previewCaption action creator".payload)
+    return { type: PREVIEW_CAPTION, previewCaption: payload }
 }
 
 export const getCaptions = () => {

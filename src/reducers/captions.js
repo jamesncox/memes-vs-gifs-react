@@ -9,7 +9,9 @@ import {
     CLEAR_CAPTIONS,
     ADD_SAVED_CAPTION,
     CAPTION_ERRORS,
-    CLEAR_CAPTION_ERRORS
+    CLEAR_CAPTION_ERRORS,
+    PREVIEW_CAPTION,
+    CLEAR_PREVIEW_CAPTION
 } from '../actionTypes'
 
 export default (state = {
@@ -18,7 +20,8 @@ export default (state = {
     randomCaptions: null,
     chosenCaption: {},
     captionInput: "",
-    errors: null
+    errors: null,
+    captionPreview: {}
 }, action) => {
     switch (action.type) {
 
@@ -59,6 +62,12 @@ export default (state = {
 
         case CLEAR_CAPTION_ERRORS:
             return { ...state, errors: null }
+
+        case PREVIEW_CAPTION:
+            return { ...state, captionPreview: action.payload }
+
+        case CLEAR_PREVIEW_CAPTION:
+            return { ...state, captionPreview: {} }
 
         default:
             return state
