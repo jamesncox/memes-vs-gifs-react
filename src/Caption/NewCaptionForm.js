@@ -57,9 +57,15 @@ class NewCaptionForm extends Component {
     }
 
     render() {
-        if (Object.keys(this.props.captionPreview).length > 0) {
-            return this.renderCaptionPreview()
-        } else {
+        function isEmpty(obj) {
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key))
+                    return false;
+            }
+            return true;
+        }
+
+        if (isEmpty(this.props.captionPreview)) {
             return (
                 <>
                     <CaptionForm className="big-zoom">
@@ -91,6 +97,9 @@ class NewCaptionForm extends Component {
                     </CaptionForm>
                 </>
             )
+        } else {
+            return this.renderCaptionPreview()
+
         }
     }
 }
