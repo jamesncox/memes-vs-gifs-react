@@ -48,7 +48,7 @@ class NewCaptionForm extends Component {
     renderCaptionPreview = () => {
         return (
             <CaptionCard>
-                <SelectButton style={{ margin: "5px" }} onClick={this.handleSubmit}>Select</SelectButton>
+                <SelectButton style={{ margin: "5px" }} onClick={this.handleSubmit}>Save</SelectButton>
                 <SelectButton onClick={this.editCaption}>Edit</SelectButton>
                 <h2>{this.props.captionPreview.text}</h2>
                 <h3>Rating: {this.props.captionPreview.rating}</h3>
