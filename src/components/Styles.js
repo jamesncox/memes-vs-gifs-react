@@ -60,4 +60,33 @@ const LogOutButton = styled.button`
   position: relative;
 `
 
-export { GameLinkCard, ThumbnailCard, PopupCard, FilterButton, LogOutButton }
+const AboutCard = styled.div`
+  background-color: rgba(0, 0, 0, 0.85) ;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  width: 90%;
+  height: 5in;
+  border-radius: .1in;
+  margin: 25px;
+  display: inline-block;
+  padding: 10px;
+  display: inline-table;
+`
+
+const GuidelineCard = styled.div`
+  background-color: rgba(0, 0, 0, 0.3) ;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  width: 90%;
+  height: 3in;
+  text-align: left;
+  border-radius: .1in;
+  margin: 25px;
+  display: inline-block;
+  padding: 10px;
+  display: inline-table;
+`
+
+export { GameLinkCard, ThumbnailCard, PopupCard, FilterButton, LogOutButton, AboutCard, GuidelineCard }
