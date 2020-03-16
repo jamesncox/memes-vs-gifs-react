@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import {
     GEN_RANDOM_CAPTIONS_R,
     GEN_RANDOM_CAPTIONS_PG,
-    GEN_RANDOM_CAPTIONS_ALL
+    GEN_RANDOM_CAPTIONS_ALL,
+    CLEAR_PREVIEW_CAPTION
 } from '../actionTypes'
 import NewCaptionForm from './NewCaptionForm'
 import Errors from './Errors'
@@ -22,6 +23,7 @@ class GenerateCaption extends Component {
     }
 
     handleHide = () => {
+        this.props.clearPreview()
         this.setState({
             isActive: false
         })
@@ -83,7 +85,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     genRandomCaptionsR: () => dispatch({ type: GEN_RANDOM_CAPTIONS_R }),
     genRandomCaptionsPG: () => dispatch({ type: GEN_RANDOM_CAPTIONS_PG }),
-    genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL })
+    genRandomCaptionsAll: () => dispatch({ type: GEN_RANDOM_CAPTIONS_ALL }),
+    clearPreview: () => dispatch({ type: CLEAR_PREVIEW_CAPTION })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GenerateCaption)

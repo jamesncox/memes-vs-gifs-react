@@ -72,11 +72,12 @@ class NewCaptionForm extends Component {
                         <form onSubmit={this.handlePreview.bind(this)}>
                             <br></br>
                             <textarea
-                                placeholder="Create a hilarious caption!!"
+                                placeholder="Create a hilarious caption! (Limit of 120 characters)"
                                 name="text" value={this.state.text}
                                 onChange={e => this.handleChange(e)}
                                 rows="5"
                                 cols="25"
+                                maxlength="120"
                             />
                             <br></br>
                             <br></br>
