@@ -12,8 +12,9 @@ class About extends Component {
                         <p>Please create all the gifs and memes your heart desires.</p>
                         <p>You can upload images from the web, and create your own captions. Which is totally awesome. But there are some guidelines:</p>
                         <ul>
-                            <p>Images must be suitable for work / office environments. (No nudity, violent images, propaganda, etc.)</p>
-                            <p>"Naughty" words are allowed, but hateful or incendiary speech is not!</p>
+                            <p>- Images must be suitable for work / office environments.</p>
+                            <p>- "Naughty" words are allowed, but please keep the captions respectful.</p>
+                            <p>- Caption cards must have a "PG" or "NSFW" rating. If my 7 year old daughter isn't allowed to read them, they're "NSFW"</p>
                             <p></p>
                         </ul>
                         <p>If any images or captions violate these terms, they will be removed and the user associated with them will be deleted, with all their saved gifs and memes.</p>

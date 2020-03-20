@@ -61,7 +61,7 @@ const LogOutButton = styled.button`
 `
 
 const AboutCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.85) ;
+  background-color: rgba(0, 0, 0, 0.80) ;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
@@ -71,21 +71,23 @@ const AboutCard = styled.div`
   margin: 25px;
   display: inline-block;
   padding: 10px;
+  border: solid rgb(121, 121, 121) 10px;
   display: inline-table;
 `
 
 const GuidelineCard = styled.div`
-  background-color: rgba(0, 0, 0, 0.3) ;
+  background-color: rgba(0, 0, 0, 0.25) ;
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
+  border: solid rgb(121, 121, 121) 5px;
   width: 90%;
   height: 3in;
   text-align: left;
   border-radius: .1in;
   margin: 25px;
   display: inline-block;
-  padding: 10px;
+  padding: 20px;
   display: inline-table;
 `
 

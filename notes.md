@@ -26,14 +26,16 @@
     [x]  "previewMeme" state, to hold a potential meme before saving to database
     [x]  Once a caption is selected, can then save to database like normal.
 
-[] Refactor created caption to only be persisted to database once it's "previewed" like created meme
-    [] probably will have to refactor backend caption to "find_or_create_by" or something similar
+[x] Refactor created caption to only be persisted to database once it's "previewed" like created meme
+    [x] probably will have to refactor backend caption to "find_or_create_by" or something similar. NOPE. Didn't do that.
 
-[] Should have an "About" page with info about the app, maybe myself and maybe contact info.
+[x] Should have an "About" page with info about the app, maybe myself and maybe contact info.
 
 [x] Add UserGifs and UserMemes components to call in UserProfile Component (presentation/container relationship)
 
 [] Refactor the href / <a> tag </a> problem into onClick and function for popUp/Modal display
+
+[] Filter everyone's gifs and memes by caption rating
 
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
