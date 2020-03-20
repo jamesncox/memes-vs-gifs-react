@@ -26,6 +26,8 @@ The Front-End: Utilizes a React framework, structured with Redux to store almost
 
 ### Running Memes vs Gifs
 
+Memes vs Gifs requires having PostgreSQL set up on your computer.
+
 To run Memes vs Gifs, complete the following steps:
 - Clone both repositories https://github.com/jamesncox/memes-vs-gifs-react.git and https://github.com/jamesncox/memes-vs-gifs-api.git 
 - In seperate terminals cd into memes-vs-gifs-react and memes-vs-gifs-api
