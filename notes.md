@@ -37,6 +37,8 @@
 
 [] Filter everyone's gifs and memes by caption rating
 
+[] Create a "share" button in user profile on each meme/gif, which will prepend each id with "shared" to filter in the shared page.
+
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
 
