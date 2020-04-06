@@ -29,7 +29,7 @@ export const getQueriedGifs = () => {
         dispatch({ type: LOADING_GIFS })
 
         try {
-            const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=x0WExR3KfMLz2nvCuAbhdSFNcTKlK2US&q=${query}&limit=25&offset=0&rating=R&lang=en`)
+            const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=M7cQmyffxGCB7LHSmI1OGrT6Tnc9pZDn&q=${query}&limit=25&offset=0&rating=R&lang=en`)
             if (!res.ok) {
                 throw res
             }
