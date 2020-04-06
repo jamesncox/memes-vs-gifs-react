@@ -72,7 +72,7 @@ export const getSavedGifs = () => {
     return async dispatch => {
         dispatch({ type: LOADING_SAVED_GIFS })
         try {
-            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/gifs")
+            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/gifs")
             if (!res.ok) {
                 throw res
             }
@@ -86,7 +86,7 @@ export const getSavedGifs = () => {
 
 export function deleteGif(id) {
     return (dispatch) => {
-        fetch(`https://memes-vs-gifs-api.herokuapp.com/gifs/${id}`, {
+        fetch(`https://memes-vs-gifs-api.herokuapp.com/api/v1/gifs/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

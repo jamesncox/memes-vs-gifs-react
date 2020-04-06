@@ -76,7 +76,7 @@ export function loginUser(user) {
 export function setCurrentUser() {
     return async (dispatch) => {
         try {
-            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/current_user", {
+            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/current_user", {
                 credentials: 'include'
             })
             if (!res.ok) {
@@ -96,7 +96,7 @@ export function clearCurrentUser() {
         const state = getState()
         const token = state.sessions.token
 
-        const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/logout", {
+        const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/logout", {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
