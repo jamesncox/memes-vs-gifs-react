@@ -8,6 +8,20 @@ class About extends Component {
                 <h1 className="header" style={{ width: "6in" }} >Information and Guidelines</h1>
                 <AboutCard>
                     <p>Memes vs Gifs is created by James Cox, a recent graduate of Flatiron School.</p>
+                    <p>This app utilizes both the{' '}
+                        <a
+                            style={{ color: "rgb(11, 218, 114)" }}
+                            href="https://developers.giphy.com/">
+                            Giphy API
+                        </a>
+                        {' '}and{' '}
+                        <a
+                            style={{ color: "rgb(11, 218, 114)" }}
+                            href="https://api.imgflip.com/">
+                            ImgFlip API
+                        </a>
+                        .
+                    </p>
                     <GuidelineCard>
                         <p>Please create all the gifs and memes your heart desires.</p>
                         <p>You can upload images from the web, and create your own captions. Which is totally awesome. But there are some guidelines:</p>

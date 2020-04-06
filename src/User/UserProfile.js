@@ -49,7 +49,7 @@ class UserProfile extends Component {
         } else {
             return (
                 <>
-                    <h1 className="header">Welcome {this.props.user.username}</h1>
+                    <h1 className="header">Hey there, {this.props.user.username}!</h1>
                     <UserGifs />
                     <UserMemes />
                 </>
