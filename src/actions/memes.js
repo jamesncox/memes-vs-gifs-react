@@ -49,7 +49,7 @@ export function sendMemeRequest(sendObj) {
     }
 
     return (dispatch) => {
-        fetch("http://localhost:3000/api/v1/caption_joins", {
+        fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/caption_joins", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export const getSavedMemes = () => {
     return async dispatch => {
         dispatch({ type: LOADING_SAVED_MEMES })
         try {
-            const res = await fetch("http://localhost:3000/api/v1/memes")
+            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/memes")
             if (!res.ok) {
                 throw res
             }
@@ -80,7 +80,7 @@ export const getSavedMemes = () => {
 
 export function deleteMeme(id) {
     return (dispatch) => {
-        fetch(`http://localhost:3000/api/v1/memes/${id}`, {
+        fetch(`https://memes-vs-gifs-api.herokuapp.com/api/v1/memes/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
