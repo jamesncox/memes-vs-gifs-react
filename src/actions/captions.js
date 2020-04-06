@@ -24,7 +24,7 @@ export const getCaptions = () => {
     return async dispatch => {
         dispatch({ type: LOADING_CAPTIONS })
         try {
-            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/captions")
+            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/captions")
             if (!res.ok) {
                 throw res
             }
@@ -45,7 +45,7 @@ export function sendSavedCaption(caption) {
             user_id: caption.userId
         }
 
-        const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/captions", {
+        const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/captions", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
