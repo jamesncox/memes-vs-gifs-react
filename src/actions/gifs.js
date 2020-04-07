@@ -55,7 +55,7 @@ export function sendGifRequest(sendObj) {
     }
 
     return (dispatch) => {
-        fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/caption_joins", {
+        fetch("https://memes-vs-gifs.herokuapp.com/api/v1/caption_joins", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export const getSavedGifs = () => {
     return async dispatch => {
         dispatch({ type: LOADING_SAVED_GIFS })
         try {
-            const res = await fetch("https://memes-vs-gifs-api.herokuapp.com/api/v1/gifs")
+            const res = await fetch("https://memes-vs-gifs.herokuapp.com/api/v1/gifs")
             if (!res.ok) {
                 throw res
             }
@@ -86,7 +86,7 @@ export const getSavedGifs = () => {
 
 export function deleteGif(id) {
     return (dispatch) => {
-        fetch(`https://memes-vs-gifs-api.herokuapp.com/api/v1/gifs/${id}`, {
+        fetch(`https://memes-vs-gifs.herokuapp.com/api/v1/gifs/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

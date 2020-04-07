@@ -2,7 +2,7 @@ import { DELETE_CAPTION_JOIN } from '../actionTypes'
 
 export function deleteCaptionJoin(id) {
     return (dispatch) => {
-        fetch(`https://memes-vs-gifs-api.herokuapp.com/api/v1/caption_joins/${id}`, {
+        fetch(`https://memes-vs-gifs.herokuapp.com/api/v1/caption_joins/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
