@@ -39,6 +39,11 @@
 
 [] Create a "share" button in user profile on each meme/gif. Set a boolean to true/false in database. Can filter by boolean.
 
+[] Integrate react-share dependency for sharing on twitter/facebook etc
+   https://www.npmjs.com/package/react-share
+
+[] Add up-vote system to display gifs/memes by rank
+
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
 
