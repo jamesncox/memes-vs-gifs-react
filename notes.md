@@ -33,6 +33,8 @@
 
 [x] Add UserGifs and UserMemes components to call in UserProfile Component (presentation/container relationship)
 
+[x] Add favicon
+
 [] Refactor the href / <a> tag </a> problem into onClick and function for popUp/Modal display
 
 [] Filter everyone's gifs and memes by caption rating
