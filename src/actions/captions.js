@@ -16,7 +16,6 @@ export const clearCaptions = () => {
 }
 
 export const previewCaption = (payload) => {
-    console.log("inside previewCaption action creator".payload)
     return { type: PREVIEW_CAPTION, previewCaption: payload }
 }
 
