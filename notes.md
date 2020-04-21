@@ -46,6 +46,10 @@
 
 [] Add up-vote system to display gifs/memes by rank
 
+[x] Create new branch 'experimental-styling'
+
+[] Update CSS to work on a mobile device
+
 # Loading Gif Options
     my "is loading" animation, not a spinning wheel
 
