@@ -83,11 +83,11 @@ class UserGifs extends Component {
             return (
                 <div>
                     <h4>
-                        <img
+                        {/* <img
                             style={{ width: "150px", float: "right", marginLeft: "-150px" }}
                             src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')}
                             alt="Powered By Giphy"
-                        />
+                        /> */}
                         Your Saved Gifs
                         </h4>
                     <h3> </h3>
