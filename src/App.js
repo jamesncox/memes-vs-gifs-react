@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import './stylesheets/app.css';
+import './stylesheets/responsive.css'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import MemeHome from './Meme/components/MemeHome'

@@ -1,0 +1,21 @@
+@media screen and (max-width: 1000px) {
+    h1{
+        width: 50vh;
+    }
+
+    .modal-popup{
+        margin: 70px auto;
+      }
+
+    .modal-popup .close {
+        top: 10px;
+        right: 15px;
+        font-size: 50px;
+      }
+}f
+
+@media screen and (max-width: 450px) {
+    img {
+        width: 80vh;
+    }
+}

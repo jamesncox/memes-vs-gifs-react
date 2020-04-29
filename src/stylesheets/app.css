@@ -285,9 +285,8 @@
   padding: 20px auto;
   background: rgba(255, 255, 255, 0);
   border-radius: 5px;
-  width: 30%;
   position: auto;
-  transition: all 5s ease-in-out;
+  /* transition: all 5s ease-in-out; */
 }
 
 .modal-popuph2 {
@@ -363,4 +362,9 @@
 @keyframes fadeout {
   from {center: 0; opacity: 1;}
   to {center: 0; opacity: 0;}
+}
+
+video, audio, iframe, table, form {
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
 }
