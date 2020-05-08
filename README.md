@@ -1,4 +1,4 @@
-https://twitter.com/home
+https://memes-vs-gifs.netlify.app/
 
 ## Memes vs Gifs
 
