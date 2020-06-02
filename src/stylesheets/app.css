@@ -11,7 +11,9 @@
   
   body {
     /* background-image: url("https://images.pexels.com/photos/1111370/pexels-photo-1111370.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") */
-    background-color: rgb(255, 255, 255);
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   img {
@@ -191,14 +193,13 @@
     overflow: hidden;
     background-color:  rgba(0, 0, 0, 0.850);
     font-family: Arial;
-    width: 100%
+    width: 100%;
   }
   
   /* Links inside the navbar */
   .navbar a {
     float: left;
     font-size: 23px;
-    margin-top: 3px;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -209,7 +210,7 @@
   .dropdown {
     float: left;
     overflow: hidden;
-    margin-top: 3px;
+    /* margin-top: 0px; */
   }
   
   /* Dropdown button */

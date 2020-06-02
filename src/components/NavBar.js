@@ -33,7 +33,7 @@ class NavBar extends Component {
                 <img
                     src={require('../assets/images/PoweredBy_200px-Black_HorizLogo.png')}
                     alt="Powered By Giphy"
-                    style={{ float: "right", marginTop: "18px" }}
+                    style={{ float: "right", marginTop: "15px" }}
                 />
             </div >
         )
