@@ -19,13 +19,18 @@ const ThumbnailCard = styled.div`
   color: white;
   font-family: Helvetica, sans-serif;
   font-size: 20px;
-  width: 1in;
-  height: .5in;
-  border-radius: .25in;
-  margin: 10px;
-  display: inline-block;
+  width: 1rem;
+  height: .5rem;
+  border-radius: 1rem;
+  margin: .5rem;
+  // display: inline-block;
   padding: 10px;
   display: inline-table;
+  @media (max-width: 450px) {
+    margin: 3px;
+    padding: 5px;
+    border-radius: .15in;
+  }
 `
 const PopupCard = styled.div`
   background-color: rgba(0, 0, 0, 0.90);
