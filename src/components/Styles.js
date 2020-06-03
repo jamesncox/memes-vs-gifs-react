@@ -23,8 +23,7 @@ const ThumbnailCard = styled.div`
   height: .5rem;
   border-radius: 1rem;
   margin: .5rem;
-  // display: inline-block;
-  padding: 10px;
+  padding: 8px;
   display: inline-table;
   @media (max-width: 450px) {
     margin: 3px;
@@ -43,7 +42,6 @@ const PopupCard = styled.div`
   border: solid;
   border-color: rgb(121, 121, 121);
   margin: 10px;
-  display: inline-block;
   padding: 10px;
   display: inline-table;
 `
