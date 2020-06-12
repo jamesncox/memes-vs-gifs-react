@@ -77,5 +77,6 @@ const CloseButton = styled.button`
   color:  #F8F8FF;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 export { ThumbnailCard, PopupCard, LoginCard, SignupCard, ErrorCard, CloseButton }
