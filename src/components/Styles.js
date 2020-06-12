@@ -52,6 +52,7 @@ const FilterButton = styled.button`
   color:  #F8F8FF;
   font-size: 18px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 
 const LogOutButton = styled.button`
@@ -61,6 +62,7 @@ const LogOutButton = styled.button`
   font-size: 20px;
   font-family: Helvetica, sans-serif;
   position: relative;
+  outline-style: none;
 `
 
 const AboutCard = styled.div`

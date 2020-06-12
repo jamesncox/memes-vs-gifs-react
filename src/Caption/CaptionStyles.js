@@ -8,6 +8,7 @@ const CaptionButton = styled.button`
   font-family: Helvetica, sans-serif;
   margin-right: 15px;
   maring-left: 15px;
+  outline-style: none;
 `
 
 const SelectButton = styled.button`
@@ -15,6 +16,7 @@ const SelectButton = styled.button`
   color: buttontext;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 
 const FormButton = styled.button`
@@ -25,6 +27,7 @@ const FormButton = styled.button`
   margin-right: 10px;
   maring-left: 10px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 
 const CaptionCard = styled.div`
@@ -77,6 +80,7 @@ const CloseButton = styled.button`
   color:  #F8F8FF;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 
 export { CaptionButton, FormButton, CaptionCard, SelectButton, CaptionForm, ErrorCard, CloseButton }

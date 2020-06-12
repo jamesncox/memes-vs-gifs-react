@@ -14,6 +14,7 @@ const NextBtn = styled.button`
   color: black;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 
 const MyForm = styled.form`
@@ -30,6 +31,7 @@ const SaveButton = styled.button`
   color:  #F8F8FF;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 const LoginCard = styled.div`
   background-color: rgba(0, 0, 0, 0.90) ;
@@ -51,6 +53,7 @@ const CloseButton = styled.button`
   color:  #F8F8FF;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
+  outline-style: none;
 `
 
 
